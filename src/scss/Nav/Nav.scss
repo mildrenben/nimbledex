@@ -1,0 +1,21 @@
+@import '../Commons';
+
+nav {
+  background: $theme-color;
+  padding: 10px 40px;
+  border-bottom: solid 1px darken($theme-color, 5%);
+  display: flex;
+  align-items: center;
+
+  .Logo {
+    display: inline-block;
+    width: 50%;
+
+    &_Img {
+      display: inline-block;
+    }
+    &_Name {
+      display: inline-block;
+    }
+  }
+}

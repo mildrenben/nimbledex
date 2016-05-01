@@ -1,0 +1,14 @@
+@import '../../Commons';
+
+.Id_Type {
+  width: 100px;
+  line-height: 27px;
+  text-align: center;
+  color: white;
+  border-radius: 4px;
+  &:first-of-type {
+    margin-bottom: 6px;
+  }
+
+  @include typeColors;
+}
