@@ -8,7 +8,7 @@ var redis = require("redis"),
 
 var request = require('request');
 function getData() {
-  for (let i = 1; i <= 718; i++) {
+  for (let i = 718; i <= 721; i++) {
     setTimeout(function(){
       request('http://pokeapi.co/api/v2/pokemon/' + i, function (err, res, body) {
         if (!err && res.statusCode == 200) {
@@ -55,7 +55,7 @@ function getData() {
           console.log('FAILURE ' + i);
         }
       });
-    }, 5000 * i);
+    }, 0 * i);
   }
 }
 
@@ -125,7 +125,7 @@ function evolFunc (entry, exit) {
 
 function getOther() {
   console.log('getOther init');
-  for (let j = 100; j <= 718; j++) {
+  for (let j = 718; j <= 721; j++) {
     setTimeout(function(){
       request('http://pokeapi.co/api/v2/pokemon-species/' + j, function(err, res, body) {
         if (!err && res.statusCode == 200) {
@@ -185,7 +185,7 @@ function getOther() {
           console.log('Failed on species req');
         }
       });
-    },5000 * j);
+    },0 * j);
   }
 }
 
