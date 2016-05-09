@@ -7,8 +7,12 @@ var redis = require("redis"),
     client = redis.createClient(port,host);
 
 var request = require('request');
+
+let Triggers = {
+
+};
 function getData() {
-  for (let i = 718; i <= 721; i++) {
+  for (let i = 1; i <= 721; i++) {
     setTimeout(function(){
       request('http://pokeapi.co/api/v2/pokemon/' + i, function (err, res, body) {
         if (!err && res.statusCode == 200) {
@@ -55,7 +59,7 @@ function getData() {
           console.log('FAILURE ' + i);
         }
       });
-    }, 0 * i);
+    }, 5000 * i);
   }
 }
 
@@ -91,6 +95,8 @@ function evolDataPush(entry, exit, multi) {
       // For objects
       if (typeof entry.evolution_details[x] === 'object') {
         if (x === 'trigger') {
+          Triggers[entry.evolution_details[x].name] = 0;
+          console.log(Triggers);
           set[x] = entry.evolution_details[x].name;
         }
         else {
@@ -99,6 +105,8 @@ function evolDataPush(entry, exit, multi) {
       }
       else {
         if (x === 'trigger') {
+          Triggers[entry.evolution_details[x]] = 0;
+          console.log(Triggers);
           set[x] = entry.evolution_details[x];
         }
         else {
@@ -125,7 +133,7 @@ function evolFunc (entry, exit) {
 
 function getOther() {
   console.log('getOther init');
-  for (let j = 718; j <= 721; j++) {
+  for (let j = 1; j <= 721; j++) {
     setTimeout(function(){
       request('http://pokeapi.co/api/v2/pokemon-species/' + j, function(err, res, body) {
         if (!err && res.statusCode == 200) {
@@ -168,7 +176,6 @@ function getOther() {
                   evolFunc(d.chain.evolves_to[0].evolves_to, newD.evol)
                 }
               }
-
               client.get(tripleId, function(err, val) {
                 var redisData = JSON.parse(val);
                 redisData.evol = newD.evol;
@@ -185,7 +192,7 @@ function getOther() {
           console.log('Failed on species req');
         }
       });
-    },0 * j);
+    }, 5000 * j);
   }
 }
 
