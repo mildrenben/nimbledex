@@ -1,3 +1,9 @@
+@mixin container {
+  width: 70%;
+  max-width: 460px;
+  box-sizing: border-box;
+}
+
 @mixin typeColors {
   &--normal {
     background: #A8A878;

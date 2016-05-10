@@ -1,9 +1,8 @@
 @import '../Commons';
 
 nav {
-  background: $theme-color;
-  padding: 10px 40px;
-  border-bottom: solid 1px darken($theme-color, 5%);
+  background: $bg;
+  padding: 16px 20px;
   display: flex;
   align-items: center;
 

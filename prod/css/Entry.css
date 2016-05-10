@@ -43,13 +43,94 @@ table {
 * {
   font-family: Montserrat, sans-serif; }
 
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+* {
+  font-family: Montserrat, sans-serif; }
+
 .Search {
   display: inline-block;
   -webkit-transform: translateX(-50%);
-          transform: translateX(-50%); }
+          transform: translateX(-50%);
+  width: 70%;
+  max-width: 460px;
+  box-sizing: border-box;
+  position: relative; }
+
+.awesomplete {
+  width: 100%; }
 
 .Search_Input {
-  width: 200px; }
+  width: 100%;
+  box-sizing: border-box;
+  padding: 6px 10px;
+  font-size: 14px;
+  border: solid 1px #A1A1A1; }
+  .Search_Input:focus {
+    outline: none; }
+
+.Search_Btn {
+  -webkit-flex-shrink: 0;
+      -ms-flex-negative: 0;
+          flex-shrink: 0;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 7px 10px;
+  border: none;
+  background: none; }
+  .Search_Btn .Icon--search {
+    width: 16px;
+    height: 16px; }
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -219,7 +300,7 @@ table {
     display: inline-block;
     width: 50px;
     height: 50px;
-    background: #61A2DA;
+    background: #72B4A4;
     border-radius: 50px;
     font-size: 14px; }
     .Evol_Triggers:empty {
@@ -349,9 +430,8 @@ table {
   font-family: Montserrat, sans-serif; }
 
 nav {
-  background: #61A2DA;
-  padding: 10px 40px;
-  border-bottom: solid 1px #4c96d5;
+  background: #F2F1ED;
+  padding: 16px 20px;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -371,8 +451,9 @@ body {
 
 main {
   width: 70%;
-  margin: 0 auto;
-  max-width: 460px; }
+  max-width: 460px;
+  box-sizing: border-box;
+  margin: 0 auto; }
 
 * {
   color: #343434; }

@@ -9,9 +9,8 @@ body {
   background: $bg;
 }
 main {
-  width: 70%;
+  @include container;
   margin: 0 auto;
-  max-width: 460px;
 }
 
 * {
