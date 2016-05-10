@@ -5,7 +5,7 @@ var Types = require('./Types');
 
 var Id = React.createClass({
   render: function () {
-    const imgURL = `/img/${this.props.idnumber}.png`;
+    const imgURL = `/img/sprites/${this.props.idnumber}.png`;
     return (
       <div className="Id">
         <img className="Id_Img" src={imgURL} />
