@@ -33,6 +33,7 @@ exports.index = function(req, res){
   let path = req.url.slice(1);
 
   if (isNaN(path)) {
+    path = path.charAt(0).toUpperCase() + path.slice(1);
     const lookupPath = lookup[path];
     client.get(lookupPath, function (err, val) {
       const data = JSON.parse(val);
