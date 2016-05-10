@@ -1,12 +1,14 @@
-var redis = {
+"use strict"
+
+const Redis = {
   port: '6379',
   host: '127.0.0.1'
 }
 
-var redis = require("redis"),
-    client = redis.createClient(redis.port,redis.host);
+const redis = require("redis"),
+      client = redis.createClient(Redis.port,Redis.host);
 
-var lookup = require('../lookup.js');
+const lookup = require('../lookup.js');
 
 function renderData(res,data) {
   if (data === null || data === undefined) {
@@ -28,7 +30,7 @@ function renderData(res,data) {
 };
 
 exports.index = function(req, res){
-  const path = req.url.slice(1);
+  let path = req.url.slice(1);
 
   if (isNaN(path)) {
     const lookupPath = lookup[path];
@@ -38,6 +40,15 @@ exports.index = function(req, res){
     });
   }
   else {
+    if (path >= 100 || path.length === 3) {
+      path = path;
+    }
+    else if (path > 9 && path < 100 || path.length === 2) {
+      path = '0' + path;
+    }
+    else {
+      path = '00' + path;
+    }
     client.get(path, function (err, val) {
       const data = JSON.parse(val);
       renderData(res,data);
