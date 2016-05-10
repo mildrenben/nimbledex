@@ -1,25 +1,21 @@
-var React = require('react');
+const React = require('react');
 
-var Stat = React.createClass({
-  barColor: function(val) {
+const Stat = React.createClass({
+  barColor(val) {
     if (val < 50) {
-       return "low"
-    }
-    else if (val < 80) {
-       return "med"
-    }
-    else if (val < 100) {
-       return "good"
-    }
-    else if (val < 120) {
-       return "veryGood"
-    }
-    else {
-       return "superb"
+      return "low";
+    } else if (val < 80) {
+      return "med";
+    } else if (val < 100) {
+      return "good";
+    } else if (val < 120) {
+      return "veryGood";
+    } else  {
+      return "superb";
     }
   },
-  render: function() {
-    const barWidth = this.props.value + 'px';
+  render() {
+    const barWidth = `${this.props.value}px`;
     let barColor = this.barColor(this.props.value);
 
     return (

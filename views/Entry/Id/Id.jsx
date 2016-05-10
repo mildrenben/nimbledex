@@ -1,10 +1,10 @@
-var React = require('react');
-var Name = require('./Name');
-var IdNumber = require('./IdNumber');
-var Types = require('./Types');
+const React = require('react');
+const Name = require('./Name');
+const IdNumber = require('./IdNumber');
+const Types = require('./Types');
 
-var Id = React.createClass({
-  render: function () {
+const Id = React.createClass({
+  render() {
     const imgURL = `/img/sprites/${this.props.idnumber}.png`;
     return (
       <div className="Id">

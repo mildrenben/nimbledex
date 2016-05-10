@@ -1,7 +1,7 @@
-var React = require('react');
+const React = require('react');
 
-var IdNumber = React.createClass({
-  render: function () {
+const IdNumber = React.createClass({
+  render() {
     return <p className="Id_IdNumber">{this.props.idnumber}</p>
   }
 });

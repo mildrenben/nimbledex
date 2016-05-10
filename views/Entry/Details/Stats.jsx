@@ -1,7 +1,7 @@
-var React = require('react');
-var Stat = require('./Stat');
+const React = require('react');
+const Stat = require('./Stat');
 
-var Stats = React.createClass({
+const Stats = React.createClass({
   render: function() {
     const stats = this.props.stats.map(function(stat){
       return <div className='Stat'>{stat}</div>

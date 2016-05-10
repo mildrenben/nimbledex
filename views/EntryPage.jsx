@@ -1,11 +1,11 @@
-var React = require('react');
-var Nav = require('./Nav/Nav');
-var Id = require('./entry/Id/Id');
-var Evol = require('./entry/Evol/Evol');
-var Details = require('./entry/Details/Details');
+const React = require('react');
+const Nav = require('./Nav/Nav');
+const Id = require('./entry/Id/Id');
+const Evol = require('./entry/Evol/Evol');
+const Details = require('./entry/Details/Details');
 
-var Root = React.createClass({
-  render: function() {
+const Root = React.createClass({
+  render() {
     return (
       <html>
         <head>

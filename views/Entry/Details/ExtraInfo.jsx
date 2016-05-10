@@ -1,7 +1,7 @@
-var React = require('react');
+const React = require('react');
 
-var ExtraInfo = React.createClass({
-  render: function () {
+const ExtraInfo = React.createClass({
+  render() {
     const evs = Object.keys(this.props.ev).map(function(ev){
       return <span>{ev} - {this.props.ev[ev]}</span>
     }.bind(this));

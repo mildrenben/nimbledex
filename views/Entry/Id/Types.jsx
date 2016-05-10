@@ -1,7 +1,7 @@
-var React = require('react');
+const React = require('react');
 
-var Types = React.createClass({
-  render: function () {
+const Types = React.createClass({
+  render() {
     const amountOfTypes = this.props.types.length;
 
     if (amountOfTypes === 1) {

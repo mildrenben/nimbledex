@@ -1,10 +1,10 @@
-var React = require('react');
-var Abilities = require('./Abilities');
-var ExtraInfo = require('./ExtraInfo');
-var Stats = require('./Stats');
+const React = require('react');
+const Abilities = require('./Abilities');
+const ExtraInfo = require('./ExtraInfo');
+const Stats = require('./Stats');
 
-var Details = React.createClass({
-  render: function () {
+const Details = React.createClass({
+  render() {
     return (
       <div className="Details">
         <Stats stats={this.props.stats} />

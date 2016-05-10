@@ -1,7 +1,7 @@
-var React = require('react');
+const React = require('react');
 
-var Abilities = React.createClass({
-  render: function() {
+const Abilities = React.createClass({
+  render() {
     const abilities = this.props.abilities.map(function(ability){
       return <p>{ability}</p>
     });

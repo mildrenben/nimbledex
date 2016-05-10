@@ -1,8 +1,8 @@
-var React = require('react');
-var Search = require('../Components/Search');
+const React = require('react');
+const Search = require('../Components/Search');
 
-var Nav = React.createClass({
-  render: function() {
+const Nav = React.createClass({
+  render() {
     return (
       <nav>
         <div className="Logo">
