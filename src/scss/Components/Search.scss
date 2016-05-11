@@ -30,9 +30,12 @@
   position: absolute;
   top: 0;
   right: 0;
-  padding: 7px 10px;
+  height: 100%;
+  padding: 0 10px;
   border: none;
   background: none;
+  cursor: pointer;
+  border-left: solid 1px $light-grey;
 
   .Icon--search {
     width: 16px;
