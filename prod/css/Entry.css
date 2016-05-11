@@ -131,6 +131,8 @@ table {
   background: none;
   cursor: pointer;
   border-left: solid 1px #A1A1A1; }
+  .Search_Btn:focus {
+    outline: none; }
   .Search_Btn .Icon--search {
     width: 16px;
     height: 16px; }

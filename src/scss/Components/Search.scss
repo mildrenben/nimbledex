@@ -36,6 +36,9 @@
   background: none;
   cursor: pointer;
   border-left: solid 1px $light-grey;
+  &:focus {
+    outline: none;
+  }
 
   .Icon--search {
     width: 16px;
