@@ -1,16 +1,13 @@
 "use strict";
 
-var port = '6379';
-var host = '127.0.0.1';
+const port = '6379';
+const host = '127.0.0.1';
 
-var redis = require("redis"),
-    client = redis.createClient(port,host);
+const redis = require("redis"),
+      client = redis.createClient(port,host);
 
-var request = require('request');
+const request = require('request');
 
-let Triggers = {
-
-};
 function getData() {
   for (let i = 1; i <= 721; i++) {
     setTimeout(function(){
@@ -89,31 +86,41 @@ function evolDataPush(entry, exit, multi) {
   if (multi) {
     set.multi = true;
   }
-  for (var x in entry.evolution_details) {
-    // For true statements
-    if (!(entry.evolution_details[x] == false) && !(entry.evolution_details[x] === null)) {
-      // For objects
-      if (typeof entry.evolution_details[x] === 'object') {
-        if (x === 'trigger') {
-          Triggers[entry.evolution_details[x].name] = 0;
-          console.log(Triggers);
-          set[x] = entry.evolution_details[x].name;
-        }
-        else {
-          set.other[x] = entry.evolution_details[x].name;
-        }
-      }
-      else {
-        if (x === 'trigger') {
-          Triggers[entry.evolution_details[x]] = 0;
-          console.log(Triggers);
-          set[x] = entry.evolution_details[x];
-        }
-        else {
-          set.other[x] = entry.evolution_details[x];
+
+  function loopEvolDetails(details) {
+    for (var x in details) {
+      // For true statements
+      if (!(details[x] == false) && !(details[x] === null)) {
+        // For objects
+        if (typeof details[x] === 'object') {
+          if (x === 'trigger') {
+            set[x] = details[x].name;
+          } else {
+            // If key has already been set, make array. For 'or' locations etc.
+            if (set.other[x]) {
+              const bank = set.other[x];
+              set.other[x] = [details[x].name];
+              set.other[x] = set.other[x].concat(bank);
+            } else {
+              set.other[x] = details[x].name;
+            }
+          }
+        } else {
+          if (x === 'trigger') {
+            set[x] = details[x];
+          } else {
+            set.other[x] = details[x];
+          }
         }
       }
     }
+  }
+  if (entry.evolution_details.constructor === Array) {
+    for(let i = 0; i < entry.evolution_details.length; i++) {
+      loopEvolDetails(entry.evolution_details[i]);
+    }
+  } else {
+    loopEvolDetails(entry.evolution_details);
   }
   exit.push(set);
 }
