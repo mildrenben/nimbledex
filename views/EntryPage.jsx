@@ -21,7 +21,7 @@ const Root = React.createClass({
             <Evol evol={this.props.evol} />
             <Details
               abilities={this.props.abilities}
-              catchRate={this.props.catchRate}
+              catchRate={this.props.captureRate}
               hatchCounter={this.props.hatchCounter}
               ev={this.props.ev}
               stats={this.props.stats} />
