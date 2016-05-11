@@ -43,7 +43,7 @@ const EvolSingle = React.createClass({
       return (
         <span>
           Holding
-          <img className="OtherTrigger_Img" src={`/img/items/${val}.png`} alt={this.formatString(Otherval)} />
+          <img className="OtherTrigger_Img" src={`/img/items/${val}.png`} alt={this.formatString(val)} />
         </span>
       );
     }
@@ -61,6 +61,20 @@ const EvolSingle = React.createClass({
           {val}
         </span>
       );
+    }
+    else if (key === 'location') {
+      if (val.constructor === Array) {
+        const items = val.map(function(item) {
+          return <span>{item}</span>;
+        });
+        return (
+          <span>
+            {items}
+          </span>
+        )
+      } else {
+        return val;
+      }
     }
     else if (key === 'time_of_day') {
       return (
