@@ -182,6 +182,80 @@ table {
 * {
   font-family: Montserrat, sans-serif; }
 
+.IconWrap {
+  position: relative; }
+  .IconWrap:hover .IconTooltip {
+    opacity: 1;
+    z-index: 1; }
+
+.Icon {
+  width: 12px;
+  height: 12px;
+  padding: 0 4px; }
+
+.IconTooltip {
+  position: absolute;
+  top: 140%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background: #343434;
+  width: auto;
+  border-radius: 4px;
+  padding: 7px 10px;
+  color: white;
+  white-space: nowrap;
+  opacity: 0;
+  z-index: -1;
+  transition: all 0.3s ease-in-out; }
+  .IconTooltip:empty {
+    display: none; }
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+* {
+  font-family: Montserrat, sans-serif; }
+
 .Id_Type {
   width: 100px;
   line-height: 27px;
@@ -303,11 +377,23 @@ table {
           justify-content: center; }
   .Evol_Triggers {
     display: inline-block;
-    width: 50px;
-    height: 50px;
-    background: #72B4A4;
-    border-radius: 50px;
-    font-size: 14px; }
+    width: 56px;
+    background: #83bdaf;
+    border-radius: 3px;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    font-size: 14px;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    padding: 7px;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
     .Evol_Triggers:empty {
       display: none; }
   .Evol_EvolSingle {
@@ -317,6 +403,29 @@ table {
     -webkit-align-items: center;
         -ms-flex-align: center;
             align-items: center; }
+
+.EvolTrigger {
+  font-size: 12px;
+  width: 100%;
+  text-align: center;
+  border-bottom: solid 1px #61ab99;
+  padding-bottom: 4px;
+  margin-bottom: 5px; }
+
+.OtherTrigger {
+  font-size: 12px; }
+  .OtherTrigger:not(:last-of-type) {
+    margin-bottom: 5px; }
+  .OtherTrigger span {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,

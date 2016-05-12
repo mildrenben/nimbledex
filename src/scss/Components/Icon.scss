@@ -1,0 +1,36 @@
+@import '../Commons.scss';
+
+.IconWrap {
+  position: relative;
+  &:hover {
+    .IconTooltip {
+      opacity: 1;
+      z-index: 1;
+    }
+  }
+}
+
+.Icon {
+  width: 12px;
+  height: 12px;
+  padding: 0 4px;
+}
+
+.IconTooltip {
+  position: absolute;
+  top: 140%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: $grey;
+  width: auto;
+  border-radius: 4px;
+  padding: 7px 10px;
+  color: white;
+  white-space: nowrap;
+  opacity: 0;
+  z-index: -1;
+  transition: all 0.3s ease-in-out;
+  &:empty {
+    display: none;
+  }
+}

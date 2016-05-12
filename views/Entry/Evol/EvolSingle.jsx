@@ -57,7 +57,7 @@ const EvolSingle = React.createClass({
     else if (key === 'min_happiness') {
       return (
         <span>
-          <Icon name="heart" />
+          <Icon name="heart" tooltip="Min. Happiness" />
           {val}
         </span>
       );
@@ -79,7 +79,7 @@ const EvolSingle = React.createClass({
     else if (key === 'time_of_day') {
       return (
         <span>
-          <Icon name="clock" />
+          <Icon name="clock" tooltip="Time of Day" />
           {val}
         </span>
       );

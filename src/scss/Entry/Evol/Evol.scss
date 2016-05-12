@@ -6,11 +6,15 @@
   justify-content: center;
   &_Triggers {
     display: inline-block;
-    width: 50px;
-    height: 50px;
-    background: $moss;
-    border-radius: 50px;
+    width: 56px;
+    background: lighten($moss,5%);
+    border-radius: 3px;
+    display: flex;
     font-size: 14px;
+    flex-wrap: wrap;
+    padding: 7px;
+    align-items: center;
+    justify-content: center;
     &:empty {
       display: none;
     }
@@ -18,5 +22,27 @@
   &_EvolSingle {
     display: flex;
     align-items: center;
+  }
+}
+
+.EvolTrigger {
+  font-size: 12px;
+  width: 100%;
+  text-align: center;
+  border-bottom: solid 1px darken($moss,5%);
+  padding-bottom: 4px;
+  margin-bottom: 5px;
+}
+
+.OtherTrigger {
+  font-size: 12px;
+  &:not(:last-of-type) {
+    margin-bottom: 5px;
+  }
+
+  span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
