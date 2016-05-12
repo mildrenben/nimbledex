@@ -11,12 +11,16 @@
 }
 
 .Icon {
-  width: 12px;
-  height: 12px;
-  padding: 2px;
-  background: white;
-  border-radius: 2px;
-  margin-right: 4px;
+  &--icon {
+    width: 12px;
+    height: 12px;
+    padding: 2px;
+    border-radius: 2px;
+    margin-right: 4px;
+  }
+  &--item {
+    
+  }
 }
 
 .IconTooltip {

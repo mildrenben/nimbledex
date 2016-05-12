@@ -29,13 +29,14 @@ const EvolSingle = React.createClass({
     }
     else if (key === 'item') {
       return (
-        <img className="OtherTrigger_Img" src={`/img/items/${val}.png`} alt={this.formatString(val)} />
+        <Icon name={val} type="item" tooltip={this.formatString(val)}/>
       );
     }
     else if (key === 'known_move') {
       return (
         <span>
-          Known move - {this.formatString(val)}
+          <Icon name="tm-ground" type="item" tooltip="Known move" />
+          {this.formatString(val)}
         </span>
       );
     }
@@ -43,7 +44,7 @@ const EvolSingle = React.createClass({
       return (
         <span>
           Holding
-          <img className="OtherTrigger_Img" src={`/img/items/${val}.png`} alt={this.formatString(val)} />
+          <Icon name={val} type="item" tooltip={this.formatString(val)} />
         </span>
       );
     }
@@ -57,7 +58,7 @@ const EvolSingle = React.createClass({
     else if (key === 'min_happiness') {
       return (
         <span>
-          <Icon name="heart" tooltip="Min. Happiness" />
+          <Icon name="heart" type="icon" tooltip="Min. Happiness" />
           {val}
         </span>
       );
@@ -65,8 +66,9 @@ const EvolSingle = React.createClass({
     else if (key === 'location') {
       if (val.constructor === Array) {
         const items = val.map(function(item) {
-          return <span>{item}</span>;
-        });
+          // const str = this.formatString(item);
+          return <span>{this.formatString(item)}</span>;
+        }.bind(this));
         return (
           <span>
             {items}
@@ -79,19 +81,19 @@ const EvolSingle = React.createClass({
     else if (key === 'time_of_day') {
       return (
         <span>
-          <Icon name="clock" tooltip="Time of Day" />
+          <Icon name="clock" type="icon" tooltip="Time of Day" />
           {val}
         </span>
       );
     }
     else if (key === 'min_affection') {
-      return `${val}♥ affection in Amie`;
+      return `${val}♥ in Amie`;
     }
     else if (key === 'gender') {
       if (val === 1) {
         return (
           <span>
-            <Icon name="female" />
+            <Icon name="female" type="icon" />
             Female
           </span>
         );
@@ -99,7 +101,7 @@ const EvolSingle = React.createClass({
       else {
         return (
           <span>
-            <Icon name="male" />
+            <Icon name="male" type="icon" />
             Male
           </span>
         );
@@ -108,7 +110,7 @@ const EvolSingle = React.createClass({
     else if(key === 'turn_upside_down') {
       return (
         <span>
-          <Icon name="down" />
+          <Icon name="down" type="icon" />
           Turn 3DS upside down
         </span>
       )
@@ -116,7 +118,7 @@ const EvolSingle = React.createClass({
     else if (key === 'needs_overworld_rain') {
       return (
         <span>
-          <Icon name="rain" />
+          <Icon name="rain" type="icon" />
           Needs overworld rain
         </span>
       )

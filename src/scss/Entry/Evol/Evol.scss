@@ -4,6 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 26px;
   &_Triggers {
     display: inline-block;
     display: flex;
@@ -11,7 +12,7 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    width: 56px;
+    max-width: 58px;
     &:empty {
       display: none;
     }
@@ -33,7 +34,7 @@
   width: 100%;
   text-align: center;
   background: darken($moss,5%);
-  border-radius: 3px 3px 0 0;
+  border-radius: 3px;
   padding: 7px;
   color: white;
   font-weight: 200;
@@ -51,6 +52,20 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  // Ugly hack for border radius on
+  // main trigger when no other triggers
+  position: relative;
+  &:before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -1px;
+    width: 100%;
+    height: 4px;
+    border-left: solid 1px darken($moss,5%);
+    border-right: solid 1px darken($moss,5%);
+    background: darken($moss,5%);
+  }
   &:empty {
     display: none;
   }
@@ -63,9 +78,18 @@
     margin-bottom: 5px;
   }
 
-  span {
+  > span {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  &--location {
+    span span:not(:last-child) {
+      padding-bottom: 5px;
+      margin-bottom: 5px;
+      border-bottom: solid 1px $light-grey;
+    }
   }
 }

@@ -7,7 +7,7 @@ const Search = React.createClass({
       <div className="Search">
         <input className="Search_Input" placeholder="Search..."/>
         <button className="Search_Btn">
-          <Icon name="search" />
+          <Icon name="search" type="icon" />
         </button>
       </div>
     )

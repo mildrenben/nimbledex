@@ -5,6 +5,7 @@
   transform: translateX(-50%);
   @include container;
   position: relative;
+  z-index: 2;
 }
 
 .awesomplete {
@@ -36,6 +37,7 @@
   background: none;
   cursor: pointer;
   border-left: solid 1px $light-grey;
+  width: 36px;
   &:focus {
     outline: none;
   }
@@ -43,5 +45,6 @@
   .Icon--search {
     width: 16px;
     height: 16px;
+    margin-right: 0;
   }
 }

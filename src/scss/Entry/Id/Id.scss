@@ -4,6 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  margin-bottom: 16px;
   &_Img {
     margin-right: 14px;
   }
@@ -11,7 +12,7 @@
 
   }
   &_Name {
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 500;
     margin-bottom: 6px;
   }
