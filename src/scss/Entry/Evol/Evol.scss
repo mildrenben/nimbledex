@@ -6,15 +6,12 @@
   justify-content: center;
   &_Triggers {
     display: inline-block;
-    width: 56px;
-    background: lighten($moss,5%);
-    border-radius: 3px;
     display: flex;
     font-size: 14px;
     flex-wrap: wrap;
-    padding: 7px;
     align-items: center;
     justify-content: center;
+    width: 56px;
     &:empty {
       display: none;
     }
@@ -23,19 +20,45 @@
     display: flex;
     align-items: center;
   }
+  a {
+    text-align: center;
+  }
+  &_Img {
+    width: 80%;
+  }
 }
 
 .EvolTrigger {
   font-size: 12px;
   width: 100%;
   text-align: center;
-  border-bottom: solid 1px darken($moss,5%);
-  padding-bottom: 4px;
-  margin-bottom: 5px;
+  background: darken($moss,5%);
+  border-radius: 3px 3px 0 0;
+  padding: 7px;
+  color: white;
+  font-weight: 200;
+}
+
+.Evol_OtherTriggers {
+  font-size: 12px;
+  width: 100%;
+  background: white;
+  border: solid 1px $light-grey;
+  border-top: none;
+  border-radius: 0 0 3px 3px;
+  padding: 6px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  &:empty {
+    display: none;
+  }
 }
 
 .OtherTrigger {
-  font-size: 12px;
+  width: 100%;
+  text-align: center;
   &:not(:last-of-type) {
     margin-bottom: 5px;
   }

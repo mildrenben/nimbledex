@@ -191,7 +191,10 @@ table {
 .Icon {
   width: 12px;
   height: 12px;
-  padding: 0 4px; }
+  padding: 2px;
+  background: white;
+  border-radius: 2px;
+  margin-right: 4px; }
 
 .IconTooltip {
   position: absolute;
@@ -377,9 +380,6 @@ table {
           justify-content: center; }
   .Evol_Triggers {
     display: inline-block;
-    width: 56px;
-    background: #83bdaf;
-    border-radius: 3px;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
@@ -387,13 +387,13 @@ table {
     -webkit-flex-wrap: wrap;
         -ms-flex-wrap: wrap;
             flex-wrap: wrap;
-    padding: 7px;
     -webkit-align-items: center;
         -ms-flex-align: center;
             align-items: center;
     -webkit-justify-content: center;
         -ms-flex-pack: center;
-            justify-content: center; }
+            justify-content: center;
+    width: 56px; }
     .Evol_Triggers:empty {
       display: none; }
   .Evol_EvolSingle {
@@ -403,17 +403,45 @@ table {
     -webkit-align-items: center;
         -ms-flex-align: center;
             align-items: center; }
+  .Evol a {
+    text-align: center; }
+  .Evol_Img {
+    width: 80%; }
 
 .EvolTrigger {
   font-size: 12px;
   width: 100%;
   text-align: center;
-  border-bottom: solid 1px #61ab99;
-  padding-bottom: 4px;
-  margin-bottom: 5px; }
+  background: #61ab99;
+  border-radius: 3px 3px 0 0;
+  padding: 7px;
+  color: white;
+  font-weight: 200; }
+
+.Evol_OtherTriggers {
+  font-size: 12px;
+  width: 100%;
+  background: white;
+  border: solid 1px #A1A1A1;
+  border-top: none;
+  border-radius: 0 0 3px 3px;
+  padding: 6px;
+  box-sizing: border-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap; }
+  .Evol_OtherTriggers:empty {
+    display: none; }
 
 .OtherTrigger {
-  font-size: 12px; }
+  width: 100%;
+  text-align: center; }
   .OtherTrigger:not(:last-of-type) {
     margin-bottom: 5px; }
   .OtherTrigger span {

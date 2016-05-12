@@ -10,10 +10,10 @@ const EvolSingle = React.createClass({
   changeTrigger(str) {
     switch (str) {
       case "level-up":
-        return "Level Up"
+        return "Lvl Up"
         break;
       case "use-item":
-        return "Use item"
+        return "Item"
         break;
       case "trade":
         return "Trade"
@@ -164,7 +164,9 @@ const EvolSingle = React.createClass({
       <div className="Evol_EvolSingle">
         <div className="Evol_Triggers">
           {trigger}
-          {otherTriggers}
+          <div className="Evol_OtherTriggers">
+            {otherTriggers}
+          </div>
         </div>
         <a href={`/${this.props.idnumber}`}>
           <img className="Evol_Img" src={imgURL} />
