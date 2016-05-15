@@ -1,0 +1,22 @@
+.ExtraInfo {
+  text-align: right; }
+  .ExtraInfo p {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: end;
+        justify-content: flex-end;
+    -ms-flex-align: start;
+        align-items: flex-start; }
+
+.ExtraInfo_Title {
+  text-align: left;
+  display: inline-block;
+  width: 100px; }
+
+.ExtraInfo_Value {
+  display: inline-block;
+  width: 55px;
+  white-space: pre-line; }
+
+.ExtraInfo_EffortValues span span + span:before {
+  content: ', '; }

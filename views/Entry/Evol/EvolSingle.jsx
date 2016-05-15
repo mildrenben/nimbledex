@@ -1,13 +1,9 @@
 const React = require('react');
 const classNames = require('classnames');
 const Icon = require('../../Components/Icon');
+const formatString = require('../../Utilities/formatString');
 
 const EvolSingle = React.createClass({
-  formatString(str) {
-    let newStr = str.replace('_',' ');
-    newStr = newStr.replace('-',' ');
-    return newStr;
-  },
   changeTrigger(str) {
     switch (str) {
       case "level-up":
@@ -30,14 +26,14 @@ const EvolSingle = React.createClass({
     }
     else if (key === 'item') {
       return (
-        <Icon name={val} type="item" tooltip={this.formatString(val)}/>
+        <Icon name={val} type="item" tooltip={formatString(val)}/>
       );
     }
     else if (key === 'known_move') {
       return (
         <span>
           <Icon name="tm-ground" type="item" tooltip="Known move" />
-          {this.formatString(val)}
+          {formatString(val)}
         </span>
       );
     }
@@ -45,14 +41,14 @@ const EvolSingle = React.createClass({
       return (
         <span>
           Holding
-          <Icon name={val} type="item" tooltip={this.formatString(val)} />
+          <Icon name={val} type="item" tooltip={formatString(val)} />
         </span>
       );
     }
     else if (key === 'known_move_type') {
       return (
         <span>
-          Knowing a {this.formatString(val)} move
+          Knowing a {formatString(val)} move
         </span>
       );
     }
@@ -67,7 +63,7 @@ const EvolSingle = React.createClass({
     else if (key === 'location') {
       if (val.constructor === Array) {
         const items = val.map(function(item) {
-          return <span>{this.formatString(item)}</span>;
+          return <span>{formatString(item)}</span>;
         }.bind(this));
         return (
           <span>

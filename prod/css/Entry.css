@@ -532,6 +532,48 @@ table {
     .Stat_Bar--superb {
       background: #2196f3; }
 
+.ExtraInfo {
+  text-align: right; }
+  .ExtraInfo p {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: end;
+        justify-content: flex-end;
+    -ms-flex-align: start;
+        align-items: flex-start; }
+
+.ExtraInfo_Title {
+  text-align: left;
+  display: inline-block;
+  width: 100px; }
+
+.ExtraInfo_Value {
+  display: inline-block;
+  width: 55px;
+  white-space: pre-line; }
+
+.ExtraInfo_EffortValues span span + span:before {
+  content: ', '; }
+
+.Details {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+  .Details_Abilities,
+  .Details .ExtraInfo {
+    width: 50%;
+    font-size: 14px;
+    margin-bottom: 20px; }
+    .Details_Abilities h3,
+    .Details .ExtraInfo h3 {
+      font-weight: 300;
+      text-decoration: underline;
+      margin-bottom: 7px; }
+    .Details_Abilities p,
+    .Details .ExtraInfo p {
+      margin-bottom: 5px; }
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,

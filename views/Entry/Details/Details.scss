@@ -1,0 +1,22 @@
+@import './Stats',
+        './Abilities',
+        './ExtraInfo';
+
+.Details {
+  display: flex;
+  flex-wrap: wrap;
+  &_Abilities,
+  .ExtraInfo {
+    width: 50%;
+    font-size: 14px;
+    margin-bottom: 20px;
+    h3 {
+      font-weight: 300;
+      text-decoration: underline;
+      margin-bottom: 7px;
+    }
+    p {
+      margin-bottom: 5px;
+    }
+  }
+}
