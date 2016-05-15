@@ -9,7 +9,7 @@ var argv = require('yargs').argv;
 var gulpif = require('gulp-if');
 
 var src = {
-  sass: './src/scss/*.scss',
+  sass: './views/**/*.scss',
   html: './src/*.html',
   js:   './src/js/*.js'
 }

@@ -90,8 +90,7 @@ table {
 
 .Search {
   display: inline-block;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
   width: 70%;
   max-width: 460px;
   box-sizing: border-box;
@@ -111,18 +110,14 @@ table {
     outline: none; }
 
 .Search_Btn {
-  -webkit-flex-shrink: 0;
-      -ms-flex-negative: 0;
-          flex-shrink: 0;
-  display: -webkit-flex;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
   display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
   position: absolute;
   top: 0;
   right: 0;
@@ -202,8 +197,7 @@ table {
   position: absolute;
   top: 140%;
   left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
   background: #343434;
   width: auto;
   border-radius: 4px;
@@ -307,15 +301,12 @@ table {
     background: #F6B4F6; }
 
 .Id {
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-justify-content: flex-start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: start;
+      justify-content: flex-start;
   margin-bottom: 16px; }
   .Id_Img {
     margin-right: 14px; }
@@ -372,46 +363,39 @@ table {
   font-family: Montserrat, sans-serif; }
 
 .Evol {
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
   margin-bottom: 26px; }
   .Evol_Triggers {
-    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     font-size: 14px;
-    -webkit-flex-wrap: wrap;
-        -ms-flex-wrap: wrap;
-            flex-wrap: wrap;
-    -webkit-align-items: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-justify-content: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-align: center;
+        align-items: center;
+    -ms-flex-pack: center;
+        justify-content: center;
     margin: 0 14px;
-    -webkit-flex-shrink: 0;
-        -ms-flex-negative: 0;
-            flex-shrink: 0;
-    -webkit-flex-direction: column;
-        -ms-flex-direction: column;
-            flex-direction: column; }
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+    -ms-flex-direction: column;
+        flex-direction: column; }
     .Evol_Triggers:empty {
       display: none; }
   .Evol_EvolSingle {
-    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    -webkit-align-items: center;
-        -ms-flex-align: center;
-            align-items: center; }
+    -ms-flex-align: center;
+        align-items: center; }
+  .Evol_Multi .Evol_EvolSingle {
+    margin-bottom: 8px; }
+    .Evol_Multi .Evol_EvolSingle .OtherTrigger {
+      width: 100px; }
   .Evol a {
     text-align: center; }
   .Evol_Img {
@@ -426,6 +410,7 @@ table {
   color: white;
   font-weight: 200;
   width: 100%;
+  max-width: 114px;
   box-sizing: border-box; }
 
 .Evol_OtherTriggers {
@@ -436,18 +421,14 @@ table {
   border-radius: 0 0 3px 3px;
   padding: 6px;
   box-sizing: border-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-flex-wrap: wrap;
-      -ms-flex-wrap: wrap;
-          flex-wrap: wrap;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-direction: column;
+      flex-direction: column;
   position: relative; }
   .Evol_OtherTriggers:before {
     content: '';
@@ -468,18 +449,14 @@ table {
   .OtherTrigger:not(:last-of-type) {
     margin-bottom: 5px; }
   .OtherTrigger > span {
-    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    -webkit-align-items: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-justify-content: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-flex-wrap: wrap;
-        -ms-flex-wrap: wrap;
-            flex-wrap: wrap; }
+    -ms-flex-align: center;
+        align-items: center;
+    -ms-flex-pack: center;
+        justify-content: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap; }
   .OtherTrigger--location {
     width: 100px; }
     .OtherTrigger--location span span:not(:last-child) {
@@ -532,12 +509,10 @@ table {
   font-family: Montserrat, sans-serif; }
 
 .Stat {
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+      align-items: center;
   margin-bottom: 8px; }
   .Stat_Name {
     width: 70px;
@@ -605,12 +580,10 @@ table {
 nav {
   background: #F2F1ED;
   padding: 16px 20px;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center; }
+  -ms-flex-align: center;
+      align-items: center; }
   nav .Logo {
     display: inline-block;
     width: 50%; }
@@ -620,7 +593,8 @@ nav {
       display: inline-block; }
 
 body {
-  background: #F2F1ED; }
+  background: #F2F1ED;
+  background: red; }
 
 main {
   width: 70%;

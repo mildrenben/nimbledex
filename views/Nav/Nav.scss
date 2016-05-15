@@ -1,0 +1,20 @@
+@import '../Commons';
+
+nav {
+  background: $bg;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+
+  .Logo {
+    display: inline-block;
+    width: 50%;
+
+    &_Img {
+      display: inline-block;
+    }
+    &_Name {
+      display: inline-block;
+    }
+  }
+}

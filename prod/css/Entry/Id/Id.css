@@ -1,0 +1,106 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+* {
+  font-family: Montserrat, sans-serif; }
+
+.Id_Type {
+  width: 100px;
+  line-height: 27px;
+  text-align: center;
+  color: white;
+  border-radius: 4px; }
+  .Id_Type:first-of-type {
+    margin-bottom: 6px; }
+  .Id_Type--normal {
+    background: #A8A878; }
+  .Id_Type--fighting {
+    background: #C03028; }
+  .Id_Type--flying {
+    background: #A890F0; }
+  .Id_Type--fire {
+    background: #F08030; }
+  .Id_Type--water {
+    background: #6890F0; }
+  .Id_Type--grass {
+    background: #78C850; }
+  .Id_Type--electric {
+    background: #F8D030; }
+  .Id_Type--poison {
+    background: #A040A0; }
+  .Id_Type--ground {
+    background: #E0C068; }
+  .Id_Type--rock {
+    background: #B8A038; }
+  .Id_Type--psychic {
+    background: #F85888; }
+  .Id_Type--ice {
+    background: #98D8D8; }
+  .Id_Type--bug {
+    background: #A8B820; }
+  .Id_Type--dragon {
+    background: #7038F8; }
+  .Id_Type--ghost {
+    background: #705898; }
+  .Id_Type--dark {
+    background: #705848; }
+  .Id_Type--steel {
+    background: #B8B8D0; }
+  .Id_Type--fairy {
+    background: #F6B4F6; }
+
+.Id {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: start;
+      justify-content: flex-start;
+  margin-bottom: 16px; }
+  .Id_Img {
+    margin-right: 14px; }
+  .Id_Name {
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 6px; }
+  .Id_Types {
+    margin-left: auto; }

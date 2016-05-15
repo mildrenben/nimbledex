@@ -1,0 +1,34 @@
+@import '../../Commons';
+
+.Stat {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+
+  &_Name {
+    width: 70px;
+    text-transform: lowercase;
+  }
+
+  &_Bar {
+    height: 15px;
+    display: inline-block;
+    margin-right: 6px;
+
+    &--low {
+      background: $red;
+    }
+    &--med {
+      background: $amber;
+    }
+    &--good {
+      background: $light-green;
+    }
+    &--veryGood {
+      background: $green;
+    }
+    &--superb {
+      background: $blue;
+    }
+  }
+}

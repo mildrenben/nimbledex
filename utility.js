@@ -140,7 +140,7 @@ function evolFunc (entry, exit) {
 
 function getOther() {
   console.log('getOther init');
-  for (let j = 1; j <= 721; j++) {
+  for (let j = 265; j <= 265; j++) {
     setTimeout(function(){
       request('http://pokeapi.co/api/v2/pokemon-species/' + j, function(err, res, body) {
         if (!err && res.statusCode == 200) {
@@ -199,7 +199,7 @@ function getOther() {
           console.log('Failed on species req');
         }
       });
-    }, 5000 * j);
+    }, 1 * j);
   }
 }
 

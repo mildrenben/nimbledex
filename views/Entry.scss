@@ -1,0 +1,19 @@
+@import './Commons',
+        './Components/Search',
+        './Components/Icon',
+        './Entry/Id/Id',
+        './Entry/Evol/Evol',
+        './Entry/Details/Stats',
+        './Nav/Nav';
+
+body {
+  background: $bg;
+}
+main {
+  @include container;
+  margin: 0 auto;
+}
+
+* {
+  color: $grey;
+}

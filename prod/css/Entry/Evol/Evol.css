@@ -1,0 +1,145 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+* {
+  font-family: Montserrat, sans-serif; }
+
+.Evol {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  margin-bottom: 26px; }
+  .Evol_Triggers {
+    display: -ms-flexbox;
+    display: flex;
+    font-size: 14px;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-align: center;
+        align-items: center;
+    -ms-flex-pack: center;
+        justify-content: center;
+    margin: 0 14px;
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+    -ms-flex-direction: column;
+        flex-direction: column; }
+    .Evol_Triggers:empty {
+      display: none; }
+  .Evol_EvolSingle {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+        align-items: center; }
+  .Evol_Multi .Evol_EvolSingle {
+    margin-bottom: 8px; }
+    .Evol_Multi .Evol_EvolSingle .OtherTrigger {
+      width: 100px; }
+  .Evol a {
+    text-align: center; }
+  .Evol_Img {
+    width: 76px; }
+
+.EvolTrigger {
+  font-size: 12px;
+  text-align: center;
+  background: #61ab99;
+  border-radius: 3px;
+  padding: 7px;
+  color: white;
+  font-weight: 200;
+  width: 100%;
+  max-width: 114px;
+  box-sizing: border-box; }
+
+.Evol_OtherTriggers {
+  font-size: 12px;
+  background: white;
+  border: solid 1px #A1A1A1;
+  border-top: none;
+  border-radius: 0 0 3px 3px;
+  padding: 6px;
+  box-sizing: border-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  position: relative; }
+  .Evol_OtherTriggers:before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -1px;
+    width: 100%;
+    height: 4px;
+    border-left: solid 1px #61ab99;
+    border-right: solid 1px #61ab99;
+    background: #61ab99; }
+  .Evol_OtherTriggers:empty {
+    display: none; }
+
+.OtherTrigger {
+  width: 44px;
+  text-align: center; }
+  .OtherTrigger:not(:last-of-type) {
+    margin-bottom: 5px; }
+  .OtherTrigger > span {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+        align-items: center;
+    -ms-flex-pack: center;
+        justify-content: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap; }
+  .OtherTrigger--location {
+    width: 100px; }
+    .OtherTrigger--location span span:not(:last-child) {
+      padding-bottom: 5px;
+      margin-bottom: 5px; }
