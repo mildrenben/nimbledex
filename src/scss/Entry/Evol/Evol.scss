@@ -6,13 +6,14 @@
   justify-content: center;
   margin-bottom: 26px;
   &_Triggers {
-    display: inline-block;
     display: flex;
     font-size: 14px;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    max-width: 58px;
+    margin: 0 14px;
+    flex-shrink: 0;
+    flex-direction: column;
     &:empty {
       display: none;
     }
@@ -31,18 +32,18 @@
 
 .EvolTrigger {
   font-size: 12px;
-  width: 100%;
   text-align: center;
   background: darken($moss,5%);
   border-radius: 3px;
   padding: 7px;
   color: white;
   font-weight: 200;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .Evol_OtherTriggers {
   font-size: 12px;
-  width: 100%;
   background: white;
   border: solid 1px $light-grey;
   border-top: none;
@@ -52,6 +53,7 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  flex-direction: column;
   // Ugly hack for border radius on
   // main trigger when no other triggers
   position: relative;
@@ -72,7 +74,7 @@
 }
 
 .OtherTrigger {
-  width: 100%;
+  width: 44px;
   text-align: center;
   &:not(:last-of-type) {
     margin-bottom: 5px;
@@ -86,10 +88,10 @@
   }
 
   &--location {
+    width: 100px;
     span span:not(:last-child) {
       padding-bottom: 5px;
       margin-bottom: 5px;
-      border-bottom: solid 1px $light-grey;
     }
   }
 }

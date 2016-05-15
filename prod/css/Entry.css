@@ -383,7 +383,6 @@ table {
           justify-content: center;
   margin-bottom: 26px; }
   .Evol_Triggers {
-    display: inline-block;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
@@ -397,7 +396,13 @@ table {
     -webkit-justify-content: center;
         -ms-flex-pack: center;
             justify-content: center;
-    max-width: 58px; }
+    margin: 0 14px;
+    -webkit-flex-shrink: 0;
+        -ms-flex-negative: 0;
+            flex-shrink: 0;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column; }
     .Evol_Triggers:empty {
       display: none; }
   .Evol_EvolSingle {
@@ -414,17 +419,17 @@ table {
 
 .EvolTrigger {
   font-size: 12px;
-  width: 100%;
   text-align: center;
   background: #61ab99;
   border-radius: 3px;
   padding: 7px;
   color: white;
-  font-weight: 200; }
+  font-weight: 200;
+  width: 100%;
+  box-sizing: border-box; }
 
 .Evol_OtherTriggers {
   font-size: 12px;
-  width: 100%;
   background: white;
   border: solid 1px #A1A1A1;
   border-top: none;
@@ -440,6 +445,9 @@ table {
   -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   position: relative; }
   .Evol_OtherTriggers:before {
     content: '';
@@ -455,7 +463,7 @@ table {
     display: none; }
 
 .OtherTrigger {
-  width: 100%;
+  width: 44px;
   text-align: center; }
   .OtherTrigger:not(:last-of-type) {
     margin-bottom: 5px; }
@@ -472,10 +480,11 @@ table {
     -webkit-flex-wrap: wrap;
         -ms-flex-wrap: wrap;
             flex-wrap: wrap; }
-  .OtherTrigger--location span span:not(:last-child) {
-    padding-bottom: 5px;
-    margin-bottom: 5px;
-    border-bottom: solid 1px #A1A1A1; }
+  .OtherTrigger--location {
+    width: 100px; }
+    .OtherTrigger--location span span:not(:last-child) {
+      padding-bottom: 5px;
+      margin-bottom: 5px; }
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,

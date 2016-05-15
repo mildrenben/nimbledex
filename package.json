@@ -10,6 +10,7 @@
   "license": "ISC",
   "devDependencies": {
     "browser-sync": "^2.11.1",
+    "classnames": "^2.2.5",
     "express": "^4.13.4",
     "express-react-views": "^0.10.0",
     "gulp": "^3.9.0",

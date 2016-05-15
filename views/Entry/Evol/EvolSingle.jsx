@@ -1,7 +1,14 @@
 const React = require('react');
+const classNames = require('classnames');
 const Icon = require('../../Components/Icon');
 
+let location = false;
 const EvolSingle = React.createClass({
+  getInitialState() {
+    return {
+      location: false,
+    }
+  },
   formatString(str) {
     let newStr = str.replace('_',' ');
     newStr = newStr.replace('-',' ');
@@ -51,7 +58,7 @@ const EvolSingle = React.createClass({
     else if (key === 'known_move_type') {
       return (
         <span>
-          Known move type - {this.formatString(val)}
+          Knowing a {this.formatString(val)} move
         </span>
       );
     }
@@ -64,9 +71,9 @@ const EvolSingle = React.createClass({
       );
     }
     else if (key === 'location') {
+      location = true;
       if (val.constructor === Array) {
         const items = val.map(function(item) {
-          // const str = this.formatString(item);
           return <span>{this.formatString(item)}</span>;
         }.bind(this));
         return (
@@ -161,11 +168,16 @@ const EvolSingle = React.createClass({
         return <div className={`OtherTrigger OtherTrigger--${key}`}>{OtherEl}</div>;
       }.bind(this));
     }
+    const className = classNames('Evol_Triggers', {
+      'Evol_Triggers--location': location
+    });
+    console.log(this.props);
 
     return (
       <div className="Evol_EvolSingle">
-        <div className="Evol_Triggers">
+        <div className={className}>
           {trigger}
+          {this.props.multi}
           <div className="Evol_OtherTriggers">
             {otherTriggers}
           </div>
