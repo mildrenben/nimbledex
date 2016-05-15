@@ -57,7 +57,9 @@ table {
     display: inline-block;
     margin-right: 6px; }
     .Stat_Bar--low {
-      background: #f44336; }
+      background: #e74c3c; }
+    .Stat_Bar--meh {
+      background: #ff9800; }
     .Stat_Bar--med {
       background: #ffc107; }
     .Stat_Bar--good {
@@ -65,4 +67,4 @@ table {
     .Stat_Bar--veryGood {
       background: #27ae60; }
     .Stat_Bar--superb {
-      background: #2196f3; }
+      background: #00bcd4; }

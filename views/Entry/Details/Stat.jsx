@@ -2,13 +2,15 @@ const React = require('react');
 
 const Stat = React.createClass({
   barColor(val) {
-    if (val < 50) {
+    if (val < 60) {
       return "low";
     } else if (val < 80) {
+      return "meh";
+    } else if (val < 95) {
       return "med";
-    } else if (val < 100) {
+    } else if (val < 110) {
       return "good";
-    } else if (val < 120) {
+    } else if (val < 125) {
       return "veryGood";
     } else  {
       return "superb";

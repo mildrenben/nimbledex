@@ -198,7 +198,7 @@ table {
   top: 140%;
   left: 50%;
   transform: translateX(-50%);
-  background: #343434;
+  background: #535352;
   width: auto;
   border-radius: 4px;
   padding: 7px 10px;
@@ -522,7 +522,9 @@ table {
     display: inline-block;
     margin-right: 6px; }
     .Stat_Bar--low {
-      background: #f44336; }
+      background: #e74c3c; }
+    .Stat_Bar--meh {
+      background: #ff9800; }
     .Stat_Bar--med {
       background: #ffc107; }
     .Stat_Bar--good {
@@ -530,7 +532,7 @@ table {
     .Stat_Bar--veryGood {
       background: #27ae60; }
     .Stat_Bar--superb {
-      background: #2196f3; }
+      background: #00bcd4; }
 
 .ExtraInfo {
   text-align: right; }
@@ -644,4 +646,4 @@ main {
   margin: 0 auto; }
 
 * {
-  color: #343434; }
+  color: #535352; }
