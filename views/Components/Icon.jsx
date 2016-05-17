@@ -15,9 +15,9 @@ const Icon = React.createClass({
     }
 
     return (
-      <span className="IconWrap">
+      <span className="IconWrap TooltipWrap">
         <img className={`Icon Icon--${type} Icon--${name}`} src={`/img/${this.props.type}s/${name}.${ext}`} alt={`${name}-icon`} />
-        <span className="IconTooltip">
+        <span className="Tooltip">
           {this.props.tooltip}
         </span>
       </span>

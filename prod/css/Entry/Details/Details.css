@@ -69,6 +69,76 @@ table {
     .Stat_Bar--superb {
       background: #00bcd4; }
 
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+* {
+  font-family: Montserrat, sans-serif; }
+
+.Details_Abilities {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-direction: column;
+      flex-direction: column; }
+
+.Ability {
+  margin-right: auto; }
+  .Ability:hover {
+    cursor: help; }
+  .Ability--hidden {
+    -ms-flex-order: 4;
+        order: 4; }
+  .Ability_Hidden {
+    display: inline-block;
+    border: solid 1px #e74c3c;
+    color: #e74c3c;
+    padding: 4px 6px;
+    margin-left: 8px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-size: 11px; }
+
 .ExtraInfo {
   text-align: right; }
   .ExtraInfo p {
@@ -109,4 +179,9 @@ table {
       margin-bottom: 7px; }
     .Details_Abilities p,
     .Details .ExtraInfo p {
-      margin-bottom: 5px; }
+      height: 20px;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-align: center;
+          align-items: center;
+      margin-bottom: 1px; }

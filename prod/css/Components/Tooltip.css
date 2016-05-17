@@ -43,9 +43,34 @@ table {
 * {
   font-family: Montserrat, sans-serif; }
 
-.Icon--icon {
-  width: 12px;
-  height: 12px;
-  padding: 2px;
-  border-radius: 2px;
-  margin-right: 4px; }
+.TooltipWrap {
+  position: relative; }
+  .TooltipWrap:hover .Tooltip {
+    opacity: 1;
+    z-index: 1; }
+
+.Tooltip {
+  position: absolute;
+  top: 120%;
+  left: 50%;
+  max-width: 300px;
+  white-space: pre-line;
+  line-height: 135%;
+  display: inline-block;
+  transform: translateX(-50%);
+  background: #535352;
+  width: auto;
+  border-radius: 4px;
+  padding: 7px 10px;
+  color: white;
+  opacity: 0;
+  z-index: -1;
+  transition: all 0.3s ease-in-out; }
+  .Tooltip:empty {
+    display: none; }
+
+.IconWrap .Tooltip {
+  white-space: nowrap; }
+
+.Ability .Tooltip {
+  width: 250px; }

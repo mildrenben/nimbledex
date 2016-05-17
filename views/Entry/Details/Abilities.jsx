@@ -4,7 +4,17 @@ const formatString = require('../../Utilities/formatString');
 const Abilities = React.createClass({
   render() {
     const abilities = this.props.abilities.map(function(ability){
-      return <p>{formatString(ability)}</p>
+      return (
+        <p className={`Ability TooltipWrap ${ability.hidden && 'Ability--hidden'}`}>
+          {formatString(ability.name)}
+          { ability.hidden &&
+            <span className="Ability_Hidden">hidden</span>
+          }
+          { ability.description &&
+            <span className="Tooltip">{ability.description}</span>
+          }
+        </p>
+      );
     });
     return (
       <div className="Details_Abilities">

@@ -47,16 +47,29 @@ function getData() {
           // Abilities
           newD.abilities = [];
           for(let i = 0; i < d.abilities.length; i++) {
-            newD.abilities.unshift(d.abilities[i].ability.name)
+            let ability = {
+              "name": d.abilities[i].ability.name,
+              "hidden": d.abilities[i].is_hidden
+            };
+            setTimeout(function(){
+              request(d.abilities[i].ability.url, function(err, res, body) {
+                const data = JSON.parse(body);
+                ability.description = data.effect_entries[0].short_effect;
+                newD.abilities.unshift(ability);
+              });
+            }, 3000);
           }
-          client.set(newD.id, JSON.stringify(newD));
-          console.log(newD.id + '   complete');
+          setTimeout(function(){
+            client.set(newD.id, JSON.stringify(newD));
+            console.log(newD.id + '   complete');
+          }, 9000);
+
         }
         else {
           console.log('FAILURE ' + i);
         }
       });
-    }, 5000 * i);
+    }, 11000 * i);
   }
 }
 
@@ -140,7 +153,7 @@ function evolFunc (entry, exit) {
 
 function getOther() {
   console.log('getOther init');
-  for (let j = 265; j <= 265; j++) {
+  for (let j = 1; j <= 200; j++) {
     setTimeout(function(){
       request('http://pokeapi.co/api/v2/pokemon-species/' + j, function(err, res, body) {
         if (!err && res.statusCode == 200) {
@@ -199,7 +212,7 @@ function getOther() {
           console.log('Failed on species req');
         }
       });
-    }, 1 * j);
+    }, 4000 * j);
   }
 }
 

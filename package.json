@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "axios": "^0.11.1",
     "browser-sync": "^2.11.1",
     "classnames": "^2.2.5",
     "express": "^4.13.4",
