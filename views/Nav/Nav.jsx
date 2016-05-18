@@ -7,7 +7,7 @@ const Nav = React.createClass({
       <nav>
         <div className="Logo">
           <img className="Logo_Img" />
-          <h2 className="Logo_Name">Nimbledex</h2>
+          <h2 className="Logo_Name"><a href="/">Nimbledex</a></h2>
         </div>
         <Search />
       </nav>

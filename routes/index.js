@@ -29,8 +29,17 @@ function renderData(res,data) {
    }
 };
 
+function renderHomepage(res) {
+  res.render('Homepage');
+}
+
 exports.index = function(req, res){
   let path = req.url.slice(1);
+
+  if (req.url === '/') {
+    renderHomepage(res);
+    return;
+  }
 
   if (isNaN(path)) {
     path = path.charAt(0).toUpperCase() + path.slice(1);

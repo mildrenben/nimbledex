@@ -57,3 +57,5 @@ nav {
       display: inline-block; }
     nav .Logo_Name {
       display: inline-block; }
+      nav .Logo_Name a {
+        text-decoration: none; }

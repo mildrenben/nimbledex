@@ -1,0 +1,55 @@
+@import './Nav/Nav',
+        './Components/Search',
+        './Components/Icon',
+        './Commons';
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background: $bg;
+}
+main {
+  @include container;
+  margin: 0 auto;
+}
+
+* {
+  color: $grey;
+}
+
+.Homepage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  top: -120px;
+  .LogoWrap {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 5px;
+    &_Name {
+      font-size: 25px;
+      margin-right: 10px;
+    }
+    &_Img {
+      width: 24px;
+    }
+  }
+  h3 {
+    font-size: 14px;
+    font-weight: 300;
+    padding-left: 2px;
+    margin-bottom: 14px;
+    color: lighten($grey, 10%);
+  }
+  .Search {
+    width: 100%;
+    transform: none;
+  }
+}

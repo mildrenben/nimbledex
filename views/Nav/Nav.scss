@@ -15,6 +15,9 @@ nav {
     }
     &_Name {
       display: inline-block;
+      a {
+        text-decoration: none;
+      }
     }
   }
 }
