@@ -17,7 +17,7 @@ const Root = React.createClass({
               <h1 className="LogoWrap_Name">Nimbledex</h1>
               <img className="LogoWrap_Img" src="/img/icons/pokeball.svg" />
             </div>
-            <h3>An ultra fast, minimal Pokedéx</h3>
+            <h3>A minimal, ultra fast Pokedéx</h3>
             <Search />
           </main>
           <script src="/js/script.js"> </script>

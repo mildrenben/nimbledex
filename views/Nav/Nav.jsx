@@ -5,9 +5,9 @@ const Nav = React.createClass({
   render() {
     return (
       <nav>
-        <div className="Logo">
-          <img className="Logo_Img" />
-          <h2 className="Logo_Name"><a href="/">Nimbledex</a></h2>
+        <div className="LogoWrap">
+          <h2 className="LogoWrap_Name"><a href="/">Nimbledex</a></h2>
+          <img className="LogoWrap_Img" src="/img/icons/pokeball.svg" />
         </div>
         <Search />
       </nav>

@@ -760,15 +760,34 @@ nav {
   display: flex;
   -ms-flex-align: center;
       align-items: center; }
-  nav .Logo {
-    display: inline-block;
+  nav .LogoWrap {
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -ms-flex-align: center;
+        align-items: center;
     width: 50%; }
-    nav .Logo_Img {
-      display: inline-block; }
-    nav .Logo_Name {
-      display: inline-block; }
-      nav .Logo_Name a {
+    nav .LogoWrap_Name {
+      margin-right: 5px; }
+      nav .LogoWrap_Name a {
         text-decoration: none; }
+    nav .LogoWrap_Img {
+      width: 16px;
+      position: relative;
+      top: -1px; }
+
+.LogoWrap_Img:hover {
+  animation: roll 0.9s ease-in-out; }
+
+@keyframes roll {
+  0%,
+  30%,
+  60%,
+  100% {
+    transform: rotate(0) translateX(0); }
+  15% {
+    transform: rotate(-35deg) translateX(-2px); }
+  45% {
+    transform: rotate(35deg) translateX(2px); } }
 
 body {
   background: #F2F1ED; }
