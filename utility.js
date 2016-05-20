@@ -217,40 +217,48 @@ function getOther() {
   }
 }
 
-// const types = [
-//   'Bug',
-//   'Dark',
-//   'Dragon',
-//   'Ice',
-//   'Fairy',
-//   'Fighting',
-//   'Fire',
-//   'Flying',
-//   'Grass',
-//   'Ghost',
-//   'Ground',
-//   'Electric',
-//   'Normal',
-//   'Poison',
-//   'Psychic',
-//   'Rock',
-//   'Steel',
-//   'Water',
-// ];
+const types = [
+  'bug',
+  'dark',
+  'dragon',
+  'ice',
+  'fairy',
+  'fighting',
+  'fire',
+  'flying',
+  'grass',
+  'ghost',
+  'ground',
+  'electric',
+  'normal',
+  'poison',
+  'psychic',
+  'rock',
+  'steel',
+  'water',
+];
 
 function getTypeData() {
   for (let i = 1; i <= 18; i++) {
     setTimeout(function(){
       request('http://pokeapi.co/api/v2/type/' + i, function(err, res, body) {
         const data = JSON.parse(body);
+        let not1 = [];
         let obj = {
-          '2': data.damage_relations.double_damage_from.filter(function(n){
+          '2': data.damage_relations.double_damage_from.map(function(n){
+            not1.push(n.name);
             return n.name;
           }),
-          '1': [],
-          '0.5': data.damage_relations.half_damage_from,
-          '0': data.damage_relations.half_damage_from,
+          '0.5': data.damage_relations.half_damage_from.map(function(n){
+            not1.push(n.name);
+            return n.name;
+          }),
+          '0': data.damage_relations.no_damage_from.map(function(n){
+            not1.push(n.name);
+            return n.name;
+          }),
         }
+        obj['1'] = _.difference(types, not1);
         client.set(data.name, JSON.stringify(obj));
         console.log('Completed - ' + data.name);
       });
