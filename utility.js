@@ -7,6 +7,7 @@ const redis = require("redis"),
       client = redis.createClient(port,host);
 
 const request = require('request');
+const _ = require('lodash');
 
 function getData() {
   for (let i = 1; i <= 721; i++) {
@@ -216,5 +217,47 @@ function getOther() {
   }
 }
 
+// const types = [
+//   'Bug',
+//   'Dark',
+//   'Dragon',
+//   'Ice',
+//   'Fairy',
+//   'Fighting',
+//   'Fire',
+//   'Flying',
+//   'Grass',
+//   'Ghost',
+//   'Ground',
+//   'Electric',
+//   'Normal',
+//   'Poison',
+//   'Psychic',
+//   'Rock',
+//   'Steel',
+//   'Water',
+// ];
+
+function getTypeData() {
+  for (let i = 1; i <= 18; i++) {
+    setTimeout(function(){
+      request('http://pokeapi.co/api/v2/type/' + i, function(err, res, body) {
+        const data = JSON.parse(body);
+        let obj = {
+          '2': data.damage_relations.double_damage_from.filter(function(n){
+            return n.name;
+          }),
+          '1': [],
+          '0.5': data.damage_relations.half_damage_from,
+          '0': data.damage_relations.half_damage_from,
+        }
+        client.set(data.name, JSON.stringify(obj));
+        console.log('Completed - ' + data.name);
+      });
+    }, 2000 * i);
+  }
+}
+
+getTypeData();
 //getData();
-getOther();
+//getOther();

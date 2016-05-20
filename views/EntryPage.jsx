@@ -25,6 +25,7 @@ const Root = React.createClass({
               hatchCounter={this.props.hatchCounter}
               ev={this.props.ev}
               stats={this.props.stats} />
+              {this.props.typeData['2']}
           </main>
           <script src="/js/script.js"> </script>
           <script src="/js/awesomplete.min.js"> </script>
