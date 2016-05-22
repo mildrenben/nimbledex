@@ -8,6 +8,7 @@ const redis = require("redis"),
 
 const request = require('request');
 const _ = require('lodash');
+const Promise = require('bluebird');
 
 function getData() {
   for (let i = 1; i <= 721; i++) {
@@ -266,6 +267,97 @@ function getTypeData() {
   }
 }
 
-getTypeData();
+function getMonData(i) {
+  return new Promise((resolve, reject) => {
+    client.get(i, function(err, val) {
+      resolve(JSON.parse(val));
+    });
+  })
+}
+
+function getFirstType(mon) {
+  return new Promise((resolve, reject) => {
+    client.get(mon.types[0], function(err, val) {
+      resolve(JSON.parse(val));
+    });
+  })
+}
+
+function getSecondType(mon) {
+  return new Promise((resolve, reject) => {
+    if (mon.types[1]) {
+      client.get(mon.types[1], function(err, val) {
+        resolve(JSON.parse(val));
+      });
+    } else {
+      resolve();
+    }
+  })
+}
+
+function compareTypeDamage(monData, type1, type2) {
+  if (!type2) {
+    let dmgChart = {};
+    Object.keys(type1).map(type1num => {
+      type1[type1num].map(type1type => {
+        dmgChart[type1type] = type1num;
+      });
+    })
+    monData.dmgChart = dmgChart;
+    client.set(monData.id, JSON.stringify(monData));
+    console.log('1 Dmg chart complete - ' + monData.id);
+  } else {
+    let dmgChart = {};
+    Object.keys(type2).map(type2num => {
+      type2[type2num].map(type2type => {
+        Object.keys(type1).map(type1num => {
+          type1[type1num].map(type1type => {
+            if(type1type === type2type) {
+              const newMultiplier = parseFloat(type1num) * parseFloat(type2num);
+              dmgChart[type1type] = newMultiplier;
+            }
+          });
+        });
+      });
+    });
+    monData.dmgChart = dmgChart;
+    client.set(monData.id, JSON.stringify(monData));
+    console.log('2 Dmg chart complete - ' + monData.id);
+  }
+}
+
+const updateTypes = (num) => {
+  getMonData(num)
+    .then((monData) => {
+      return getFirstType(monData)
+      .then((typeData1) => {
+        return getSecondType(monData)
+        .then((typeData2) => {
+          compareTypeDamage(monData, typeData1, typeData2);
+        })
+      })
+    });
+  }
+
+const updateAllTypes = () => {
+  for (let i = 1; i <= 718; i++) {
+    let tripleId;
+    if (i >= 100) {
+      tripleId = i;
+    }
+    else if (i > 9 && i < 100) {
+      tripleId = '0' + i;
+    }
+    else {
+      tripleId = '00' + i;
+    }
+    updateTypes(tripleId);
+  }
+}
+
+updateAllTypes();
+
+
+//getTypeData();
 //getData();
 //getOther();

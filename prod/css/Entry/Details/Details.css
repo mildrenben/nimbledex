@@ -166,7 +166,8 @@ table {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap; }
+      flex-wrap: wrap;
+  margin-bottom: 26px; }
   .Details_Abilities,
   .Details .ExtraInfo {
     width: 50%;

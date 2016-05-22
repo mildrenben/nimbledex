@@ -1,0 +1,74 @@
+@import '../../Commons',
+        '../../Mixins';
+
+@mixin typeOrder {
+  @each $type, $num in (normal, 1),
+                       (fire, 2),
+                       (water, 3),
+                       (electric, 4),
+                       (grass, 5),
+                       (ice, 6),
+                       (fighting, 7),
+                       (poison, 8),
+                       (ground, 9),
+                       (flying, 10),
+                       (psychic, 11),
+                       (bug, 12),
+                       (rock, 13),
+                       (ghost, 14),
+                       (dragon, 15),
+                       (dark, 16),
+                       (steel, 17),
+                       (fairy, 18) {
+    &--#{$type} {
+      order: $num;
+    }
+  }
+}
+
+.DmgChart {
+  h3 {
+    font-weight: 300;
+    text-decoration: underline;
+    font-size: 14px;
+  }
+  &_Chart {
+    // width: 140%;
+    // position: relative;
+    // left: -20%;
+    display: flex;
+    justify-content: space-between;
+  }
+  &_Item {
+    width: 18px;
+    @include typeOrder;
+    // width: 24px;
+    // @include typeOrder;
+  }
+  &_Type {
+    transform: rotate(90deg);
+    transform-origin: left bottom;
+    @include typeColors;
+    color: white;
+    width: 60px;
+    text-align: center;
+    padding: 3px 4px;
+    font-size: 12px;
+    border-radius: 2px;
+
+
+    // @include typeColors;
+    // color: white;
+    // width: 24px;
+    // height: 24px;
+    // font-size: 12px;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+  }
+  &_Multiplier {
+    text-align: center;
+    font-size: 13px;
+    margin-top: 80px;
+  }
+}

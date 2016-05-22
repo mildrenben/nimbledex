@@ -688,7 +688,8 @@ table {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap; }
+      flex-wrap: wrap;
+  margin-bottom: 26px; }
   .Details_Abilities,
   .Details .ExtraInfo {
     width: 50%;
@@ -707,6 +708,170 @@ table {
       -ms-flex-align: center;
           align-items: center;
       margin-bottom: 1px; }
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+* {
+  font-family: Montserrat, sans-serif; }
+
+.DmgChart h3 {
+  font-weight: 300;
+  text-decoration: underline;
+  font-size: 14px; }
+
+.DmgChart_Chart {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+      justify-content: space-between; }
+
+.DmgChart_Item {
+  width: 18px; }
+  .DmgChart_Item--normal {
+    -ms-flex-order: 1;
+        order: 1; }
+  .DmgChart_Item--fire {
+    -ms-flex-order: 2;
+        order: 2; }
+  .DmgChart_Item--water {
+    -ms-flex-order: 3;
+        order: 3; }
+  .DmgChart_Item--electric {
+    -ms-flex-order: 4;
+        order: 4; }
+  .DmgChart_Item--grass {
+    -ms-flex-order: 5;
+        order: 5; }
+  .DmgChart_Item--ice {
+    -ms-flex-order: 6;
+        order: 6; }
+  .DmgChart_Item--fighting {
+    -ms-flex-order: 7;
+        order: 7; }
+  .DmgChart_Item--poison {
+    -ms-flex-order: 8;
+        order: 8; }
+  .DmgChart_Item--ground {
+    -ms-flex-order: 9;
+        order: 9; }
+  .DmgChart_Item--flying {
+    -ms-flex-order: 10;
+        order: 10; }
+  .DmgChart_Item--psychic {
+    -ms-flex-order: 11;
+        order: 11; }
+  .DmgChart_Item--bug {
+    -ms-flex-order: 12;
+        order: 12; }
+  .DmgChart_Item--rock {
+    -ms-flex-order: 13;
+        order: 13; }
+  .DmgChart_Item--ghost {
+    -ms-flex-order: 14;
+        order: 14; }
+  .DmgChart_Item--dragon {
+    -ms-flex-order: 15;
+        order: 15; }
+  .DmgChart_Item--dark {
+    -ms-flex-order: 16;
+        order: 16; }
+  .DmgChart_Item--steel {
+    -ms-flex-order: 17;
+        order: 17; }
+  .DmgChart_Item--fairy {
+    -ms-flex-order: 18;
+        order: 18; }
+
+.DmgChart_Type {
+  transform: rotate(90deg);
+  transform-origin: left bottom;
+  color: white;
+  width: 60px;
+  text-align: center;
+  padding: 3px 4px;
+  font-size: 12px;
+  border-radius: 2px; }
+  .DmgChart_Type--normal {
+    background: #A8A878; }
+  .DmgChart_Type--fighting {
+    background: #C03028; }
+  .DmgChart_Type--flying {
+    background: #A890F0; }
+  .DmgChart_Type--fire {
+    background: #F08030; }
+  .DmgChart_Type--water {
+    background: #6890F0; }
+  .DmgChart_Type--grass {
+    background: #78C850; }
+  .DmgChart_Type--electric {
+    background: #F8D030; }
+  .DmgChart_Type--poison {
+    background: #A040A0; }
+  .DmgChart_Type--ground {
+    background: #E0C068; }
+  .DmgChart_Type--rock {
+    background: #B8A038; }
+  .DmgChart_Type--psychic {
+    background: #F85888; }
+  .DmgChart_Type--ice {
+    background: #98D8D8; }
+  .DmgChart_Type--bug {
+    background: #A8B820; }
+  .DmgChart_Type--dragon {
+    background: #7038F8; }
+  .DmgChart_Type--ghost {
+    background: #705898; }
+  .DmgChart_Type--dark {
+    background: #705848; }
+  .DmgChart_Type--steel {
+    background: #B8B8D0; }
+  .DmgChart_Type--fairy {
+    background: #F6B4F6; }
+
+.DmgChart_Multiplier {
+  text-align: center;
+  font-size: 13px;
+  margin-top: 80px; }
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
