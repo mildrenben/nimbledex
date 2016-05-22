@@ -86,12 +86,12 @@ table {
   .Search_Btn:focus {
     outline: none; }
   .Search_Btn .Icon--search {
-    width: 16px;
+    width: 15px;
     height: 16px;
     margin-right: 0;
     position: relative;
     left: -1px;
-    top: 2px; }
+    top: 1px; }
 
 .Icon--icon {
   width: 12px;
