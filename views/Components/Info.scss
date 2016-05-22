@@ -1,0 +1,52 @@
+@import  '../Commons';
+
+.Info {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  &_Toggle {
+    position: relative;
+    &:after {
+      content: 'i';
+      font-family: serif;
+      font-style: italic;
+      position: absolute;
+      left: -2px;
+      top: -2px;
+      width: 16px;
+      height: 16px;
+      text-align: center;
+      line-height: 16px;
+      background: darken($light-grey, 5%);
+      color: white;
+      cursor: pointer;
+      border-radius: 16px;
+    }
+    &:hover {
+      &:after {
+        background: darken($light-grey, 13%);
+      }
+    }
+    &:checked + .Info_Popup {
+      display: block;
+    }
+  }
+  &_Popup {
+    position: absolute;
+    bottom: 130%;
+    right: 0;
+    background: white;
+    border: solid 1px $light-grey;
+    border-radius: 4px;
+    padding: 10px 14px;
+    font-size: 13px;
+    display: none;
+    width: 170px;
+    line-height: 130%;
+    a {
+      display: block;
+      margin: 4px 0;
+      font-weight: 700;
+    }
+  }
+}

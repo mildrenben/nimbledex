@@ -4,6 +4,7 @@ const Id = require('./entry/Id/Id');
 const Evol = require('./entry/Evol/Evol');
 const Details = require('./entry/Details/Details');
 const DmgChart = require('./entry/DmgChart/DmgChart');
+const Info = require('./Components/Info');
 
 const Root = React.createClass({
   render() {
@@ -27,6 +28,7 @@ const Root = React.createClass({
               ev={this.props.ev}
               stats={this.props.stats} />
             <DmgChart dmgChart={this.props.dmgChart} />
+            <Info />
           </main>
           <script src="/js/script.js"> </script>
           <script src="/js/awesomplete.min.js"> </script>
