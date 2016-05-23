@@ -15,7 +15,14 @@ const Root = React.createClass({
           <main>
             <div className="LogoWrap">
               <h1 className="LogoWrap_Name">Nimbledex</h1>
-              <img className="LogoWrap_Img" src="/img/icons/pokeball.svg" />
+              <div className="LogoWrap_ImgWrap">
+                <img className="LogoWrap_Img" src="/img/icons/pokeball.svg" />
+                <div className="LogoWrap_AnimWrap">
+                  <span className="LogoWrap_StarLeft"></span>
+                  <span className="LogoWrap_StarRight"></span>
+                  <span className="LogoWrap_CircleOverlay"></span>
+                </div>
+              </div>
             </div>
             <h3>A minimal, ultra fast Pokedéx</h3>
             <Search />

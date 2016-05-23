@@ -1,5 +1,5 @@
 @import './Reset',
-        './Fonts',    
+        './Fonts',
         './Nav/Nav',
         './Components/Search',
         './Components/Icon',
@@ -31,18 +31,6 @@ main {
   height: 100%;
   position: relative;
   top: -120px;
-  .LogoWrap {
-    display: flex;
-    align-items: flex-end;
-    margin-bottom: 5px;
-    &_Name {
-      font-size: 25px;
-      margin-right: 10px;
-    }
-    &_Img {
-      width: 24px;
-    }
-  }
   h3 {
     font-size: 14px;
     font-weight: 300;

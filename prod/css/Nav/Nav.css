@@ -20,8 +20,75 @@ nav {
       position: relative;
       top: -1px; }
 
+.LogoWrap_ImgWrap {
+  position: relative; }
+
 .LogoWrap_Img:hover {
   animation: roll 0.9s ease-in-out; }
+  .LogoWrap_Img:hover + .LogoWrap_AnimWrap .LogoWrap_StarLeft {
+    animation: shootLeft 0.3s ease-out 1s; }
+  .LogoWrap_Img:hover + .LogoWrap_AnimWrap .LogoWrap_StarRight {
+    animation: shootRight 0.3s ease-out 1s; }
+  .LogoWrap_Img:hover + .LogoWrap_AnimWrap .LogoWrap_CircleOverlay {
+    animation: fadeOverlay 0.1s ease-out 1s forwards; }
+
+.LogoWrap_AnimWrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; }
+
+.LogoWrap_StarLeft,
+.LogoWrap_StarRight {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: #ffc107;
+  border-radius: 3px;
+  opacity: 0; }
+
+.LogoWrap_StarLeft {
+  left: 0; }
+
+.LogoWrap_StarRight {
+  right: 0; }
+
+.LogoWrap_CircleOverlay {
+  display: block;
+  width: 16px;
+  height: 16px;
+  position: relative;
+  top: -1px;
+  border-radius: 40px;
+  background: rgba(0, 0, 0, 0.3);
+  opacity: 0; }
+
+.Homepage .LogoWrap {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: end;
+      align-items: flex-end;
+  margin-bottom: 5px; }
+  .Homepage .LogoWrap_Name {
+    font-size: 25px;
+    margin-right: 10px; }
+  .Homepage .LogoWrap_Img {
+    width: 24px;
+    position: relative;
+    top: 1px; }
+
+.Homepage .LogoWrap_StarLeft,
+.Homepage .LogoWrap_StarRight {
+  width: 4px;
+  height: 4px;
+  border-radius: 4px; }
+
+.Homepage .LogoWrap_CircleOverlay {
+  width: 24px;
+  height: 24px;
+  top: 1px; }
 
 @keyframes roll {
   0%,
@@ -30,6 +97,42 @@ nav {
   100% {
     transform: rotate(0) translateX(0); }
   15% {
-    transform: rotate(-35deg) translateX(-2px); }
+    transform: rotate(-35deg) translateX(-12.5%); }
   45% {
-    transform: rotate(35deg) translateX(2px); } }
+    transform: rotate(35deg) translateX(12.5%); } }
+
+@keyframes shootLeft {
+  0% {
+    opacity: 0;
+    left: 0;
+    top: 0; }
+  5% {
+    opacity: 1; }
+  40% {
+    top: -30%;
+    left: -20%;
+    opacity: 1; }
+  100% {
+    top: -10%;
+    left: -30%; } }
+
+@keyframes shootRight {
+  0% {
+    right: 0;
+    top: 0;
+    opacity: 0; }
+  5% {
+    opacity: 1; }
+  40% {
+    top: -30%;
+    right: -20%;
+    opacity: 1; }
+  100% {
+    top: -10%;
+    right: -30%; } }
+
+@keyframes fadeOverlay {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
