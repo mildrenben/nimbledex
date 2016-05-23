@@ -1,0 +1,26 @@
+@import './Reset',
+        './Fonts',
+        './Nav/Nav',
+        './Components/Search',
+        './Components/Icon',
+        './Components/Info',
+        './Commons',
+        './Base';
+
+.page404 {
+  p {
+    width: 100%;
+    text-align: center;
+  }
+}
+.MissingnoWrap {
+  margin: 60px 0 20px;
+  text-align: center;
+  img {
+    width: 70px;
+    height: 140px;
+  }
+  h5 {
+    font-size: 28px;
+  }
+}

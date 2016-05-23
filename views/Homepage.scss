@@ -4,25 +4,8 @@
         './Components/Search',
         './Components/Icon',
         './Components/Info',
-        './Commons';
-
-html,
-body {
-  height: 100%;
-  width: 100%;
-}
-
-body {
-  background: $bg;
-}
-main {
-  @include container;
-  margin: 0 auto;
-}
-
-* {
-  color: $grey;
-}
+        './Commons',
+        './Base';
 
 .Homepage {
   display: flex;

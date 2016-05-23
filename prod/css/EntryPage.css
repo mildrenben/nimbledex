@@ -694,6 +694,11 @@ nav {
   100% {
     opacity: 1; } }
 
+html,
+body {
+  height: 100%;
+  width: 100%; }
+
 body {
   background: #F2F1ED; }
 

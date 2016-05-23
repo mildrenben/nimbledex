@@ -1,0 +1,16 @@
+html,
+body {
+  height: 100%;
+  width: 100%; }
+
+body {
+  background: #F2F1ED; }
+
+main {
+  width: 70%;
+  max-width: 460px;
+  box-sizing: border-box;
+  margin: 0 auto; }
+
+* {
+  color: #535352; }

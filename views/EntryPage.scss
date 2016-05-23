@@ -9,16 +9,5 @@
         './Entry/Evol/Evol',
         './Entry/Details/Details',
         './Entry/DmgChart/DmgChart',
-        './Nav/Nav';
-
-body {
-  background: $bg;
-}
-main {
-  @include container;
-  margin: 0 auto;
-}
-
-* {
-  color: $grey;
-}
+        './Nav/Nav',
+        './Base';
