@@ -1,5 +1,6 @@
 const React = require('react');
 const Search = require('./Components/Search');
+const Info = require('./Components/Info');
 
 const Root = React.createClass({
   render() {
@@ -26,6 +27,7 @@ const Root = React.createClass({
             </div>
             <h3>A minimal, ultra fast Pokedéx</h3>
             <Search />
+            <Info />
           </main>
           <script src="/js/script.js"> </script>
           <script src="/js/awesomplete.min.js"> </script>
