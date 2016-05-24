@@ -16,9 +16,7 @@ nav {
       nav .LogoWrap_Name a {
         text-decoration: none; }
     nav .LogoWrap_Img {
-      width: 16px;
-      position: relative;
-      top: -1px; }
+      width: 16px; }
 
 .LogoWrap_ImgWrap {
   position: relative; }
@@ -59,8 +57,6 @@ nav {
   display: block;
   width: 16px;
   height: 16px;
-  position: relative;
-  top: -1px;
   border-radius: 40px;
   background: rgba(0, 0, 0, 0.3);
   opacity: 0; }
@@ -88,6 +84,7 @@ nav {
 .Homepage .LogoWrap_CircleOverlay {
   width: 24px;
   height: 24px;
+  position: relative;
   top: 1px; }
 
 @keyframes roll {
