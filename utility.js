@@ -355,9 +355,188 @@ const updateAllTypes = () => {
   }
 }
 
-updateAllTypes();
+const getMove = (num) => {
+  request('http://pokeapi.co/api/v2/move/' + num, function(err, res, body) {
+    if (!err && res.statusCode == 200) {
+      const data = JSON.parse(body);
+      let obj = {};
+      console.log(`${num} - started`);
 
+      obj.name = data.name;
+      obj.accuracy = data.accuracy;
+      obj.type = data.type.name;
+      obj.power = data.power;
+      obj.category = data.damage_class.name;
 
+      client.set(`_${obj.name}`, JSON.stringify(obj));
+      console.log(`${num} - ${obj.name} - Completed`);
+    } else {
+      console.log('FAILURE' + ' | err: ' + err);
+    }
+  });
+}
+
+const getAllMoves = () => {
+  for(let i = 1; i <= 621; i++) {
+    setTimeout(() => {
+      getMove(i);
+    }, 3000 * i);
+  }
+}
+
+const tripleId = (num) => {
+  let tripleId;
+  if (num >= 100) {
+    tripleId = num;
+  }
+  else if (num > 9 && num < 100) {
+    tripleId = '0' + num;
+  }
+  else {
+    tripleId = '00' + num;
+  }
+  return tripleId;
+}
+
+const getMovesForMon = (num) => {
+  request('http://pokeapi.co/api/v2/pokemon/' + num, function(err, res, body) {
+    if (!err && res.statusCode == 200) {
+      const data = JSON.parse(body);
+      getMonData(tripleId(num))
+      .then((monData) => {
+        monData.moves = {
+          level: [],
+          egg: [],
+          machine: [],
+          tutor: [],
+        };
+        for(let i = 0; i < data.moves.length; i++) {
+          switch (data.moves[i].version_group_details[0].move_learn_method.name) {
+            case 'level-up':
+              monData.moves.level.push({
+                name: data.moves[i].move.name,
+                level: data.moves[i].version_group_details[0].level_learned_at,
+              });
+              break;
+            case 'egg':
+              monData.moves.egg.push({
+                name: data.moves[i].move.name,
+              });
+              break;
+            case 'machine':
+              monData.moves.machine.push({
+                name: data.moves[i].move.name,
+              });
+              break;
+            case 'tutor':
+              monData.moves.tutor.push({
+                name: data.moves[i].move.name,
+              });
+              break;
+          }
+        }
+        client.set(tripleId(num), JSON.stringify(monData));
+        console.log(`${num} - Completed`);
+        console.log(data.moves.length, monData.moves.level.length + monData.moves.egg.length + monData.moves.machine.length + monData.moves.tutor.length);
+        if (data.moves.length !== monData.moves.level.length + monData.moves.egg.length + monData.moves.machine.length + monData.moves.tutor.length) {
+          console.log(`${num} - NOT ALL MOVES BANKED ----------------------------`);
+        }
+      });
+    } else {
+      console.log(`FAILURE | err: ${err} - ${num}`);
+    }
+  });
+}
+
+const getMovesForAllMons = () => {
+  for(let i = 1; i <= 721; i++) {
+    setTimeout(() => {
+      getMovesForMon(i);
+    }, 3000 * i);
+  }
+}
+
+var promiseWhile = function(condition, action) {
+    var resolver = Promise.defer();
+    var loop = function() {
+        if (!condition()) return resolver.resolve();
+        return Promise.cast(action())
+            .then(loop)
+            .catch(resolver.reject);
+    };
+    process.nextTick(loop);
+    return resolver.promise;
+};
+
+const getMovesOfCategory = (data, category) => {
+  return new Promise ((resolve, reject) => {
+      let arr = [];
+      let sum = 0,
+          stop = data.moves[category].length;
+
+    promiseWhile(function() {
+        return sum < stop;
+    }, function() {
+        return new Promise((resolve, reject) => {
+          const moveName = data.moves[category][sum].name;
+          const level = category === 'level' ? data.moves[category][sum].level : null;
+          client.get(`_${moveName}`, function(err, val) {
+            let moveObj = JSON.parse(val);
+            moveObj.level = level;
+            arr.push(moveObj);
+            resolve();
+          });
+          sum++;
+        })
+    }).then(function() {
+        resolve(arr);
+    });
+  });
+}
+
+const updateMoves = (num) => {
+  client.get(tripleId(num), (err, val) => {
+    const data = JSON.parse(val);
+    let obj = {
+      level: [],
+      egg: [],
+      tutor: [],
+      machine: [],
+    };
+
+    getMovesOfCategory(data, 'level')
+      .then((levelResult) => {
+        obj.level = levelResult;
+        getMovesOfCategory(data, 'egg')
+          .then((eggResult) => {
+            obj.egg = eggResult;
+            getMovesOfCategory(data, 'tutor')
+            .then((tutorResult) => {
+              obj.tutor = tutorResult;
+              getMovesOfCategory(data, 'machine')
+              .then((machineResult) => {
+                obj.machine = machineResult;
+                data.moves = obj;
+                client.set(tripleId(num), JSON.stringify(data));
+                console.log(`${num} - completed`)
+              });
+            });
+          });
+      });
+  });
+}
+
+const updateAllMoves = () => {
+  for (let i = 1; i <= 721; i++) {
+    updateMoves(i);
+  }
+}
+
+//updateAllMoves();
+
+//getMovesForAllMons();
+//updateAllTypes();
+//getAllMoves();
 //getTypeData();
 //getData();
 //getOther();

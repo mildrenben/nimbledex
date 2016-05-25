@@ -26,23 +26,8 @@ function renderData(res,data) {
       hatchCounter: data.hatch_counter,
       stats: data.stats,
       dmgChart: data.dmgChart,
+      moves: data.moves,
      });
-    // client.get('grass', function(err, val) {
-    //   const typeData = JSON.parse(val);
-    //   res.render('EntryPage', {
-    //     name: data.name,
-    //     types: data.types,
-    //     id: data.id,
-    //     evol: data.evol,
-    //     ev: data.ev,
-    //     abilities: data.abilities,
-    //     captureRate: data.capture_rate,
-    //     hatchCounter: data.hatch_counter,
-    //     stats: data.stats,
-    //     typeData: typeData,
-    //    });
-    // });
-
    }
 };
 
