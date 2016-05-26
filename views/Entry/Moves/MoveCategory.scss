@@ -1,0 +1,70 @@
+@import '../../Commons.scss';
+
+.MoveList {
+  margin-bottom: 30px;
+
+  &_Move {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: solid 1px lighten($light-grey, 30%);
+    border-right: solid 1px $light-grey;
+    border-left: solid 1px $light-grey;
+    background: white;
+    font-size: 14px;
+    &:first-of-type {
+      border-top: solid 1px $light-grey;
+    }
+    &:last-of-type {
+      border-bottom: solid 1px $light-grey;
+    }
+  }
+  &_Level {
+    width: 10%;
+    text-align: center;
+  }
+  &_Name {
+    width: 40%;
+  }
+  &_Type {
+    width: 15%;
+    @include typeColors;
+    color: white;
+    text-align: center;
+    padding: 4px 0;
+    border-radius: 4px;
+  }
+  &_Category {
+    text-align: center;
+    width: 10%;
+    height: 22px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &--physical {
+      background: #FF4400;
+    }
+    &--special {
+      background: #2266CC;
+    }
+    &--status {
+      background: #999999;
+    }
+    .MoveList_Img {
+      width: 15px;
+      &--special {
+        width: 18.5px;
+      }
+    }
+  }
+  &_Power {
+    width: 10%;
+    text-align: center;
+  }
+  &_Accuracy {
+    width: 10%;
+    text-align: center;
+  }
+}

@@ -1,7 +1,7 @@
 @import  '../Commons';
 
 .Info {
-  position: absolute;
+  position: fixed;
   bottom: 12px;
   right: 12px;
   &_Toggle {

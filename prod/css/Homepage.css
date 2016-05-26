@@ -237,7 +237,7 @@ nav {
   margin-right: 4px; }
 
 .Info {
-  position: absolute;
+  position: fixed;
   bottom: 12px;
   right: 12px; }
   .Info_Toggle {

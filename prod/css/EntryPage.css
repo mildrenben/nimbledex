@@ -133,7 +133,7 @@ table {
   width: 250px; }
 
 .Info {
-  position: absolute;
+  position: fixed;
   bottom: 12px;
   right: 12px; }
   .Info_Toggle {
@@ -690,6 +690,103 @@ nav {
     opacity: 0; }
   100% {
     opacity: 1; } }
+
+.MoveList {
+  margin-bottom: 30px; }
+  .MoveList_Move {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+        justify-content: space-between;
+    -ms-flex-align: center;
+        align-items: center;
+    padding: 12px 0;
+    border-bottom: solid 1px #eeeeee;
+    border-right: solid 1px #A1A1A1;
+    border-left: solid 1px #A1A1A1;
+    background: white;
+    font-size: 14px; }
+    .MoveList_Move:first-of-type {
+      border-top: solid 1px #A1A1A1; }
+    .MoveList_Move:last-of-type {
+      border-bottom: solid 1px #A1A1A1; }
+  .MoveList_Level {
+    width: 10%;
+    text-align: center; }
+  .MoveList_Name {
+    width: 40%; }
+  .MoveList_Type {
+    width: 15%;
+    color: white;
+    text-align: center;
+    padding: 4px 0;
+    border-radius: 4px; }
+    .MoveList_Type--normal {
+      background: #A8A878; }
+    .MoveList_Type--fighting {
+      background: #C03028; }
+    .MoveList_Type--flying {
+      background: #A890F0; }
+    .MoveList_Type--fire {
+      background: #F08030; }
+    .MoveList_Type--water {
+      background: #6890F0; }
+    .MoveList_Type--grass {
+      background: #78C850; }
+    .MoveList_Type--electric {
+      background: #F8D030; }
+    .MoveList_Type--poison {
+      background: #A040A0; }
+    .MoveList_Type--ground {
+      background: #E0C068; }
+    .MoveList_Type--rock {
+      background: #B8A038; }
+    .MoveList_Type--psychic {
+      background: #F85888; }
+    .MoveList_Type--ice {
+      background: #98D8D8; }
+    .MoveList_Type--bug {
+      background: #A8B820; }
+    .MoveList_Type--dragon {
+      background: #7038F8; }
+    .MoveList_Type--ghost {
+      background: #705898; }
+    .MoveList_Type--dark {
+      background: #705848; }
+    .MoveList_Type--steel {
+      background: #B8B8D0; }
+    .MoveList_Type--fairy {
+      background: #F6B4F6; }
+  .MoveList_Category {
+    text-align: center;
+    width: 10%;
+    height: 22px;
+    border-radius: 4px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+        align-items: center;
+    -ms-flex-pack: center;
+        justify-content: center; }
+    .MoveList_Category--physical {
+      background: #FF4400; }
+    .MoveList_Category--special {
+      background: #2266CC; }
+    .MoveList_Category--status {
+      background: #999999; }
+    .MoveList_Category .MoveList_Img {
+      width: 15px; }
+      .MoveList_Category .MoveList_Img--special {
+        width: 18.5px; }
+  .MoveList_Power {
+    width: 10%;
+    text-align: center; }
+  .MoveList_Accuracy {
+    width: 10%;
+    text-align: center; }
+
+.Moves {
+  margin-top: 40px; }
 
 html,
 body {
