@@ -136,3 +136,9 @@
       width: 15px; }
       .MoveList_Category .MoveList_Img--special {
         width: 18.5px; }
+  .MoveList_NoMoves {
+    padding: 12px;
+    font-size: 14px;
+    width: 100%;
+    background: white;
+    box-sizing: border-box; }

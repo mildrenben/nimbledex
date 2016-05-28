@@ -32,7 +32,10 @@ const MoveCategory = React.createClass({
           <span className="MoveListHeader_Accuracy">Acc</span>
         </div>
         <div className={`MoveList MoveList--${this.props.title}`}>
-          {items}
+          {items.length === 0 ?
+            <span className="MoveList_NoMoves">No {this.props.title} moves</span>
+            : items
+          }
         </div>
       </div>
     )
