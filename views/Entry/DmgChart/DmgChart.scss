@@ -33,17 +33,12 @@
     font-size: 14px;
   }
   &_Chart {
-    // width: 140%;
-    // position: relative;
-    // left: -20%;
     display: flex;
     justify-content: space-between;
   }
   &_Item {
     width: 18px;
     @include typeOrder;
-    // width: 24px;
-    // @include typeOrder;
   }
   &_Type {
     transform: rotate(90deg);
@@ -55,20 +50,10 @@
     padding: 3px 4px;
     font-size: 12px;
     border-radius: 2px;
-
-
-    // @include typeColors;
-    // color: white;
-    // width: 24px;
-    // height: 24px;
-    // font-size: 12px;
-    // display: flex;
-    // align-items: center;
-    // justify-content: center;
   }
   &_Multiplier {
     text-align: center;
     font-size: 13px;
-    margin-top: 80px;
+    margin-top: 76px;
   }
 }
