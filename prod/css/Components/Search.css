@@ -6,6 +6,20 @@
   box-sizing: border-box;
   position: relative;
   z-index: 2; }
+  @media screen and (max-width: 800px) {
+    .Search {
+      max-width: 560px; } }
+  @media screen and (max-width: 600px) {
+    .Search {
+      width: 90%; } }
+  @media screen and (max-width: 1000px) {
+    .Search {
+      width: 80%;
+      max-width: 1000px;
+      transform: none; } }
+  @media screen and (max-width: 600px) {
+    .Search {
+      width: 100%; } }
 
 .awesomplete {
   width: 100%; }

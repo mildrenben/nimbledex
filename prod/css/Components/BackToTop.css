@@ -23,3 +23,6 @@
     background: #eeeeee; }
   .BackToTop .Icon {
     margin-right: 0; }
+  @media screen and (max-width: 600px) {
+    .BackToTop {
+      display: none; } }

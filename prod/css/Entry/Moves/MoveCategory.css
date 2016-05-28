@@ -117,6 +117,10 @@
       background: #B8B8D0; }
     .MoveList_Type--fairy {
       background: #F6B4F6; }
+    @media screen and (max-width: 600px) {
+      .MoveList_Type {
+        font-size: 12px;
+        padding: 5px 0; } }
   .MoveList_Category {
     height: 22px;
     border-radius: 4px;

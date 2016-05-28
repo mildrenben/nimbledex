@@ -6,6 +6,14 @@
   @include container;
   position: relative;
   z-index: 2;
+  @media screen and (max-width: 1000px) {
+    width: 80%;
+    max-width: 1000px;
+    transform: none;
+  }
+  @media screen and (max-width: 600px) {
+    width: 100%;
+  }
 }
 
 .awesomplete {

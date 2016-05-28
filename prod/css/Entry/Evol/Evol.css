@@ -21,6 +21,9 @@
         flex-shrink: 0;
     -ms-flex-direction: column;
         flex-direction: column; }
+    @media screen and (max-width: 470px) {
+      .Evol_Triggers {
+        margin: 0 7px; } }
     .Evol_Triggers:empty {
       display: none; }
   .Evol_EvolSingle {
@@ -32,10 +35,16 @@
     margin-bottom: 8px; }
     .Evol_Multi .Evol_EvolSingle .OtherTrigger {
       width: 100px; }
+      @media screen and (max-width: 470px) {
+        .Evol_Multi .Evol_EvolSingle .OtherTrigger {
+          width: 60px; } }
   .Evol a {
     text-align: center; }
   .Evol_Img {
     width: 76px; }
+    @media screen and (max-width: 470px) {
+      .Evol_Img {
+        width: 72px; } }
 
 .EvolTrigger {
   font-size: 12px;

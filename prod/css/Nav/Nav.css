@@ -17,6 +17,17 @@ nav {
         text-decoration: none; }
     nav .LogoWrap_Img {
       width: 16px; }
+    @media screen and (max-width: 1000px) {
+      nav .LogoWrap {
+        width: 128px; } }
+  @media screen and (max-width: 600px) {
+    nav {
+      padding: 8px 16px 12px;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap; }
+      nav .LogoWrap {
+        width: 100%;
+        margin-bottom: 6px; } }
 
 .LogoWrap_ImgWrap {
   position: relative; }

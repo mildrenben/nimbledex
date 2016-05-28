@@ -150,7 +150,7 @@ const EvolSingle = React.createClass({
     }
 
     let otherTriggers;
-    if (! (this.props.other === undefined)) {
+    if (this.props.other !== undefined) {
       otherTriggers = Object.keys(this.props.other).map(function(key) {
         const val = this.props.other[key];
         const OtherEl = this.changeOther(key, val);
@@ -164,12 +164,14 @@ const EvolSingle = React.createClass({
 
     return (
       <div className={className}>
-        <div className="Evol_Triggers">
-          {trigger}
-          <div className="Evol_OtherTriggers">
-            {otherTriggers}
+        {this.props.trigger !== undefined &&
+          <div className="Evol_Triggers">
+            {trigger}
+            <div className="Evol_OtherTriggers">
+              {otherTriggers}
+            </div>
           </div>
-        </div>
+        }
         <a href={`/${this.props.idnumber}`}>
           <img className="Evol_Img" src={imgURL} />
         </a>

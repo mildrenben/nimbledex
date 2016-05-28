@@ -51,6 +51,20 @@ table {
   box-sizing: border-box;
   position: relative;
   z-index: 2; }
+  @media screen and (max-width: 800px) {
+    .Search {
+      max-width: 560px; } }
+  @media screen and (max-width: 600px) {
+    .Search {
+      width: 90%; } }
+  @media screen and (max-width: 1000px) {
+    .Search {
+      width: 80%;
+      max-width: 1000px;
+      transform: none; } }
+  @media screen and (max-width: 600px) {
+    .Search {
+      width: 100%; } }
 
 .awesomplete {
   width: 100%; }
@@ -173,6 +187,9 @@ table {
       display: block;
       margin: 4px 0;
       font-weight: 700; }
+  @media screen and (max-width: 600px) {
+    .Info {
+      display: none; } }
 
 .BackToTop {
   border: solid 1px #A1A1A1;
@@ -199,6 +216,9 @@ table {
     background: #eeeeee; }
   .BackToTop .Icon {
     margin-right: 0; }
+  @media screen and (max-width: 600px) {
+    .BackToTop {
+      display: none; } }
 
 .Id_Type {
   width: 100px;
@@ -285,6 +305,9 @@ table {
         flex-shrink: 0;
     -ms-flex-direction: column;
         flex-direction: column; }
+    @media screen and (max-width: 470px) {
+      .Evol_Triggers {
+        margin: 0 7px; } }
     .Evol_Triggers:empty {
       display: none; }
   .Evol_EvolSingle {
@@ -296,10 +319,16 @@ table {
     margin-bottom: 8px; }
     .Evol_Multi .Evol_EvolSingle .OtherTrigger {
       width: 100px; }
+      @media screen and (max-width: 470px) {
+        .Evol_Multi .Evol_EvolSingle .OtherTrigger {
+          width: 60px; } }
   .Evol a {
     text-align: center; }
   .Evol_Img {
     width: 76px; }
+    @media screen and (max-width: 470px) {
+      .Evol_Img {
+        width: 72px; } }
 
 .EvolTrigger {
   font-size: 12px;
@@ -413,6 +442,10 @@ table {
     border-radius: 3px;
     text-transform: uppercase;
     font-size: 11px; }
+  @media screen and (max-width: 600px) {
+    .Ability .Tooltip {
+      transform: none;
+      left: 0; } }
 
 .ExtraInfo {
   text-align: right; }
@@ -600,6 +633,17 @@ nav {
         text-decoration: none; }
     nav .LogoWrap_Img {
       width: 16px; }
+    @media screen and (max-width: 1000px) {
+      nav .LogoWrap {
+        width: 128px; } }
+  @media screen and (max-width: 600px) {
+    nav {
+      padding: 8px 16px 12px;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap; }
+      nav .LogoWrap {
+        width: 100%;
+        margin-bottom: 6px; } }
 
 .LogoWrap_ImgWrap {
   position: relative; }
@@ -836,6 +880,10 @@ nav {
       background: #B8B8D0; }
     .MoveList_Type--fairy {
       background: #F6B4F6; }
+    @media screen and (max-width: 600px) {
+      .MoveList_Type {
+        font-size: 12px;
+        padding: 5px 0; } }
   .MoveList_Category {
     height: 22px;
     border-radius: 4px;
@@ -878,6 +926,12 @@ main {
   max-width: 460px;
   box-sizing: border-box;
   margin: 0 auto; }
+  @media screen and (max-width: 800px) {
+    main {
+      max-width: 560px; } }
+  @media screen and (max-width: 600px) {
+    main {
+      width: 90%; } }
 
 * {
   color: #535352; }

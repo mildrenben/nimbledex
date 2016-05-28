@@ -62,6 +62,17 @@ nav {
         text-decoration: none; }
     nav .LogoWrap_Img {
       width: 16px; }
+    @media screen and (max-width: 1000px) {
+      nav .LogoWrap {
+        width: 128px; } }
+  @media screen and (max-width: 600px) {
+    nav {
+      padding: 8px 16px 12px;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap; }
+      nav .LogoWrap {
+        width: 100%;
+        margin-bottom: 6px; } }
 
 .LogoWrap_ImgWrap {
   position: relative; }
@@ -187,6 +198,20 @@ nav {
   box-sizing: border-box;
   position: relative;
   z-index: 2; }
+  @media screen and (max-width: 800px) {
+    .Search {
+      max-width: 560px; } }
+  @media screen and (max-width: 600px) {
+    .Search {
+      width: 90%; } }
+  @media screen and (max-width: 1000px) {
+    .Search {
+      width: 80%;
+      max-width: 1000px;
+      transform: none; } }
+  @media screen and (max-width: 600px) {
+    .Search {
+      width: 100%; } }
 
 .awesomplete {
   width: 100%; }
@@ -277,6 +302,9 @@ nav {
       display: block;
       margin: 4px 0;
       font-weight: 700; }
+  @media screen and (max-width: 600px) {
+    .Info {
+      display: none; } }
 
 html,
 body {
@@ -291,6 +319,12 @@ main {
   max-width: 460px;
   box-sizing: border-box;
   margin: 0 auto; }
+  @media screen and (max-width: 800px) {
+    main {
+      max-width: 560px; } }
+  @media screen and (max-width: 600px) {
+    main {
+      width: 90%; } }
 
 * {
   color: #535352; }
