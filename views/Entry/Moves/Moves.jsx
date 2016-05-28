@@ -6,8 +6,8 @@ const Moves = React.createClass({
     const moves = this.props.moves;
     return (
       <div className="Moves">
-        <MoveCategory title="Level Up" moveList={moves.level} />
-        <MoveCategory title="TM/HM" moveList={moves.machine} />
+        <MoveCategory title="Level Up" moveList={moves.level} firstCol="Lvl"/>
+        <MoveCategory title="TM/HM" moveList={moves.machine} firstCol="#"/>
         <MoveCategory title="Tutor" moveList={moves.tutor} />
         <MoveCategory title="Egg" moveList={moves.egg} />
       </div>

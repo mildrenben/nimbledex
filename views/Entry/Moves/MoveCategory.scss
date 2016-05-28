@@ -1,34 +1,90 @@
 @import '../../Commons.scss';
 
-.MoveList {
-  margin-bottom: 30px;
-
-  &_Move {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 12px 0;
-    border-bottom: solid 1px lighten($light-grey, 30%);
-    border-right: solid 1px $light-grey;
-    border-left: solid 1px $light-grey;
-    background: white;
-    font-size: 14px;
-    &:first-of-type {
-      border-top: solid 1px $light-grey;
-    }
-    &:last-of-type {
-      border-bottom: solid 1px $light-grey;
-    }
-  }
-  &_Level {
-    width: 10%;
+@mixin columnWidths {
+  &_Number,
+  &_Category,
+  &_Power,
+  &_Accuracy,
+  &_Type {
     text-align: center;
+  }
+  &_Number {
+    width: 10%;
   }
   &_Name {
     width: 40%;
   }
   &_Type {
     width: 15%;
+  }
+  &_Category {
+    width: 10%;
+  }
+  &_Power {
+    width: 10%;
+  }
+  &_Accuracy {
+    width: 10%;
+  }
+}
+
+.MoveListWrap {
+  h3 {
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: 400;
+    text-decoration: underline;
+    text-transform: lowercase;
+  }
+  &--Tutor,
+  &--Egg {
+    .MoveListHeader,
+    .MoveList_Move {
+      padding-left: 3%;
+    }
+  }
+}
+
+.MoveListHeader,
+.MoveList {
+  display: flex;
+  flex-wrap: wrap;
+  @include columnWidths;
+}
+
+.MoveListHeader {
+  padding: 12px 0;
+  justify-content: space-between;
+  align-items: center;
+  border: solid 1px lighten($light-grey, 12%);
+  border-bottom: solid 1px lighten($light-grey, 30%);
+  font-size: 13px;
+  font-weight: 700;
+  background: white;
+}
+
+.MoveList {
+  flex-direction: column;
+  margin-bottom: 38px;
+  border: solid 1px lighten($light-grey, 12%);
+  border-top: none;
+
+  &_Move {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: solid 1px lighten($light-grey, 30%);
+    background: white;
+    font-size: 14px;
+    &:hover {
+      background: darken(white, 2%);
+    }
+  }
+
+  &_Type {
     @include typeColors;
     color: white;
     text-align: center;
@@ -36,8 +92,6 @@
     border-radius: 4px;
   }
   &_Category {
-    text-align: center;
-    width: 10%;
     height: 22px;
     border-radius: 4px;
     display: flex;
@@ -58,13 +112,5 @@
         width: 18.5px;
       }
     }
-  }
-  &_Power {
-    width: 10%;
-    text-align: center;
-  }
-  &_Accuracy {
-    width: 10%;
-    text-align: center;
   }
 }

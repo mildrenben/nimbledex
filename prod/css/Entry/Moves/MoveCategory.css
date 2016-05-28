@@ -1,6 +1,69 @@
+.MoveListWrap h3 {
+  margin-bottom: 10px;
+  font-size: 14px;
+  font-weight: 400;
+  text-decoration: underline;
+  text-transform: lowercase; }
+
+.MoveListWrap--Tutor .MoveListHeader,
+.MoveListWrap--Tutor .MoveList_Move, .MoveListWrap--Egg .MoveListHeader,
+.MoveListWrap--Egg .MoveList_Move {
+  padding-left: 3%; }
+
+.MoveListHeader,
 .MoveList {
-  margin-bottom: 30px; }
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+  .MoveListHeader_Number, .MoveListHeader_Category, .MoveListHeader_Power, .MoveListHeader_Accuracy, .MoveListHeader_Type,
+  .MoveList_Number,
+  .MoveList_Category,
+  .MoveList_Power,
+  .MoveList_Accuracy,
+  .MoveList_Type {
+    text-align: center; }
+  .MoveListHeader_Number,
+  .MoveList_Number {
+    width: 10%; }
+  .MoveListHeader_Name,
+  .MoveList_Name {
+    width: 40%; }
+  .MoveListHeader_Type,
+  .MoveList_Type {
+    width: 15%; }
+  .MoveListHeader_Category,
+  .MoveList_Category {
+    width: 10%; }
+  .MoveListHeader_Power,
+  .MoveList_Power {
+    width: 10%; }
+  .MoveListHeader_Accuracy,
+  .MoveList_Accuracy {
+    width: 10%; }
+
+.MoveListHeader {
+  padding: 12px 0;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  -ms-flex-align: center;
+      -ms-grid-row-align: center;
+      align-items: center;
+  border: solid 1px silver;
+  border-bottom: solid 1px #eeeeee;
+  font-size: 13px;
+  font-weight: 700;
+  background: white; }
+
+.MoveList {
+  -ms-flex-direction: column;
+      flex-direction: column;
+  margin-bottom: 38px;
+  border: solid 1px silver;
+  border-top: none; }
   .MoveList_Move {
+    width: 100%;
+    box-sizing: border-box;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-pack: justify;
@@ -9,21 +72,11 @@
         align-items: center;
     padding: 12px 0;
     border-bottom: solid 1px #eeeeee;
-    border-right: solid 1px #A1A1A1;
-    border-left: solid 1px #A1A1A1;
     background: white;
     font-size: 14px; }
-    .MoveList_Move:first-of-type {
-      border-top: solid 1px #A1A1A1; }
-    .MoveList_Move:last-of-type {
-      border-bottom: solid 1px #A1A1A1; }
-  .MoveList_Level {
-    width: 10%;
-    text-align: center; }
-  .MoveList_Name {
-    width: 40%; }
+    .MoveList_Move:hover {
+      background: #fafafa; }
   .MoveList_Type {
-    width: 15%;
     color: white;
     text-align: center;
     padding: 4px 0;
@@ -65,8 +118,6 @@
     .MoveList_Type--fairy {
       background: #F6B4F6; }
   .MoveList_Category {
-    text-align: center;
-    width: 10%;
     height: 22px;
     border-radius: 4px;
     display: -ms-flexbox;
@@ -85,9 +136,3 @@
       width: 15px; }
       .MoveList_Category .MoveList_Img--special {
         width: 18.5px; }
-  .MoveList_Power {
-    width: 10%;
-    text-align: center; }
-  .MoveList_Accuracy {
-    width: 10%;
-    text-align: center; }
