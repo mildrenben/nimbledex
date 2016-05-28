@@ -1,0 +1,29 @@
+@import '../Commons';
+
+.BackToTop {
+  border: solid 1px $light-grey;
+  text-transform: uppercase;
+  position: fixed;
+  bottom: 40px;
+  right: 9px;
+  cursor: pointer;
+  height: 24px;
+  width: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0;
+  z-index: -1;
+  &.visible {
+    opacity: 1;
+    z-index: 1;
+  }
+  &:hover {
+    background: lighten($light-grey, 30%);
+  }
+
+  .Icon {
+    margin-right: 0;
+  }
+}

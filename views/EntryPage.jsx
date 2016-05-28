@@ -6,6 +6,7 @@ const Details = require('./entry/Details/Details');
 const DmgChart = require('./entry/DmgChart/DmgChart');
 const Info = require('./Components/Info');
 const Moves = require('./Entry/Moves/Moves');
+const BackToTop = require('./Components/BackToTop');
 
 const Root = React.createClass({
   render() {
@@ -31,6 +32,7 @@ const Root = React.createClass({
             <DmgChart dmgChart={this.props.dmgChart} />
             <Info />
             <Moves moves={this.props.moves} />
+            <BackToTop />
           </main>
           <script src="/js/script.js"> </script>
           <script src="/js/awesomplete.min.js"> </script>
