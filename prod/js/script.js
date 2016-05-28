@@ -41,3 +41,13 @@ window.addEventListener('scroll', function() {
 BackToTopBtn.addEventListener('click', function(){
   document.body.scrollTop = 0;
 });
+
+var searchOffset = searchInput.getClientRects()[0].top < 16 ? 16 : searchInput.getClientRects()[0].top;
+// Sticky header
+window.addEventListener('scroll', function(){
+  if (window.scrollY > searchOffset) {
+    document.body.classList.add('fixed-header');
+  } else if (document.body.classList.contains('fixed-header')) {
+    document.body.classList.remove('fixed-header');
+  }
+});

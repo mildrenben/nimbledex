@@ -33,6 +33,14 @@ nav {
   }
 }
 
+@media screen and (max-width: 600px) {
+  .fixed-header {
+    nav {
+      margin-bottom: 32px;
+    }
+  }
+}
+
 .LogoWrap_ImgWrap {
   position: relative;
 }

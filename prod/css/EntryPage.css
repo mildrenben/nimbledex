@@ -78,6 +78,20 @@ table {
   .Search_Input:focus {
     outline: none; }
 
+@media screen and (max-width: 600px) {
+  .fixed-header .Search {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 0 6px 5px rgba(0, 0, 0, 0.11); }
+    .fixed-header .Search_Input {
+      border: none;
+      padding: 11px 18px; }
+    .fixed-header .Search_Btn {
+      width: 44px;
+      border-left: solid 1px rgba(0, 0, 0, 0.1); } }
+
 .Search_Btn {
   -ms-flex-negative: 0;
       flex-shrink: 0;
@@ -644,6 +658,10 @@ nav {
       nav .LogoWrap {
         width: 100%;
         margin-bottom: 6px; } }
+
+@media screen and (max-width: 600px) {
+  .fixed-header nav {
+    margin-bottom: 32px; } }
 
 .LogoWrap_ImgWrap {
   position: relative; }
