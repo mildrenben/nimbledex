@@ -1,17 +1,13 @@
 const React = require('react');
 const Search = require('./Components/Search');
 const Info = require('./Components/Info');
+const Head = require('./Components/Head');
 
 const Root = React.createClass({
   render() {
     return (
       <html>
-        <head>
-          <link rel="stylesheet" type="text/css" href="/css/Homepage.css" />
-          <link rel="stylesheet" type="text/css" href="/css/awesomplete.css" />
-          <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css' />
-          <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700' rel='stylesheet' type='text/css' />
-        </head>
+        <Head title={`Nimbledex | Ultra fast Pokedex`} name='' idnumber='001' />
         <body className="Homepage">
           <main>
             <div className="LogoWrap">

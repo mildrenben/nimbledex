@@ -7,17 +7,15 @@ const DmgChart = require('./entry/DmgChart/DmgChart');
 const Info = require('./Components/Info');
 const Moves = require('./Entry/Moves/Moves');
 const BackToTop = require('./Components/BackToTop');
+const Head = require('./Components/Head');
+const capitaliseFirst = require('./Utilities/capitaliseFirst');
 
 const Root = React.createClass({
   render() {
+    const title = capitaliseFirst(this.props.name);
     return (
-      <html>
-        <head>
-          <link rel="stylesheet" type="text/css" href="/css/EntryPage.css" />
-          <link rel="stylesheet" type="text/css" href="/css/awesomplete.css" />
-          <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css' />
-          <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700' rel='stylesheet' type='text/css' />
-        </head>
+      <html prefix="og: http://ogp.me/ns#">
+        <Head title={`${title} | Nimbledex`} name={this.props.name} idnumber={this.props.id} />
         <body>
           <Nav />
           <main>
