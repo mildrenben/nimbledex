@@ -197,6 +197,8 @@ table {
     display: none;
     width: 170px;
     line-height: 130%; }
+    .Info_Popup p {
+      margin-bottom: 8px; }
     .Info_Popup a {
       display: block;
       margin: 4px 0;
