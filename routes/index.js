@@ -8,7 +8,7 @@ const Redis = {
 const redis = require("redis"),
       client = redis.createClient(Redis.port,Redis.host);
 
-const lookup = require('../lookup.js');
+const lookup = require('../lookups/pokemonNumbers.js');
 
 function renderData(res,data) {
   if (data === null || data === undefined) {

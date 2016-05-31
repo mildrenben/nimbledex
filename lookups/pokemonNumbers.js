@@ -1,4 +1,4 @@
-const lookup = {
+const pokemonNumbers = {
   "Bulbasaur" : "001",
   "Ivysaur" : "002",
   "Venusaur" : "003",
@@ -724,7 +724,7 @@ const lookup = {
 
 
 
-module.exports = lookup;
+module.exports = pokemonNumbers;
 
 
 

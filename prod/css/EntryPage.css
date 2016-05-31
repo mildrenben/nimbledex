@@ -859,6 +859,9 @@ nav {
     font-size: 14px; }
     .MoveList_Move:hover {
       background: #fafafa; }
+  .MoveList_Number--machines {
+    text-transform: uppercase;
+    font-size: 12px; }
   .MoveList_Type {
     color: white;
     text-align: center;

@@ -84,6 +84,13 @@
     }
   }
 
+  &_Number {
+    &--machines {
+      text-transform: uppercase;
+      font-size: 12px;
+    }
+  }
+
   &_Type {
     @include typeColors;
     color: white;

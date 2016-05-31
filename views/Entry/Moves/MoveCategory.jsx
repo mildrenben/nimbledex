@@ -5,11 +5,26 @@ const MoveCategory = React.createClass({
   render() {
     const moveList = this.props.moveList;
     const items = moveList.map(item => {
+      let firstCol;
+      let styles = {
+        order: null,
+      };
+      if (this.props.firstCol === 'Lvl') {
+        firstCol = <Move className="MoveList_Number" data={item.level} />;
+        styles.order = item.level;
+      } else if (this.props.firstCol === '#') {
+        firstCol = <Move className="MoveList_Number MoveList_Number--machines" data={item.machine} />;
+        console.log(item.machine);
+        if (item.machine.charAt(0) === 't') {
+          styles.order = item.machine.slice(2);
+        } else {
+          styles.order = parseInt(item.machine.slice(2)) + 100;
+        }
+      }
+
       return (
-        <div className="MoveList_Move" style={{order: item.level}}>
-          {this.props.firstCol &&
-            <Move className="MoveList_Number" data={item.level} />
-          }
+        <div className="MoveList_Move" style={styles}>
+          {firstCol}
           <Move className="MoveList_Name" data={formatString(item.name)} />
           <Move className={`MoveList_Type MoveList_Type--${item.type}`} data={item.type} />
           <Move className="MoveList_Category" data={item.category} />
@@ -56,8 +71,7 @@ const Move = React.createClass({
         <span className={`${this.props.className} ${this.props.className}--${this.props.data}`}>
           <img className={`MoveList_Img MoveList_Img--${this.props.data}`}
                src={`/img/icons/${this.props.data}Move.svg`}
-               alt={this.props.data}
-          />
+               alt={this.props.data} />
         </span>
       )
     } else {

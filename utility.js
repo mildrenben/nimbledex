@@ -10,6 +10,8 @@ const request = require('request');
 const _ = require('lodash');
 const Promise = require('bluebird');
 
+const tmHmLookup = require('./lookups/tmHmNumbers');
+
 function getData() {
   for (let i = 1; i <= 721; i++) {
     setTimeout(function(){
@@ -20,11 +22,9 @@ function getData() {
           // Id & Name
           if (d.id >= 100) {
             newD.id = d.id;
-          }
-          else if (d.id > 9 && d.id < 100) {
+          } else if (d.id > 9 && d.id < 100) {
             newD.id = '0' + d.id;
-          }
-          else {
+          } else {
             newD.id = '00' + d.id;
           }
 
@@ -155,7 +155,7 @@ function evolFunc (entry, exit) {
 
 function getOther() {
   console.log('getOther init');
-  for (let j = 1; j <= 200; j++) {
+  for (let j = 1; j <= 721; j++) {
     setTimeout(function(){
       request('http://pokeapi.co/api/v2/pokemon-species/' + j, function(err, res, body) {
         if (!err && res.statusCode == 200) {
@@ -411,36 +411,39 @@ const getMovesForMon = (num) => {
           tutor: [],
         };
         for(let i = 0; i < data.moves.length; i++) {
-          switch (data.moves[i].version_group_details[0].move_learn_method.name) {
-            case 'level-up':
-              monData.moves.level.push({
-                name: data.moves[i].move.name,
-                level: data.moves[i].version_group_details[0].level_learned_at,
-              });
-              break;
-            case 'egg':
-              monData.moves.egg.push({
-                name: data.moves[i].move.name,
-              });
-              break;
-            case 'machine':
-              monData.moves.machine.push({
-                name: data.moves[i].move.name,
-              });
-              break;
-            case 'tutor':
-              monData.moves.tutor.push({
-                name: data.moves[i].move.name,
-              });
-              break;
+          for (let j = 0; j < data.moves[i].version_group_details.length; j++) {
+            if (data.moves[i].version_group_details[j].version_group.name === 'omega-ruby-alpha-sapphire') {
+              switch (data.moves[i].version_group_details[j].move_learn_method.name) {
+                case 'level-up':
+                  monData.moves.level.push({
+                    name: data.moves[i].move.name,
+                    level: data.moves[i].version_group_details[j].level_learned_at,
+                  });
+                  break;
+                case 'egg':
+                  monData.moves.egg.push({
+                    name: data.moves[i].move.name,
+                  });
+                  break;
+                case 'machine':
+                  monData.moves.machine.push({
+                    name: data.moves[i].move.name,
+                  });
+                  break;
+                case 'tutor':
+                  monData.moves.tutor.push({
+                    name: data.moves[i].move.name,
+                  });
+                  break;
+              }
+            }
           }
+
         }
-        client.set(tripleId(num), JSON.stringify(monData));
-        console.log(`${num} - Completed`);
-        console.log(data.moves.length, monData.moves.level.length + monData.moves.egg.length + monData.moves.machine.length + monData.moves.tutor.length);
-        if (data.moves.length !== monData.moves.level.length + monData.moves.egg.length + monData.moves.machine.length + monData.moves.tutor.length) {
-          console.log(`${num} - NOT ALL MOVES BANKED ----------------------------`);
-        }
+        setTimeout(function() {
+          client.set(tripleId(num), JSON.stringify(monData));
+          console.log(`${num} - Completed`);
+        }, 5000);
       });
     } else {
       console.log(`FAILURE | err: ${err} - ${num}`);
@@ -452,7 +455,33 @@ const getMovesForAllMons = () => {
   for(let i = 1; i <= 721; i++) {
     setTimeout(() => {
       getMovesForMon(i);
-    }, 3000 * i);
+    }, 5000 * i);
+  }
+};
+
+const updateMachine = (num, machineType) => {
+  let number = num.toString();
+  if (num < 10) {
+    number = '0' + num;
+  }
+
+  const machineName = tmHmLookup[machineType][number];
+  const moveNameDashes = machineName.replace(' ', '-');
+  const moveName = moveNameDashes.toLowerCase();
+  client.get(`_${moveName}`, (err, val) => {
+    let redisMove = JSON.parse(val);
+    redisMove.machine = machineType + number;
+    client.set(`_${moveName}`, JSON.stringify(redisMove));
+    console.log(`${moveName} - completed`);
+  });
+}
+
+const updateAllMachines = () => {
+  for (let i = 1; i <= 100; i++) {
+    updateMachine(i, 'tm');
+  }
+  for (let j = 1; j <= 7; j++) {
+    updateMachine(j, 'hm');
   }
 }
 
@@ -532,11 +561,12 @@ const updateAllMoves = () => {
   }
 }
 
-//updateAllMoves();
 
+updateAllMoves();
+//updateAllMachines();
 //getMovesForAllMons();
 //updateAllTypes();
 //getAllMoves();
 //getTypeData();
-//getData();
 //getOther();
+//getData();
