@@ -2,6 +2,7 @@ const React = require('react');
 const Search = require('./Components/Search');
 const Info = require('./Components/Info');
 const Head = require('./Components/Head');
+const Tracking = require('./Components/Tracking');
 
 const Root = React.createClass({
   render() {
@@ -25,6 +26,7 @@ const Root = React.createClass({
             <Search />
             <Info />
           </main>
+          <Tracking />
           <script src="/js/script.js"> </script>
           <script src="/js/awesomplete.min.js"> </script>
           <script src="/js/typeahead.js"> </script>
