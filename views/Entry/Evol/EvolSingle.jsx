@@ -136,6 +136,9 @@ const EvolSingle = React.createClass({
         return 'Atk = Def';
       }
     }
+    else if (key === 'party_type') {
+      return `${val} type in party`;
+    }
     else {
       return val;
     }
