@@ -25,10 +25,7 @@ const Root = React.createClass({
             <Search />
             <Info />
           </main>
-          <script src="/js/analytics.js"> </script>
-          <script src="/js/script.js"> </script>
-          <script src="/js/awesomplete.min.js"> </script>
-          <script src="/js/typeahead.js"> </script>
+          <script src="/js/all.js"> </script>
         </body>
       </html>
     );
