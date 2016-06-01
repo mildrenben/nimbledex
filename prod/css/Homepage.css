@@ -220,6 +220,9 @@ div.awesomplete {
     border-top: none;
     text-shadow: none;
     font-size: 14px; }
+    @media screen and (max-width: 600px) {
+      div.awesomplete > ul {
+        border: none; } }
   div.awesomplete > ul[hidden],
   div.awesomplete > ul:empty {
     display: none; }
@@ -282,7 +285,9 @@ div.awesomplete {
   box-sizing: border-box;
   padding: 6px 10px;
   font-size: 14px;
-  border: solid 1px #A1A1A1; }
+  border: solid 1px #A1A1A1;
+  border-radius: 0;
+  box-shadow: none; }
   .Search_Input:focus {
     outline: none; }
 

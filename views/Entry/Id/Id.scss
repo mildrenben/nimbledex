@@ -7,12 +7,16 @@
   margin-bottom: 16px;
   &_Img {
     margin-right: 14px;
+    @media screen and (max-width: 340px) {
+      width: 80px;
+      margin-right: 0;
+    }
   }
   &_Identifiers {
 
   }
   &_Name {
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 500;
     margin-bottom: 6px;
   }

@@ -5,6 +5,10 @@
     justify-content: flex-end;
     align-items: flex-start;
   }
+  @media screen and (max-width: 340px) {
+    box-sizing: border-box;
+    padding-left: 10px;
+  }
 }
 
 .ExtraInfo_Title {

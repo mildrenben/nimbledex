@@ -69,6 +69,9 @@ div.awesomplete {
     border-top: none;
     text-shadow: none;
     font-size: 14px; }
+    @media screen and (max-width: 600px) {
+      div.awesomplete > ul {
+        border: none; } }
   div.awesomplete > ul[hidden],
   div.awesomplete > ul:empty {
     display: none; }
@@ -131,7 +134,9 @@ div.awesomplete {
   box-sizing: border-box;
   padding: 6px 10px;
   font-size: 14px;
-  border: solid 1px #A1A1A1; }
+  border: solid 1px #A1A1A1;
+  border-radius: 0;
+  box-shadow: none; }
   .Search_Input:focus {
     outline: none; }
 
@@ -337,6 +342,12 @@ div.awesomplete {
     background: #B8B8D0; }
   .Id_Type--fairy {
     background: #F6B4F6; }
+  @media screen and (max-width: 340px) {
+    .Id_Type {
+      line-height: 20px;
+      width: 60px;
+      font-size: 14px;
+      font-weight: 700; } }
 
 .Id {
   display: -ms-flexbox;
@@ -348,8 +359,12 @@ div.awesomplete {
   margin-bottom: 16px; }
   .Id_Img {
     margin-right: 14px; }
+    @media screen and (max-width: 340px) {
+      .Id_Img {
+        width: 80px;
+        margin-right: 0; } }
   .Id_Name {
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 500;
     margin-bottom: 6px; }
   .Id_Types {
@@ -381,6 +396,9 @@ div.awesomplete {
     @media screen and (max-width: 470px) {
       .Evol_Triggers {
         margin: 0 7px; } }
+    @media screen and (max-width: 340px) {
+      .Evol_Triggers {
+        width: 58px; } }
     .Evol_Triggers:empty {
       display: none; }
   .Evol_EvolSingle {
@@ -388,13 +406,34 @@ div.awesomplete {
     display: flex;
     -ms-flex-align: center;
         align-items: center; }
+    @media screen and (max-width: 340px) {
+      .Evol_EvolSingle {
+        -ms-flex-direction: column;
+            flex-direction: column; } }
+  @media screen and (max-width: 340px) {
+    .Evol_Multi .Evol_Triggers {
+      width: 80px; } }
   .Evol_Multi .Evol_EvolSingle {
     margin-bottom: 8px; }
+    @media screen and (max-width: 340px) {
+      .Evol_Multi .Evol_EvolSingle {
+        width: 60px;
+        -ms-flex-negative: 0;
+            flex-shrink: 0;
+        margin: 0 14px; } }
     .Evol_Multi .Evol_EvolSingle .OtherTrigger {
       width: 100px; }
       @media screen and (max-width: 470px) {
         .Evol_Multi .Evol_EvolSingle .OtherTrigger {
           width: 60px; } }
+  @media screen and (max-width: 340px) {
+    .Evol_Multi {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+      width: 300px;
+      overflow-x: scroll; } }
   .Evol a {
     text-align: center; }
   .Evol_Img {
@@ -402,6 +441,10 @@ div.awesomplete {
     @media screen and (max-width: 470px) {
       .Evol_Img {
         width: 72px; } }
+  @media screen and (max-width: 340px) {
+    .Evol {
+      -ms-flex-direction: column;
+          flex-direction: column; } }
 
 .EvolTrigger {
   font-size: 12px;
@@ -502,6 +545,10 @@ div.awesomplete {
       flex-wrap: wrap;
   -ms-flex-direction: column;
       flex-direction: column; }
+  @media screen and (max-width: 340px) {
+    .Details_Abilities {
+      box-sizing: border-box;
+      padding-right: 10px; } }
 
 .Ability {
   margin-right: auto; }
@@ -519,6 +566,11 @@ div.awesomplete {
     border-radius: 3px;
     text-transform: uppercase;
     font-size: 11px; }
+    @media screen and (max-width: 340px) {
+      .Ability_Hidden {
+        font-size: 10px;
+        margin-left: 5px;
+        padding: 4px; } }
   @media screen and (max-width: 600px) {
     .Ability .Tooltip {
       transform: none;
@@ -533,6 +585,10 @@ div.awesomplete {
         justify-content: flex-end;
     -ms-flex-align: start;
         align-items: flex-start; }
+  @media screen and (max-width: 340px) {
+    .ExtraInfo {
+      box-sizing: border-box;
+      padding-left: 10px; } }
 
 .ExtraInfo_Title {
   text-align: left;
@@ -571,6 +627,11 @@ div.awesomplete {
       -ms-flex-align: center;
           align-items: center;
       margin-bottom: 1px; }
+      @media screen and (max-width: 340px) {
+        .Details_Abilities p,
+        .Details .ExtraInfo p {
+          margin-bottom: 5px;
+          height: auto; } }
 
 .DmgChart h3 {
   font-weight: 300;
@@ -582,6 +643,9 @@ div.awesomplete {
   display: flex;
   -ms-flex-pack: justify;
       justify-content: space-between; }
+  @media screen and (max-width: 400px) {
+    .DmgChart_Chart {
+      display: block; } }
 
 .DmgChart_Item {
   width: 18px; }
@@ -639,6 +703,10 @@ div.awesomplete {
   .DmgChart_Item--fairy {
     -ms-flex-order: 18;
         order: 18; }
+  @media screen and (max-width: 400px) {
+    .DmgChart_Item {
+      display: inline-block;
+      margin: 0 5px; } }
 
 .DmgChart_Type {
   transform: rotate(90deg);
@@ -870,21 +938,45 @@ nav {
   .MoveListHeader_Number,
   .MoveList_Number {
     width: 10%; }
+    @media screen and (max-width: 400px) {
+      .MoveListHeader_Number,
+      .MoveList_Number {
+        width: 16%; } }
   .MoveListHeader_Name,
   .MoveList_Name {
     width: 40%; }
+    @media screen and (max-width: 400px) {
+      .MoveListHeader_Name,
+      .MoveList_Name {
+        width: 28%; } }
   .MoveListHeader_Type,
   .MoveList_Type {
     width: 15%; }
+    @media screen and (max-width: 400px) {
+      .MoveListHeader_Type,
+      .MoveList_Type {
+        width: 18%; } }
   .MoveListHeader_Category,
   .MoveList_Category {
     width: 10%; }
+    @media screen and (max-width: 400px) {
+      .MoveListHeader_Category,
+      .MoveList_Category {
+        width: 9%; } }
   .MoveListHeader_Power,
   .MoveList_Power {
     width: 10%; }
+    @media screen and (max-width: 400px) {
+      .MoveListHeader_Power,
+      .MoveList_Power {
+        width: 12%; } }
   .MoveListHeader_Accuracy,
   .MoveList_Accuracy {
     width: 10%; }
+    @media screen and (max-width: 400px) {
+      .MoveListHeader_Accuracy,
+      .MoveList_Accuracy {
+        width: 12%; } }
 
 .MoveListHeader {
   padding: 12px 0;
@@ -995,7 +1087,7 @@ nav {
     box-sizing: border-box; }
 
 .Moves {
-  margin-top: 46px; }
+  margin: 46px 0; }
 
 html,
 body {

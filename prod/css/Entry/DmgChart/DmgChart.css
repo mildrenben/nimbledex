@@ -8,6 +8,9 @@
   display: flex;
   -ms-flex-pack: justify;
       justify-content: space-between; }
+  @media screen and (max-width: 400px) {
+    .DmgChart_Chart {
+      display: block; } }
 
 .DmgChart_Item {
   width: 18px; }
@@ -65,6 +68,10 @@
   .DmgChart_Item--fairy {
     -ms-flex-order: 18;
         order: 18; }
+  @media screen and (max-width: 400px) {
+    .DmgChart_Item {
+      display: inline-block;
+      margin: 0 5px; } }
 
 .DmgChart_Type {
   transform: rotate(90deg);

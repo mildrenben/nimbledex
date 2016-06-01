@@ -29,6 +29,9 @@ div.awesomplete {
   	border-top: none;
   	text-shadow: none;
     font-size: 14px;
+    @media screen and (max-width: 600px) {
+      border: none;
+    }
   }
   > ul[hidden],
   > ul:empty {

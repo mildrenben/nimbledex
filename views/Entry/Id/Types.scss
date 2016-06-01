@@ -11,4 +11,11 @@
   }
 
   @include typeColors;
+
+  @media screen and (max-width: 340px) {
+    line-height: 20px;
+    width: 60px;
+    font-size: 14px;
+    font-weight: 700;
+  }
 }

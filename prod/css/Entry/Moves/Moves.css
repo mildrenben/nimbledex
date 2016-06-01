@@ -26,21 +26,45 @@
   .MoveListHeader_Number,
   .MoveList_Number {
     width: 10%; }
+    @media screen and (max-width: 400px) {
+      .MoveListHeader_Number,
+      .MoveList_Number {
+        width: 16%; } }
   .MoveListHeader_Name,
   .MoveList_Name {
     width: 40%; }
+    @media screen and (max-width: 400px) {
+      .MoveListHeader_Name,
+      .MoveList_Name {
+        width: 28%; } }
   .MoveListHeader_Type,
   .MoveList_Type {
     width: 15%; }
+    @media screen and (max-width: 400px) {
+      .MoveListHeader_Type,
+      .MoveList_Type {
+        width: 18%; } }
   .MoveListHeader_Category,
   .MoveList_Category {
     width: 10%; }
+    @media screen and (max-width: 400px) {
+      .MoveListHeader_Category,
+      .MoveList_Category {
+        width: 9%; } }
   .MoveListHeader_Power,
   .MoveList_Power {
     width: 10%; }
+    @media screen and (max-width: 400px) {
+      .MoveListHeader_Power,
+      .MoveList_Power {
+        width: 12%; } }
   .MoveListHeader_Accuracy,
   .MoveList_Accuracy {
     width: 10%; }
+    @media screen and (max-width: 400px) {
+      .MoveListHeader_Accuracy,
+      .MoveList_Accuracy {
+        width: 12%; } }
 
 .MoveListHeader {
   padding: 12px 0;
@@ -151,4 +175,4 @@
     box-sizing: border-box; }
 
 .Moves {
-  margin-top: 46px; }
+  margin: 46px 0; }

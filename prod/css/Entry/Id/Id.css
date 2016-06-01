@@ -42,6 +42,12 @@
     background: #B8B8D0; }
   .Id_Type--fairy {
     background: #F6B4F6; }
+  @media screen and (max-width: 340px) {
+    .Id_Type {
+      line-height: 20px;
+      width: 60px;
+      font-size: 14px;
+      font-weight: 700; } }
 
 .Id {
   display: -ms-flexbox;
@@ -53,8 +59,12 @@
   margin-bottom: 16px; }
   .Id_Img {
     margin-right: 14px; }
+    @media screen and (max-width: 340px) {
+      .Id_Img {
+        width: 80px;
+        margin-right: 0; } }
   .Id_Name {
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 500;
     margin-bottom: 6px; }
   .Id_Types {

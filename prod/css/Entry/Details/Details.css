@@ -31,6 +31,10 @@
       flex-wrap: wrap;
   -ms-flex-direction: column;
       flex-direction: column; }
+  @media screen and (max-width: 340px) {
+    .Details_Abilities {
+      box-sizing: border-box;
+      padding-right: 10px; } }
 
 .Ability {
   margin-right: auto; }
@@ -48,6 +52,11 @@
     border-radius: 3px;
     text-transform: uppercase;
     font-size: 11px; }
+    @media screen and (max-width: 340px) {
+      .Ability_Hidden {
+        font-size: 10px;
+        margin-left: 5px;
+        padding: 4px; } }
   @media screen and (max-width: 600px) {
     .Ability .Tooltip {
       transform: none;
@@ -62,6 +71,10 @@
         justify-content: flex-end;
     -ms-flex-align: start;
         align-items: flex-start; }
+  @media screen and (max-width: 340px) {
+    .ExtraInfo {
+      box-sizing: border-box;
+      padding-left: 10px; } }
 
 .ExtraInfo_Title {
   text-align: left;
@@ -100,3 +113,8 @@
       -ms-flex-align: center;
           align-items: center;
       margin-bottom: 1px; }
+      @media screen and (max-width: 340px) {
+        .Details_Abilities p,
+        .Details .ExtraInfo p {
+          margin-bottom: 5px;
+          height: auto; } }

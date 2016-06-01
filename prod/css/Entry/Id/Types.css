@@ -42,3 +42,9 @@
     background: #B8B8D0; }
   .Id_Type--fairy {
     background: #F6B4F6; }
+  @media screen and (max-width: 340px) {
+    .Id_Type {
+      line-height: 20px;
+      width: 60px;
+      font-size: 14px;
+      font-weight: 700; } }

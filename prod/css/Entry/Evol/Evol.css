@@ -24,6 +24,9 @@
     @media screen and (max-width: 470px) {
       .Evol_Triggers {
         margin: 0 7px; } }
+    @media screen and (max-width: 340px) {
+      .Evol_Triggers {
+        width: 58px; } }
     .Evol_Triggers:empty {
       display: none; }
   .Evol_EvolSingle {
@@ -31,13 +34,34 @@
     display: flex;
     -ms-flex-align: center;
         align-items: center; }
+    @media screen and (max-width: 340px) {
+      .Evol_EvolSingle {
+        -ms-flex-direction: column;
+            flex-direction: column; } }
+  @media screen and (max-width: 340px) {
+    .Evol_Multi .Evol_Triggers {
+      width: 80px; } }
   .Evol_Multi .Evol_EvolSingle {
     margin-bottom: 8px; }
+    @media screen and (max-width: 340px) {
+      .Evol_Multi .Evol_EvolSingle {
+        width: 60px;
+        -ms-flex-negative: 0;
+            flex-shrink: 0;
+        margin: 0 14px; } }
     .Evol_Multi .Evol_EvolSingle .OtherTrigger {
       width: 100px; }
       @media screen and (max-width: 470px) {
         .Evol_Multi .Evol_EvolSingle .OtherTrigger {
           width: 60px; } }
+  @media screen and (max-width: 340px) {
+    .Evol_Multi {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+      width: 300px;
+      overflow-x: scroll; } }
   .Evol a {
     text-align: center; }
   .Evol_Img {
@@ -45,6 +69,10 @@
     @media screen and (max-width: 470px) {
       .Evol_Img {
         width: 72px; } }
+  @media screen and (max-width: 340px) {
+    .Evol {
+      -ms-flex-direction: column;
+          flex-direction: column; } }
 
 .EvolTrigger {
   font-size: 12px;

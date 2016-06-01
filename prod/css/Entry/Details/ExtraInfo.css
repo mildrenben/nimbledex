@@ -7,6 +7,10 @@
         justify-content: flex-end;
     -ms-flex-align: start;
         align-items: flex-start; }
+  @media screen and (max-width: 340px) {
+    .ExtraInfo {
+      box-sizing: border-box;
+      padding-left: 10px; } }
 
 .ExtraInfo_Title {
   text-align: left;

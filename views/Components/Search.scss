@@ -27,6 +27,8 @@
   padding: 6px 10px;
   font-size: 14px;
   border: solid 1px $light-grey;
+  border-radius: 0;
+  box-shadow: none;
   &:focus {
     outline: none;
   }

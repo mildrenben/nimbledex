@@ -35,10 +35,17 @@
   &_Chart {
     display: flex;
     justify-content: space-between;
+    @media screen and (max-width: 400px) {
+      display: block;
+    }
   }
   &_Item {
     width: 18px;
     @include typeOrder;
+    @media screen and (max-width: 400px) {
+      display: inline-block;
+      margin: 0 5px
+    }
   }
   &_Type {
     transform: rotate(90deg);

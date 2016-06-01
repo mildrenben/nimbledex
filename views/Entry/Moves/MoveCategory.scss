@@ -10,21 +10,39 @@
   }
   &_Number {
     width: 10%;
+    @media screen and (max-width: 400px) {
+      width: 16%;
+    }
   }
   &_Name {
     width: 40%;
+    @media screen and (max-width: 400px) {
+      width: 28%;
+    }
   }
   &_Type {
     width: 15%;
+    @media screen and (max-width: 400px) {
+      width: 18%;
+    }
   }
   &_Category {
     width: 10%;
+    @media screen and (max-width: 400px) {
+      width: 9%;
+    }
   }
   &_Power {
     width: 10%;
+    @media screen and (max-width: 400px) {
+      width: 12%;
+    }
   }
   &_Accuracy {
     width: 10%;
+    @media screen and (max-width: 400px) {
+      width: 12%;
+    }
   }
 }
 

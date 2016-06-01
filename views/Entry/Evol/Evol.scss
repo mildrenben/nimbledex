@@ -17,6 +17,9 @@
     @media screen and (max-width: 470px) {
       margin: 0 7px;
     }
+    @media screen and (max-width: 340px) {
+      width: 58px;
+    }
     &:empty {
       display: none;
     }
@@ -24,16 +27,35 @@
   &_EvolSingle {
     display: flex;
     align-items: center;
+    @media screen and (max-width: 340px) {
+      flex-direction: column
+    }
   }
   &_Multi {
+    .Evol_Triggers {
+      @media screen and (max-width: 340px) {
+        width: 80px;
+      }
+    }
     .Evol_EvolSingle {
       margin-bottom: 8px;
+      @media screen and (max-width: 340px) {
+        width: 60px;
+        flex-shrink: 0;
+        margin: 0 14px;
+      }
       .OtherTrigger {
         width: 100px;
         @media screen and (max-width: 470px) {
           width: 60px;
         }
       }
+    }
+    @media screen and (max-width: 340px) {
+      display: flex;
+      justify-content: space-between;
+      width: 300px;
+      overflow-x: scroll;
     }
   }
   a {
@@ -44,6 +66,9 @@
     @media screen and (max-width: 470px) {
       width: 72px;
     }
+  }
+  @media screen and (max-width: 340px) {
+    flex-direction: column
   }
 }
 
