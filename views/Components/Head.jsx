@@ -3,12 +3,14 @@ const React = require('react');
 const Head = React.createClass({
   render() {
     const imgURL = `http://nimbledex/img/sprites/${this.props.idnumber}.png`;
+    const stylesheet = this.props.stylesheet === 'entry' ?
+      <link rel="stylesheet" type="text/css" href="/css/EntryPage.css" />
+      : <link rel="stylesheet" type="text/css" href="/css/Homepage.css" />;
     return (
       <head>
         <meta charset="utf-8" />
         <title>{this.props.title}</title>
-        <link rel="stylesheet" type="text/css" href="/css/EntryPage.css" />
-        <link rel="stylesheet" type="text/css" href="/css/awesomplete.css" />
+        {stylesheet}
         <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css' />
         <meta property="og:title" content={this.props.title} />
         <meta property="og:type" content="article" />

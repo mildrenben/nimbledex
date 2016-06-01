@@ -15,7 +15,7 @@ const Root = React.createClass({
     const title = capitaliseFirst(this.props.name);
     return (
       <html prefix="og: http://ogp.me/ns#">
-        <Head title={`${title} | Nimbledex`} name={this.props.name} idnumber={this.props.id} />
+        <Head title={`${title} | Nimbledex`} name={this.props.name} idnumber={this.props.id} stylesheet="entry"/>
         <body>
           <Nav />
           <main>

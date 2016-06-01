@@ -1,0 +1,76 @@
+@import '../Commons';
+
+[hidden] {
+  display: none;
+}
+
+.visually-hidden {
+	position: absolute;
+	clip: rect(0, 0, 0, 0);
+}
+
+div.awesomplete {
+	display: inline-block;
+	position: relative;
+  > input {
+  	display: block;
+  }
+  > ul {
+  	position: absolute;
+  	left: 0;
+  	z-index: 5;
+  	min-width: 100%;
+  	box-sizing: border-box;
+  	list-style: none;
+  	padding: 0;
+  	margin:  0;
+  	border: 1px solid $light-grey;
+  	background: white;
+  	border-top: none;
+  	text-shadow: none;
+    font-size: 14px;
+  }
+  > ul[hidden],
+  > ul:empty {
+  	display: none;
+  }
+	> ul {
+		transition: .3s ease-in-out;
+		transform-origin: top center;
+	}
+
+	> ul[hidden],
+	> ul:empty {
+		opacity: 0;
+		transform: scaleY(0);
+		display: block;
+		transition-timing-function: ease;
+	}
+
+	> ul > li {
+		position: relative;
+		padding: 7px 10px;
+		border-bottom: solid 1px rgba(0,0,0,0.1);
+	  font-size: 14px;
+		cursor: pointer;
+    @media screen and (max-width: 600px) {
+      padding: 12px 12px;
+      font-size: 15px;
+    }
+	}
+	> ul > li:last-of-type {
+		border: none;
+	}
+
+	> ul > li:hover {
+		background: rgba(0,0,0,0.05);
+	}
+
+	> ul > li[aria-selected="true"] {
+		background: rgba(0,0,0,0.05);
+	}
+
+	mark {
+		background: #c5e1da;
+	}
+}

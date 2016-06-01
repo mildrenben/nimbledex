@@ -7,7 +7,7 @@ const Root = React.createClass({
   render() {
     return (
       <html>
-        <Head title={`Nimbledex | Ultra fast Pokedex`} name='' idnumber='001' />
+        <Head title={`Nimbledex | Ultra fast Pokedex`} name='' idnumber='001' stylesheet="homepage" />
         <body className="Homepage">
           <main>
             <div className="LogoWrap">
