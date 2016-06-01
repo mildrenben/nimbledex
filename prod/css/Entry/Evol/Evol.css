@@ -102,6 +102,10 @@
         justify-content: center;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap; }
+  .OtherTrigger--min_level {
+    -ms-flex-order: -1;
+        order: -1;
+    margin-bottom: 5px; }
   .OtherTrigger--location {
     width: 100px; }
     .OtherTrigger--location span span:not(:last-child) {

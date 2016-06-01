@@ -105,6 +105,11 @@
     flex-wrap: wrap;
   }
 
+  &--min_level {
+    order: -1;
+    margin-bottom: 5px;
+  }
+
   &--location {
     width: 100px;
     span span:not(:last-child) {
