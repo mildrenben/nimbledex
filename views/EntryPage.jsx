@@ -9,7 +9,6 @@ const Moves = require('./Entry/Moves/Moves');
 const BackToTop = require('./Components/BackToTop');
 const Head = require('./Components/Head');
 const capitaliseFirst = require('./Utilities/capitaliseFirst');
-const Tracking = require('./Components/Tracking');
 
 const Root = React.createClass({
   render() {
@@ -33,7 +32,7 @@ const Root = React.createClass({
             <Moves moves={this.props.moves} />
             <BackToTop />
           </main>
-          <Tracking />
+          <script src="/js/analytics.js"> </script>
           <script src="/js/script.js"> </script>
           <script src="/js/awesomplete.min.js"> </script>
           <script src="/js/typeahead.js"> </script>
