@@ -437,7 +437,7 @@ const pokemonNumbers = {
   "Bronzor" : "436",
   "Bronzong" : "437",
   "Bonsly" : "438",
-  "Mime jr." : "439",
+  "Mime%20jr." : "439",
   "Happiny" : "440",
   "Chatot" : "441",
   "Spiritomb" : "442",
