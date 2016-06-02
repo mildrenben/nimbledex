@@ -1,16 +1,14 @@
 const React = require('react');
 const Nav = require('./Nav/Nav');
 const Info = require('./Components/Info');
+const Head = require('./Components/Head');
+const BackToTop = require('./Components/BackToTop');
 
 const page404 = React.createClass({
   render() {
     return (
       <html>
-        <head>
-          <link rel="stylesheet" type="text/css" href="/css/404.css" />
-          <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css' />
-          <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700' rel='stylesheet' type='text/css' />
-        </head>
+        <Head title='Missingno | Nimbledex' name='Missingno' idnumber='missingno' stylesheet="404" />
         <body className="page404">
           <Nav />
           <main>
@@ -21,9 +19,8 @@ const page404 = React.createClass({
             <p>We could not find the Pokémon you were looking for</p>
             <Info />
           </main>
-          <script src="/js/script.js"> </script>
-          <script src="/js/awesomplete.min.js"> </script>
-          <script src="/js/typeahead.js"> </script>
+          <BackToTop />
+          <script src="/js/all.js"> </script>
         </body>
       </html>
     )

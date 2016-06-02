@@ -3,9 +3,20 @@ const React = require('react');
 const Head = React.createClass({
   render() {
     const imgURL = `http://nimbledex/img/sprites/${this.props.idnumber}.png`;
-    const stylesheet = this.props.stylesheet === 'entry' ?
-      <link rel="stylesheet" type="text/css" href="/css/EntryPage.css" />
-      : <link rel="stylesheet" type="text/css" href="/css/Homepage.css" />;
+
+    let stylesheet;
+    switch(this.props.stylesheet) {
+      case 'entry':
+        stylesheet = <link rel="stylesheet" type="text/css" href="/css/EntryPage.css" />;
+        break;
+      case 'homepage':
+        stylesheet = <link rel="stylesheet" type="text/css" href="/css/Homepage.css" />;
+        break;
+      case '404':
+        stylesheet = <link rel="stylesheet" type="text/css" href="/css/404.css" />;
+        break;
+    }
+
     return (
       <head>
         <meta charset="utf-8" />
