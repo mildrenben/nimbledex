@@ -62,6 +62,48 @@ That said, here's the order in which things are run:
 
 This long, convoluted method was intended to make use of Redis in a way I haven't tried before. There a timeouts littered throughout the file and they're needed as Pokeapi will begin rejecting your calls if you hammer them too quickly. I would be eternally grateful if somebody cleared this up.
 
+**Note** - Unfortunately, the Wurmple evolution line is unique, annoying and [is bugged in Pokeapi](https://github.com/PokeAPI/pokeapi/issues/163). As such, you need to manually add in the following code to overwrite the `evol` key for each Mon in the Wurmple line (265 - 269):
+
+```
+"evol": [
+        {
+            "id": "265"
+        },
+        {
+            "id": "266",
+            "other": {
+                "min_level": 7
+            },
+            "multi": true,
+            "trigger": "level-up"
+        },
+        {
+            "id": "267",
+            "other": {
+                "min_level": 10
+            },
+            "multi2": true,
+            "trigger": "level-up"
+        },
+        {
+            "id": "268",
+            "other": {
+                "min_level": 7
+            },
+            "multi": true,
+            "trigger": "level-up"
+        },
+        {
+            "id": "269",
+            "other": {
+                "min_level": 10
+            },
+            "multi2": true,
+            "trigger": "level-up"
+        }
+    ]
+```
+
 ### Views
 
 The `.jsx` files and the `.scss` are coupled in directory structure within the `views` dir. At the top level of this dir you have all the base level `.scss` files and a `.jsx` file for each page.
