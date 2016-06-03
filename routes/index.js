@@ -61,6 +61,7 @@ exports.index = function(req, res){
     else {
       path = '00' + path;
     }
+    console.log(path);
     client.get(path, function (err, val) {
       const data = JSON.parse(val);
       renderData(res,data);

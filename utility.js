@@ -263,7 +263,7 @@ function getTypeData() {
         client.set(data.name, JSON.stringify(obj));
         console.log('Completed - ' + data.name);
       });
-    }, 2000 * i);
+    }, 20 * i);
   }
 }
 
@@ -340,7 +340,7 @@ const updateTypes = (num) => {
   }
 
 const updateAllTypes = () => {
-  for (let i = 1; i <= 718; i++) {
+  for (let i = 719; i <= 721; i++) {
     let tripleId;
     if (i >= 100) {
       tripleId = i;
@@ -562,7 +562,7 @@ const updateAllMoves = () => {
 }
 
 
-updateAllMoves();
+//updateAllMoves();
 //updateAllMachines();
 //getMovesForAllMons();
 //updateAllTypes();

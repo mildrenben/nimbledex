@@ -14,7 +14,6 @@ const MoveCategory = React.createClass({
         styles.order = item.level;
       } else if (this.props.firstCol === '#') {
         firstCol = <Move className="MoveList_Number MoveList_Number--machines" data={item.machine} />;
-        console.log(item.machine);
         if (item.machine.charAt(0) === 't') {
           styles.order = item.machine.slice(2);
         } else {
