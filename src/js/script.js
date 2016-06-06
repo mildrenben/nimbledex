@@ -26,21 +26,23 @@ searchInput.addEventListener('keyup',function(e){
 // Back to top button
 var BackToTopBtn = document.getElementsByClassName('BackToTop')[0];
 
-function isScrolled() {
-  return window.scrollY > 300 ? true : false;
-}
-
-window.addEventListener('scroll', function() {
-  if (isScrolled(BackToTopBtn)) {
-    BackToTopBtn.classList.add('visible');
-  } else if (BackToTopBtn.classList.contains('visible')) {
-    BackToTopBtn.classList.remove('visible');
+if (BackToTopBtn) {
+  function isScrolled() {
+    return window.scrollY > 300 ? true : false;
   }
-});
 
-BackToTopBtn.addEventListener('click', function(){
-  document.body.scrollTop = 0;
-});
+  window.addEventListener('scroll', function() {
+    if (isScrolled(BackToTopBtn)) {
+      BackToTopBtn.classList.add('visible');
+    } else if (BackToTopBtn.classList.contains('visible')) {
+      BackToTopBtn.classList.remove('visible');
+    }
+  });
+
+  BackToTopBtn.addEventListener('click', function(){
+    document.body.scrollTop = 0;
+  });
+}
 
 var searchOffset = searchInput.getClientRects()[0].top < 16 ? 16 : searchInput.getClientRects()[0].top;
 // Sticky header
