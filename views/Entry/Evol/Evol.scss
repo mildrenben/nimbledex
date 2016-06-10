@@ -6,14 +6,9 @@
   justify-content: center;
   margin-bottom: 26px;
   &_Triggers {
-    display: flex;
     font-size: 14px;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
     margin: 0 14px;
-    flex-shrink: 0;
-    flex-direction: column;
+    max-width: 114px;
     @media screen and (max-width: 470px) {
       margin: 0 7px;
     }
