@@ -53,3 +53,11 @@ window.addEventListener('scroll', function(){
     document.body.classList.remove('fixed-header');
   }
 });
+
+// Info
+var infoToggle = document.getElementsByClassName('Info_Toggle')[0];
+var infoPopup = document.getElementsByClassName('Info_Popup')[0];
+
+infoToggle.addEventListener('click', function() {
+  infoPopup.classList.toggle('visible');
+});

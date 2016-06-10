@@ -4,7 +4,7 @@ const Info = React.createClass({
   render() {
     return (
       <div className="Info">
-        <input type="checkbox" className="Info_Toggle" />
+        <span className="Info_Toggle">i</span>
         <div className="Info_Popup">
           <p>This is an open source Pokedéx made for the community.</p>
           <p>The data is for ORAS and I will try to always keep the data consistent with the latest game.</p>

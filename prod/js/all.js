@@ -74,6 +74,14 @@ window.addEventListener('scroll', function(){
   }
 });
 
+// Info
+var infoToggle = document.getElementsByClassName('Info_Toggle')[0];
+var infoPopup = document.getElementsByClassName('Info_Popup')[0];
+
+infoToggle.addEventListener('click', function() {
+  infoPopup.classList.toggle('visible');
+});
+
 var input = document.getElementsByClassName("Search_Input")[0];
 
 new Awesomplete(input, {

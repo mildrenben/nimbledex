@@ -5,30 +5,20 @@
   bottom: 12px;
   right: 12px;
   &_Toggle {
-    position: relative;
-    &:after {
-      content: 'i';
-      font-family: serif;
-      font-style: italic;
-      position: absolute;
-      left: -2px;
-      top: -2px;
-      width: 16px;
-      height: 16px;
-      text-align: center;
-      line-height: 16px;
-      background: darken($light-grey, 5%);
-      color: white;
-      cursor: pointer;
-      border-radius: 16px;
-    }
+    font-family: serif;
+    font-style: italic;
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 18px;
+    background: darken($light-grey, 5%);
+    color: white;
+    cursor: pointer;
+    border-radius: 16px;
     &:hover {
-      &:after {
-        background: darken($light-grey, 13%);
-      }
-    }
-    &:checked + .Info_Popup {
-      display: block;
+      background: darken($light-grey, 13%);
     }
   }
   &_Popup {
@@ -50,6 +40,9 @@
       display: block;
       margin: 4px 0;
       font-weight: 700;
+    }
+    &.visible {
+      display: block;
     }
   }
   @media screen and (max-width: 600px) {
