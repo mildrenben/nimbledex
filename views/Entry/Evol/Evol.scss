@@ -133,6 +133,9 @@
   &--min_level {
     order: -1;
     margin-bottom: 5px;
+    &:first-of-type {
+      margin-bottom: 0;
+    }
   }
 
   &--location {
