@@ -60,6 +60,7 @@ if (BackToTopBtn) {
   });
 
   BackToTopBtn.addEventListener('click', function(){
+    document.documentElement.scrollTop = 0
     document.body.scrollTop = 0;
   });
 }
