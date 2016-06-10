@@ -2,7 +2,7 @@ const React = require('react');
 
 const Head = React.createClass({
   render() {
-    const imgURL = `http://nimbledex/img/sprites/${this.props.idnumber}.png`;
+    const imgURL = `http://nimbledex.com/img/sprites/${this.props.idnumber}.png`;
 
     let stylesheet;
     switch(this.props.stylesheet) {
@@ -35,7 +35,7 @@ const Head = React.createClass({
         <meta name="twitter:site" content="@nimbledex" />
         <meta name="twitter:creator" content="@mildrenben" />
         <meta name="twitter:title" content={this.props.title} />
-        <meta name="twitter:description" content="Ultra fast, minimal Pokedex with all the important info up front!" />
+        <meta name="twitter:description" content={`${this.props.idnumber} | Ultra fast, minimal Pokedex with all the important info up front!`}` />
         <meta name="twitter:image" content={imgURL} />
         <meta name="description" content="An ultra fast, minimal design Pokedex with all the important Pokemon information up front." />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
