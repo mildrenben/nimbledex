@@ -31,6 +31,12 @@ div.awesomplete {
     font-size: 14px;
     @media screen and (max-width: 600px) {
       border: none;
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+    }
+    &:first-of-type {
+      @media screen and (max-width: 600px) {
+        border-top: 1px solid rgba(0,0,0,0.1);
+      }
     }
   }
   > ul[hidden],
@@ -63,6 +69,9 @@ div.awesomplete {
 	}
 	> ul > li:last-of-type {
 		border: none;
+    @media screen and (max-width: 600px) {
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+    }
 	}
 
 	> ul > li:hover {
