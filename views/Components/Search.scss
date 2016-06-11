@@ -2,7 +2,7 @@
 @import './Awesomeplete';
 
 .Search {
-  display: inline-block;
+  display: inline-flex;
   transform: translateX(-50%);
   @include container;
   position: relative;
@@ -23,12 +23,14 @@
 
 .Search_Input {
   width: 100%;
+  height: 32px;
   box-sizing: border-box;
   padding: 6px 10px;
   font-size: 14px;
   border: solid 1px $light-grey;
   border-radius: 0;
   box-shadow: none;
+  -webkit-appearance: none;
   &:focus {
     outline: none;
   }
@@ -62,13 +64,13 @@
   position: absolute;
   top: 0;
   right: 0;
-  height: 100%;
   padding: 0 10px;
   border: none;
   background: none;
   cursor: pointer;
   border-left: solid 1px $light-grey;
   width: 36px;
+  height: 100%;
   &:focus {
     outline: none;
   }
