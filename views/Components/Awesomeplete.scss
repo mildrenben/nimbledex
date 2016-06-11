@@ -9,6 +9,21 @@
 	clip: rect(0, 0, 0, 0);
 }
 
+body:not(.fixed-header) {
+  div.awesomplete {
+    > ul {
+      @media screen and (max-width: 600px) {
+        border: 1px solid $light-grey;
+      }
+      &:first-of-type {
+        @media screen and (max-width: 600px) {
+          border-top: none;
+        }
+      }
+    }
+  }
+}
+
 div.awesomplete {
 	display: inline-block;
 	position: relative;
