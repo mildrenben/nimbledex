@@ -1,3 +1,4 @@
 ./node_modules
 node_modules
 ./nginx.conf
+nginx.conf

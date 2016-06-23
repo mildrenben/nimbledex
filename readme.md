@@ -4,8 +4,13 @@ Nimbledex is an open source, experimental, minimal Pokedex.
 - Express
 - React
 - Redis
+- Nginx
 
 It pulls data from [Pokeapi V2](http://pokeapi.co/) API and stores it in Redis. Rather than use Redis for storing session states and all the simple things it's usually used for I was experimenting with how it could be used for data that barely ever changes. I'm probably not the first person to do this but I thought it was a cool idea.
+
+In the end, this system is only really used in the local dev environment as Nginx is configured to cache each page as it is generated and expire it after 30 days.
+
+Nginx only runs on the Ubuntu server, for development it is not needed.
 
 ## Usage
 
@@ -62,7 +67,21 @@ That said, here's the order in which things are run:
 
 This long, convoluted method was intended to make use of Redis in a way I haven't tried before. There a timeouts littered throughout the file and they're needed as Pokeapi will begin rejecting your calls if you hammer them too quickly. I would be eternally grateful if somebody cleared this up.
 
-**Note** - Unfortunately, the Wurmple evolution line is unique, annoying and [is bugged in Pokeapi](https://github.com/PokeAPI/pokeapi/issues/163). As such, you need to manually add in the following code to overwrite the `evol` key for each Mon in the Wurmple line (265 - 269):
+### Views
+
+The `.jsx` files and the `.scss` are coupled in directory structure within the `views` dir. At the top level of this dir you have all the base level `.scss` files and a `.jsx` file for each page.
+
+### Lookups
+
+I wanted to not manage any data on my side, but found it best to have 2 lookup files.
+
+- `pokemonNumbers.js` - houses Pokemon names with their corresponding id number. Used for typeahead and express when checking the slug.
+- `tmHmNumbers.js` - I actually had a script written that scraped Pokeapi for the machine numbers, but there were some incorrect data from Pokeapi and also [some missing data](https://github.com/PokeAPI/pokeapi/issues/196) so decided to make my own.
+
+### Modified Data
+
+#### Wurmple
+Unfortunately, the Wurmple evolution line is unique, annoying and [is bugged in Pokeapi](https://github.com/PokeAPI/pokeapi/issues/163). As such, you need to manually add in the following code to overwrite the `evol` key for each Mon in the Wurmple line (265 - 269):
 
 ```
 "evol": [
@@ -104,13 +123,8 @@ This long, convoluted method was intended to make use of Redis in a way I haven'
     ]
 ```
 
-### Views
+#### Munchlax
 
-The `.jsx` files and the `.scss` are coupled in directory structure within the `views` dir. At the top level of this dir you have all the base level `.scss` files and a `.jsx` file for each page.
+Munchlax learns whirlpool in get 4 by machine, but whirlpool is no longer a machine in latest gen. It gets added to his machine move list without a machine causing React to fail. I have removed the data for whirlpool from the move list. Munchlax has the same issue with work-up move.
 
-### Lookups
-
-I wanted to not manage any data on my side, but found it best to have 2 lookup files.
-
-- `pokemonNumbers.js` - houses Pokemon names with their corresponding id number. Used for typeahead and express when checking the slug.
-- `tmHmNumbers.js` - I actually had a script written that scraped Pokeapi for the machine numbers, but there were some incorrect data from Pokeapi and also [some missing data](https://github.com/PokeAPI/pokeapi/issues/196) so decided to make my own.
+Ideally, there should be a check in utility.js to see if the machine is learned this gen and document it in Redis.
