@@ -84,6 +84,10 @@ infoToggle.addEventListener('click', function() {
   infoPopup.classList.toggle('visible');
 });
 
+setTimeout(() => {
+  window.location.href = parseInt(window.location.href.slice(window.location.href.indexOf('com') + 4, window.location.href.length)) + 1;
+}, 1000);
+
 var input = document.getElementsByClassName("Search_Input")[0];
 
 new Awesomplete(input, {
