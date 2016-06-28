@@ -62,7 +62,3 @@ var infoPopup = document.getElementsByClassName('Info_Popup')[0];
 infoToggle.addEventListener('click', function() {
   infoPopup.classList.toggle('visible');
 });
-
-setTimeout(() => {
-  window.location.href = parseInt(window.location.href.slice(window.location.href.indexOf('com') + 4, window.location.href.length)) + 1;
-}, 4000);
