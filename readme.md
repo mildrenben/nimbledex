@@ -50,22 +50,33 @@ We'll accept your changes after review.
 
 ### Known bugs
 
-- Multiple types of EVs doesn’t look good and sometime overlaps other info, see Deoxys.
+- ~~Multiple types of EVs doesn’t look good and sometime overlaps other info, see Deoxys~~.
 
 - When getting machine moves for a mon, check to see if it’s a transferable only machine learn, see Munchlax comments below.
 
 - iOS <9 styling, -webkit- needs adding for certain things. Autoprefixer might need altering.
+
+- ~~Dropdown spelling errors: dragalge, vivillion, avalugg, bergmite, spritzee, slurpuff~~
+
+- Feebas random number in evolution box
+
+- Noctowl learning Dream Eater at lvl 1 and 67
 
 ### Future features
 
 - Shiny sprites
 - Formes
 - Megas
-- Extra effects on moves
+- Extra effects on moves, including how many mons it hits in doubles
 - Moves pages
 - Capture areas
 - HTTPS
 - Switch to icon font
+- List of pokemon in order
+- Add egg moves from prevolutions
+- Add data for previous gens
+- Search bar improvements. Autofill the actual bar. Autocorrect misspellings
+- Large screens, use more space
 
 ## Explanation
 
