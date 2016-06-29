@@ -15,14 +15,17 @@
   text-align: left;
   display: inline-block;
   width: 100px;
+  @media screen and (max-width: 340px) {
+    width: 90px;
+  }
 }
 
 .ExtraInfo_Value {
   display: inline-block;
   width: 55px;
   white-space: pre-line;
-}
-
-.ExtraInfo_EffortValues span span + span:before {
-  content: ', ';
+  span {
+    display: block;
+    margin-bottom: 3px;
+  }
 }

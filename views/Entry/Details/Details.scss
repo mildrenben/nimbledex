@@ -14,12 +14,12 @@
     h3 {
       font-weight: 300;
       text-decoration: underline;
-      margin-bottom: 7px;
+      margin-bottom: 11px;
     }
     p {
       height: 20px;
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       margin-bottom: 1px;
       @media screen and (max-width: 340px) {
         margin-bottom: 5px;
