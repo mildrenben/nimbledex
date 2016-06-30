@@ -14,24 +14,43 @@
     height: 15px;
     display: inline-block;
     margin-right: 6px;
+  }
+}
 
-    &--low {
-      background: $red;
-    }
-    &--meh {
-      background: $orange;
-    }
-    &--med {
-      background: $amber;
-    }
-    &--good {
-      background: $light-green;
-    }
-    &--veryGood {
-      background: $green;
-    }
-    &--superb {
-      background: $blue;
-    }
+.Stats_BST {
+  display: flex;
+  align-items: flex-start;
+  .Stats_BSTName {
+    width: 70px;
+    display: inline-block;
+  }
+  .Stats_BSTDot {
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+    border-radius: 30px;
+    margin-right: 6px;
+  }
+}
+
+.Stats_BSTDot,
+.Stat_Bar {
+  &--low {
+    background: $red;
+  }
+  &--meh {
+    background: $orange;
+  }
+  &--med {
+    background: $amber;
+  }
+  &--good {
+    background: $light-green;
+  }
+  &--veryGood {
+    background: $green;
+  }
+  &--superb {
+    background: $blue;
   }
 }
