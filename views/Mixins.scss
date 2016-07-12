@@ -11,6 +11,16 @@
   }
 }
 
+@mixin link {
+  font-size: 12px;
+  color: $light-grey;
+  text-decoration: none;
+  white-space: nowrap;
+  &:hover {
+    color: $grey;
+  }
+}
+
 @mixin typeColors {
   &--normal {
     background: #A8A878;
@@ -65,5 +75,111 @@
   }
   &--fairy {
     background: #F6B4F6;
+  }
+}
+
+@mixin typeReduction($width) {
+  @media screen and (max-width: $width) {
+    font-size: 0 !important;
+    position: relative;
+    height: 15px;
+    &:before {
+      position: absolute;
+      display: inline-block;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%,-50%);
+      font-size: 12px;
+    }
+  }
+  &--normal:before {
+    @media screen and (max-width: $width) {
+      content: 'nor';
+    }
+  }
+  &--fighting:before {
+    @media screen and (max-width: $width) {
+      content: 'fght';
+    }
+  }
+  &--flying:before {
+    @media screen and (max-width: $width) {
+      content: 'fly';
+    }
+  }
+  &--fire:before {
+    @media screen and (max-width: $width) {
+      content: 'fire';
+    }
+  }
+  &--water:before {
+    @media screen and (max-width: $width) {
+      content: 'wtr';
+    }
+  }
+  &--grass:before {
+    @media screen and (max-width: $width) {
+      content: 'gra';
+    }
+  }
+  &--electric:before {
+    @media screen and (max-width: $width) {
+      content: 'elec';
+    }
+  }
+  &--poison:before {
+    @media screen and (max-width: $width) {
+      content: 'psn';
+    }
+  }
+  &--ground:before {
+    @media screen and (max-width: $width) {
+      content: 'grnd';
+    }
+  }
+  &--rock:before {
+    @media screen and (max-width: $width) {
+      content: 'rock';
+    }
+  }
+  &--psychic:before {
+    @media screen and (max-width: $width) {
+      content: 'psy';
+    }
+  }
+  &--ice:before {
+    @media screen and (max-width: $width) {
+      content: 'ice';
+    }
+  }
+  &--bug:before {
+    @media screen and (max-width: $width) {
+      content: 'bug';
+    }
+  }
+  &--dragon:before {
+    @media screen and (max-width: $width) {
+      content: 'drg';
+    }
+  }
+  &--ghost:before {
+    @media screen and (max-width: $width) {
+      content: 'gho';
+    }
+  }
+  &--dark:before {
+    @media screen and (max-width: $width) {
+      content: 'dark';
+    }
+  }
+  &--steel:before {
+    @media screen and (max-width: $width) {
+      content: 'ste';
+    }
+  }
+  &--fairy:before {
+    @media screen and (max-width: $width) {
+      content: 'fry';
+    }
   }
 }

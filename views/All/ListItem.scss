@@ -1,0 +1,101 @@
+@import '../Commons.scss';
+
+.ListItem {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  font-size: 14px;
+  background: white;
+  border-bottom: solid 1px lighten($light-grey, 30%);
+  padding: 12px 8px;
+  box-sizing: border-box;
+  text-decoration: none;
+
+  &:hover {
+    background: darken(white, 2%);
+  }
+
+  @media screen and (max-width: 500px) {
+    font-size: 13px;
+  }
+
+  &_Img {
+    width: 32px;
+    height: 32px;
+    background-image: url('../img/sprites/spritesheet.png');
+    background-repeat: no-repeat;
+  }
+
+  &_Id,
+  &_Name,
+  &_Stat {
+    display: inline-flex;
+    align-items: center;
+    height: 32px;
+  }
+
+  &_Id {
+    width: 10%;
+    justify-content: center;
+    @media screen and (max-width: 500px) {
+      display: none;
+    }
+  }
+
+  &_Name {
+    width: 22%;
+    @media screen and (max-width: 500px) {
+      margin-left: 4px;
+    }
+  }
+
+  &_Types {
+    width: 13%;
+    margin-right: 9px;
+
+    @media screen and (max-width: 500px) {
+      width: 8%;
+    }
+  }
+
+  &_Type {
+    @include typeColors;
+    @include typeReduction('500px');
+    padding: 1px 0;
+    font-size: 13px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    &:first-child {
+      margin-bottom: 3px;
+    }
+  }
+
+  &_Stats {
+    width: 45%;
+    @media screen and (max-width: 500px) {
+      width: 60%;
+    }
+  }
+
+  &_Stat {
+    display: inline-flex;
+    width: 14.285%;
+    align-items: center;
+    justify-content: center;
+    &:nth-child(even) {
+      background: lighten($light-grey, 34%);
+      border-radius: 4px;
+    }
+    @media screen and (max-width: 500px) {
+      width: 16.66%;
+    }
+    &:last-of-type {
+      @media screen and (max-width: 500px) {
+        display: none;
+      }
+    }
+  }
+}

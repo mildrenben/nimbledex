@@ -1,5 +1,7 @@
 "use strict"
 
+const Promise = require('bluebird');
+
 const Redis = {
   port: '6379',
   host: '127.0.0.1'
@@ -35,11 +37,60 @@ function renderHomepage(res) {
   res.render('Homepage');
 }
 
+const promiseWhile = function(condition, action) {
+    let resolver = Promise.defer();
+    let loop = function() {
+        if (!condition()) return resolver.resolve();
+        return Promise.cast(action())
+            .then(loop)
+            .catch(resolver.reject);
+    };
+    process.nextTick(loop);
+    return resolver.promise;
+};
+
+function renderAll(res) {
+  return new Promise ((resolve, reject) => {
+      let arr = [];
+      let sum = 1,
+          stop = 722;
+
+    promiseWhile(function() {
+        return sum < stop;
+    }, function() {
+        return new Promise((resolve, reject) => {
+          let number;
+          if (sum >= 100) {
+            number = sum;
+          } else if (sum > 9 && sum < 100) {
+            number = '0' + sum;
+          } else {
+            number = '00' + sum;
+          }
+          client.get(number, function(err, val) {
+            let data = JSON.parse(val);
+            arr.push(data);
+            resolve();
+          });
+          sum++;
+        })
+    }).then(function() {
+      res.render('All', {arr});
+    });
+  });
+  ;
+}
+
 exports.index = function(req, res){
   let path = req.url.slice(1);
 
   if (req.url === '/') {
     renderHomepage(res);
+    return;
+  }
+
+  if (path === 'all' || path === 'All') {
+    renderAll(res);
     return;
   }
 

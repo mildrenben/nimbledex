@@ -15,6 +15,9 @@ const Head = React.createClass({
       case '404':
         stylesheet = <link rel="stylesheet" type="text/css" href="/css/404.css" />;
         break;
+      case 'all':
+        stylesheet = <link rel="stylesheet" type="text/css" href="/css/All.css" />;
+        break;
     }
 
     return (

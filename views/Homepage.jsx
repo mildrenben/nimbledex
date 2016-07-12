@@ -23,6 +23,7 @@ const Root = React.createClass({
             </div>
             <h3>A minimal, ultra fast Pokedéx</h3>
             <Search />
+            <a href="/all">All Pokemon</a>
             <Info />
           </main>
           <script src="/js/all.js"> </script>

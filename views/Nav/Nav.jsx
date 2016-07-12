@@ -1,5 +1,6 @@
 const React = require('react');
 const Search = require('../Components/Search');
+const SideNav = require('../Components/SideNav');
 
 const Nav = React.createClass({
   render() {
@@ -17,6 +18,10 @@ const Nav = React.createClass({
           </div>
         </div>
         <Search />
+        <div className="Links">
+          <a className="Links_All" href="/all">All Pokemon</a>
+        </div>
+        <SideNav />
       </nav>
     )
   }

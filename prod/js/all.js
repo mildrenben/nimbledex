@@ -67,12 +67,24 @@ if (BackToTopBtn) {
 }
 
 var searchOffset = searchInput.getClientRects()[0].top < 16 ? 16 : searchInput.getClientRects()[0].top;
-// Sticky header
+var allHeader = document.getElementsByClassName('AllListHeader')[0];
+if (allHeader) {
+  var allHeaderOffset = allHeader.getClientRects()[0].top < 64 ? 64 : allHeader.getClientRects()[0].top;
+}
+
+// Sticky headers
 window.addEventListener('scroll', function(){
   if (window.scrollY > searchOffset) {
     document.body.classList.add('fixed-header');
   } else if (document.body.classList.contains('fixed-header')) {
     document.body.classList.remove('fixed-header');
+  }
+  if (allHeader) {
+    if (window.scrollY > allHeaderOffset) {
+      document.body.classList.add('fixed-allHeader');
+    } else if (document.body.classList.contains('fixed-allHeader')) {
+      document.body.classList.remove('fixed-allHeader');
+    }
   }
 });
 

@@ -1,18 +1,24 @@
 @import '../Commons';
 @import './Awesomeplete';
 
+body:not(.Homepage) .Search {
+  margin: 0 8px;
+  @media screen and (max-width: 600px) {
+    margin: 0;
+  }
+}
+
 .Search {
   display: inline-flex;
-  transform: translateX(-50%);
   @include container;
   position: relative;
   z-index: 2;
   @media screen and (max-width: 1000px) {
     width: 80%;
     max-width: 1000px;
-    transform: none;
   }
   @media screen and (max-width: 600px) {
+    margin: 0;
     width: 100%;
   }
 }

@@ -1,0 +1,25 @@
+@import '../Commons.scss';
+
+.SideNav {
+  position: absolute;
+  left: 20px;
+  top: 20%;
+  border-radius: 5px;
+  border: solid 1px $light-grey;
+  opacity: 0;
+  transition: opacity 0.2s ease-out;
+  width: 130px;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  li {
+    padding: 9px 13px;
+    font-size: 13px;
+
+    &:not(:last-child) {
+      border-bottom: solid 1px $light-grey;
+    }
+  }
+}
