@@ -2,6 +2,7 @@ const React = require('react');
 const Nav = require('./Nav/Nav');
 const Info = require('./Components/Info');
 const Head = require('./Components/Head');
+const FootScripts = require('./Components/FootScripts');
 const BackToTop = require('./Components/BackToTop');
 
 const page404 = React.createClass({
@@ -20,7 +21,7 @@ const page404 = React.createClass({
             <Info />
           </main>
           <BackToTop />
-          <script src="/js/all.js"> </script>
+          <FootScripts />
         </body>
       </html>
     )

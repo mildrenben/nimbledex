@@ -2,6 +2,7 @@ const React = require('react');
 const Nav = require('./Nav/Nav');
 const Info = require('./Components/Info');
 const Head = require('./Components/Head');
+const FootScripts = require('./Components/FootScripts');
 const BackToTop = require('./Components/BackToTop');
 const ListItem = require('./All/ListItem');
 
@@ -45,7 +46,7 @@ const All = React.createClass({
           </main>
           <BackToTop />
           <Info />
-          <script src="/js/all.js"> </script>
+          <FootScripts />
         </body>
       </html>
     );

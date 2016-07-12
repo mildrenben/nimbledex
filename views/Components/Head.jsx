@@ -3,20 +3,21 @@ const React = require('react');
 const Head = React.createClass({
   render() {
     const imgURL = `http://nimbledex.com/img/sprites/${this.props.idnumber}.png`;
+    const version = '?version=1.1';
 
     let stylesheet;
     switch(this.props.stylesheet) {
       case 'entry':
-        stylesheet = <link rel="stylesheet" type="text/css" href="/css/EntryPage.css" />;
+        stylesheet = <link rel="stylesheet" type="text/css" href={`/css/EntryPage.css${version}`} />;
         break;
       case 'homepage':
-        stylesheet = <link rel="stylesheet" type="text/css" href="/css/Homepage.css" />;
+        stylesheet = <link rel="stylesheet" type="text/css" href={`/css/Homepage.css${version}`} />;
         break;
       case '404':
-        stylesheet = <link rel="stylesheet" type="text/css" href="/css/404.css" />;
+        stylesheet = <link rel="stylesheet" type="text/css" href={`/css/404.css${version}`} />;
         break;
       case 'all':
-        stylesheet = <link rel="stylesheet" type="text/css" href="/css/All.css" />;
+        stylesheet = <link rel="stylesheet" type="text/css" href={`/css/All.css${version}`} />;
         break;
     }
 

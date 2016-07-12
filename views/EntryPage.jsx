@@ -8,6 +8,7 @@ const Info = require('./Components/Info');
 const Moves = require('./Entry/Moves/Moves');
 const BackToTop = require('./Components/BackToTop');
 const Head = require('./Components/Head');
+const FootScripts = require('./Components/FootScripts');
 const capitaliseFirst = require('./Utilities/capitaliseFirst');
 
 const Root = React.createClass({
@@ -40,7 +41,7 @@ const Root = React.createClass({
             <Moves moves={this.props.moves} />
             <BackToTop />
           </main>
-          <script src="/js/all.js"> </script>
+          <FootScripts />
         </body>
       </html>
     )

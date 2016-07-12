@@ -2,6 +2,7 @@ const React = require('react');
 const Search = require('./Components/Search');
 const Info = require('./Components/Info');
 const Head = require('./Components/Head');
+const FootScripts = require('./Components/FootScripts');
 
 const Root = React.createClass({
   render() {
@@ -26,7 +27,7 @@ const Root = React.createClass({
             <a href="/all">All Pokemon</a>
             <Info />
           </main>
-          <script src="/js/all.js"> </script>
+          <FootScripts />
         </body>
       </html>
     );
