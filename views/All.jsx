@@ -10,11 +10,20 @@ const All = React.createClass({
     const items = this.props.arr.map((mon) => {
       return <ListItem mon={mon} />;
     });
+    const sideNavItems = [
+      { name: '#100', link: '#100' },
+      { name: '#200', link: '#200' },
+      { name: '#300', link: '#300' },
+      { name: '#400', link: '#400' },
+      { name: '#500', link: '#500' },
+      { name: '#600', link: '#600' },
+      { name: '#700', link: '#700' },
+    ];
     return (
       <html>
         <Head title='All Pokemon | Nimbledex' name='All' idnumber='001' stylesheet="all" />
         <body className="All">
-          <Nav />
+          <Nav sideNavItems={sideNavItems} />
           <main>
             <div className="AllList">
               <div className="AllListHeader">

@@ -61,7 +61,7 @@ if (BackToTopBtn) {
   });
 
   BackToTopBtn.addEventListener('click', function(){
-    document.documentElement.scrollTop = 0
+    document.documentElement.scrollTop = 0;
     document.body.scrollTop = 0;
   });
 }
@@ -87,6 +87,20 @@ window.addEventListener('scroll', function(){
     }
   }
 });
+
+// Anchor ID links on All page
+if (window.location.pathname === '/all') {
+  var sideNavLinks = document.querySelectorAll('.SideNav_Link');
+  for (var i = 0; i < sideNavLinks.length; i++) {
+    sideNavLinks[i].addEventListener('click', function(event) {
+      event.preventDefault();
+      var linkTarget = document.getElementById(this.textContent.slice(1));
+      var linkTargetOffset = linkTarget.offsetTop - 100;
+      document.documentElement.scrollTop = linkTargetOffset;
+      document.body.scrollTop = linkTargetOffset;
+    });
+  }
+}
 
 // Info
 var infoToggle = document.getElementsByClassName('Info_Toggle')[0];
