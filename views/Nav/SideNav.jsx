@@ -2,6 +2,10 @@ const React = require('react');
 
 const SideNav = React.createClass({
   render() {
+    if (this.props.navItems === null) {
+      return null;
+    }
+
     const navItems = this.props.navItems.map((item) => {
       return (
         <li className="SideNav_Link">
