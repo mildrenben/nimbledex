@@ -13,11 +13,19 @@ const capitaliseFirst = require('./Utilities/capitaliseFirst');
 const Root = React.createClass({
   render() {
     const title = capitaliseFirst(this.props.name);
+    const sideNavItems = [
+      { name: 'Id', link: '#Id' },
+      { name: 'Details', link: '#Details' },
+      { name: 'Lvl Up Moves', link: '#LevelUp' },
+      { name: 'TM/HM Moves', link: '#TM/HM' },
+      { name: 'Tutor Moves', link: '#Tutor' },
+      { name: 'Egg Moves', link: '#Egg' },
+    ];
     return (
       <html prefix="og: http://ogp.me/ns#">
         <Head title={`${title} | Nimbledex`} name={this.props.name} idnumber={this.props.id} stylesheet="entry"/>
         <body>
-          <Nav />
+          <Nav sideNavItems={sideNavItems}/>
           <main>
             <Id name={this.props.name} idnumber={this.props.id} types={this.props.types} />
             <Evol evol={this.props.evol} />

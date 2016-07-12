@@ -32,8 +32,9 @@ const MoveCategory = React.createClass({
         </div>
       );
     });
+
     return (
-      <div className={`MoveListWrap MoveListWrap--${this.props.title}`}>
+      <div className={`MoveListWrap MoveListWrap--${this.props.title}`} id={this.props.title.replace(' ', '')}>
         <h3>{this.props.title} Moves</h3>
         <div className="MoveListHeader">
           {this.props.firstCol &&

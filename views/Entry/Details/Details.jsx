@@ -6,7 +6,7 @@ const Stats = require('./Stats');
 const Details = React.createClass({
   render() {
     return (
-      <div className="Details">
+      <div className="Details" id="Details">
         <Abilities abilities={this.props.abilities} />
         <ExtraInfo
           catchRate={this.props.catchRate}

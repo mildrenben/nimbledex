@@ -5,7 +5,7 @@ const Id = React.createClass({
   render() {
     const imgURL = `/img/sprites/${this.props.idnumber}.png`;
     return (
-      <div className="Id">
+      <div className="Id" id="Id">
         <img className="Id_Img" src={imgURL} />
         <div className="Id_Identifiers">
           <h1 className="Id_Name">{this.props.name}</h1>
