@@ -34,7 +34,6 @@ const Stats = React.createClass({
     });
 
     const bst = this.bst(this.props.stats);
-    console.log(bst);
 
     return (
       <div className="Stats">
