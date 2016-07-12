@@ -74,7 +74,7 @@ if (window.location.pathname === '/all') {
     sideNavLinks[i].addEventListener('click', function(event) {
       event.preventDefault();
       var linkTarget = document.getElementById(this.textContent.slice(1));
-      var linkTargetOffset = linkTarget.offsetTop - 100;
+      var linkTargetOffset = linkTarget.offsetTop - 80;
       document.documentElement.scrollTop = linkTargetOffset;
       document.body.scrollTop = linkTargetOffset;
     });
