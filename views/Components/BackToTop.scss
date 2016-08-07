@@ -4,11 +4,12 @@
   border: solid 1px $light-grey;
   text-transform: uppercase;
   position: fixed;
-  bottom: 40px;
-  right: 9px;
+  bottom: 50px;
+  right: 12px;
+  border-radius: 4px;
   cursor: pointer;
-  height: 24px;
-  width: 24px;
+  height: 28px;
+  width: 28px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -16,15 +17,20 @@
   opacity: 0;
   z-index: -1;
   &.visible {
-    opacity: 1;
+    opacity: 0.4;
     z-index: 1;
   }
   &:hover {
+    opacity: 1;
     background: lighten($light-grey, 30%);
   }
 
   .Icon {
     margin-right: 0;
+  }
+  @media screen and (max-width: 800px) {
+    width: 47px;
+    bottom: 110px;
   }
   @media screen and (max-width: 600px) {
     display: none;

@@ -1,10 +1,16 @@
 const React = require('react');
+const NextPrevBtns = require('./NextPrevBtns');
 
 const Info = React.createClass({
   render() {
+    const currentNum = parseInt(this.props.id);
+    const prev = currentNum - 1;
+    const next = currentNum + 1;
+
     return (
       <div className="Info">
-        <span className="Info_Toggle">i</span>
+        {this.props.id && <NextPrevBtns prev={prev} next={next}/>}
+        <span className="Info_Toggle">Info</span>
         <div className="Info_Popup">
           <p>This is an open source Pokedéx made for the community.</p>
           <p>The data is for ORAS and I will try to always keep the data consistent with the latest game.</p>

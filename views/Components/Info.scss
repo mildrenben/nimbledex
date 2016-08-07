@@ -1,25 +1,32 @@
-@import  '../Commons';
+@import '../Commons';
+@import './NextPrevBtns';
 
 .Info {
   position: fixed;
   bottom: 12px;
   right: 12px;
-  &_Toggle {
-    font-family: serif;
-    font-style: italic;
+  font-size: 13px;
+  line-height: 18px;
+  cursor: pointer;
+  border: solid 1px $light-grey;
+  border-radius: 4px;
+  opacity: 0.3;
+  transition: opacity 0.2s ease-out;
+  &:hover {
+    opacity: 1;
+  }
+  &_Toggle,
+  a {
+    color: $grey;
     display: inline-block;
-    width: 18px;
-    height: 18px;
     text-align: center;
-    font-size: 14px;
-    line-height: 18px;
-    background: darken($light-grey, 5%);
-    color: white;
-    cursor: pointer;
-    border-radius: 16px;
+    padding: 5px 8px;
     &:hover {
-      background: darken($light-grey, 13%);
+      background: white;
     }
+  }
+  &_Toggle {
+    border-radius: 0 4px 4px 0;
   }
   &_Popup {
     position: absolute;
@@ -40,9 +47,20 @@
       display: block;
       margin: 4px 0;
       font-weight: 700;
+      text-align: left;
     }
     &.visible {
       display: block;
+    }
+  }
+  @media screen and (max-width: 800px) {
+    .Info_Toggle,
+    .NextPrevBtns,
+    .NextPrevBtns_Btn {
+      display: block;
+    }
+    .Info_Toggle {
+      border-radius: 0 0 4px 4px;
     }
   }
   @media screen and (max-width: 600px) {

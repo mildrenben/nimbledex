@@ -37,7 +37,7 @@ const Root = React.createClass({
               ev={this.props.ev}
               stats={this.props.stats} />
             <DmgChart dmgChart={this.props.dmgChart} />
-            <Info />
+            <Info id={this.props.id}/>
             <Moves moves={this.props.moves} />
             <BackToTop />
           </main>

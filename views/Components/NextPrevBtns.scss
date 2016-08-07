@@ -1,0 +1,23 @@
+@import '../Commons';
+
+.NextPrevBtns {
+  display: inline-block;
+  a {
+    text-decoration: none;
+    &.NextPrevBtns_Btn--prev {
+      border-radius: 4px 0 0 4px;
+      @media screen and (max-width: 800px) {
+        border-radius: 4px 4px 0 0;
+      }
+    }
+    &.NextPrevBtns_Btn--next {
+      border-left: solid 1px $light-grey;
+      border-right: solid 1px $light-grey;
+      @media screen and (max-width: 800px) {
+        border: none;
+        border-top: solid 1px $light-grey;
+        border-bottom: solid 1px $light-grey;
+      }
+    }
+  }
+}
