@@ -13,7 +13,8 @@ const capitaliseFirst = require('./Utilities/capitaliseFirst');
 
 const Root = React.createClass({
   render() {
-    const title = capitaliseFirst(this.props.name);
+    const props = this.props;
+    const title = capitaliseFirst(props.name);
     const sideNavItems = [
       { name: 'Id', link: '#Id' },
       { name: 'Details', link: '#Details' },
@@ -22,23 +23,24 @@ const Root = React.createClass({
       { name: 'Tutor Moves', link: '#Tutor' },
       { name: 'Egg Moves', link: '#Egg' },
     ];
+
     return (
       <html prefix="og: http://ogp.me/ns#">
-        <Head title={`${title} | Nimbledex`} name={this.props.name} idnumber={this.props.id} stylesheet="entry"/>
+        <Head title={`${title} | Nimbledex`} name={props.name} idnumber={props.id} stylesheet="entry"/>
         <body>
-          <Nav sideNavItems={sideNavItems}/>
+          <Nav sideNavItems={sideNavItems} />
           <main>
-            <Id name={this.props.name} idnumber={this.props.id} types={this.props.types} />
-            <Evol evol={this.props.evol} />
+            <Id name={props.name} idnumber={props.id} types={props.types} />
+            <Evol evol={props.evol} />
             <Details
-              abilities={this.props.abilities}
-              catchRate={this.props.captureRate}
-              hatchCounter={this.props.hatchCounter}
-              ev={this.props.ev}
-              stats={this.props.stats} />
-            <DmgChart dmgChart={this.props.dmgChart} />
-            <Info id={this.props.id}/>
-            <Moves moves={this.props.moves} />
+              abilities={props.abilities}
+              catchRate={props.captureRate}
+              hatchCounter={props.hatchCounter}
+              ev={props.ev}
+              stats={props.stats} />
+            <DmgChart dmgChart={props.dmgChart} />
+            <Info id={props.id} />
+            <Moves moves={props.moves} types={props.types} />
             <BackToTop />
           </main>
           <FootScripts />

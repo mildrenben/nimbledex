@@ -21,8 +21,12 @@ const MoveCategory = React.createClass({
         }
       }
 
+      let isStab = this.props.types.indexOf(item.type) > -1 ?
+        'MoveList_Move--stab' :
+        'MoveList_Move--notStab';
+
       return (
-        <div className="MoveList_Move" style={styles}>
+        <div className={`MoveList_Move ${isStab}`} style={styles}>
           {firstCol}
           <Move className="MoveList_Name" data={formatString(item.name)} />
           <Move className={`MoveList_Type MoveList_Type--${item.type}`} data={item.type} />
