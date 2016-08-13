@@ -562,6 +562,29 @@ const updateAllMoves = () => {
 }
 
 
+// Add egg moves from the first mon in an
+// evo line to the rest of the evo line
+const updatePrevoEggMoves = (id) => {
+  const num = tripleId(id);
+  client.get(num, (err,val) => {
+    const Val = JSON.parse(val);
+    if (Val.evol.length !== 1 && Val.evol[0].id !== num) {
+      client.get(Val.evol[0].id, (err2, val2) => {
+        const Val2 = JSON.parse(val2);
+        Val.moves.egg = Val2.moves.egg;
+        client.set(num, JSON.stringify(Val));
+      });
+    }
+  });
+}
+
+const updateAllPrevoEggMoves = () => {
+  for (let i = 1; i <= 721; i++) {
+    updatePrevoEggMoves(i);
+  }
+}
+
+//updateAllPrevoEggMoves();
 //updateAllMoves();
 //updateAllMachines();
 //getMovesForAllMons();
