@@ -584,6 +584,47 @@ const updateAllPrevoEggMoves = () => {
   }
 }
 
+// Read ability of mon and create db entry
+// if needed, otherwise simply add mon num
+// to the db entry
+const updateAbility = (id) => {
+  const num = tripleId(id);
+  client.get(num, (err, val) => {
+    const Val = JSON.parse(val);
+    for (let i = 0; i < Val.abilities.length; i++) {
+      client.get(`__${Val.abilities[i].name}`, (err2,val2) => {
+        if (val2 === null) {
+          // If no ability record is found, create one
+          let obj = {
+            name: Val.abilities[i].name,
+            description: Val.abilities[i].description,
+            mons: [Val.id],
+          };
+          console.log('creating');
+          client.set(`__${Val.abilities[i].name}`, JSON.stringify(obj));
+        } else {
+          // Else append mon id to ability
+          const Val2 = JSON.parse(val2);
+          if (Val2.mons.indexOf(Val.id) === -1) {
+            Val2.mons.push(Val.id);
+            console.log('adding');
+            client.set(`__${Val2.name}`, JSON.stringify(Val2));
+          }
+        }
+      });
+    }
+  });
+}
+
+const updateAllAbilities = () => {
+  for (let i = 1; i <= 721; i++) {
+    setTimeout(() => {
+      updateAbility(i);
+    }, 2000 * i);
+  }
+}
+
+//updateAllAbilities();
 //updateAllPrevoEggMoves();
 //updateAllMoves();
 //updateAllMachines();
