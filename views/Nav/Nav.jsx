@@ -21,7 +21,9 @@ const Nav = React.createClass({
         <div className="Links">
           <a className="Links_All" href="/all">All Pokemon</a>
         </div>
-        <SideNav navItems={this.props.sideNavItems} />
+        {this.props.sideNavItems &&
+          <SideNav navItems={this.props.sideNavItems} />
+        }
       </nav>
     )
   }

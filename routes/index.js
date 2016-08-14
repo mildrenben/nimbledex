@@ -15,8 +15,7 @@ const lookup = require('../lookups/pokemonNumbers.js');
 function renderData(res,data) {
   if (data === null || data === undefined) {
     res.render('404', '');
-  }
-  else {
+  } else {
     res.render('EntryPage', {
       name: data.name,
       types: data.types,
@@ -81,6 +80,36 @@ function renderAll(res) {
   ;
 }
 
+function getDataForArrayOfMons (arr) {
+  return new Promise ((resolve, reject) => {
+    const monData = [];
+    for (let i = 0; i < arr.length; i++) {
+      client.get(arr[i], (err, val) => {
+        const Val = JSON.parse(val);
+        monData.push(Val);
+        if (i === arr.length -1) {
+          resolve(monData);
+        }
+      });
+    }
+  })
+}
+
+function renderAbility(res, ability) {
+  client.get(`__${ability.toLowerCase()}`, (err, val) => {
+    if (val === null) {
+      res.render('404', '');
+      return;
+    }
+    let data = JSON.parse(val);
+    getDataForArrayOfMons(data.mons)
+      .then((monData) => {
+        data.monData = monData;
+        res.render('AbilityPage',{data});
+      });
+  });
+}
+
 exports.index = function(req, res){
   let path = req.url.slice(1);
 
@@ -91,6 +120,12 @@ exports.index = function(req, res){
 
   if (path === 'all' || path === 'All') {
     renderAll(res);
+    return;
+  }
+
+  if (path.toLowerCase().includes('ability/')) {
+    const ability = path.substring(path.toLowerCase().indexOf('ability/') + 8, path.length);
+    renderAbility(res, ability);
     return;
   }
 

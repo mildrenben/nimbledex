@@ -12,6 +12,9 @@
 
 .Ability {
   margin-right: auto;
+  a {
+    text-decoration: none;
+  }
   &:hover {
     cursor: help;
   }

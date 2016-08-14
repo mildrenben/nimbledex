@@ -101,3 +101,27 @@ div.awesomplete {
 		background: #c5e1da;
 	}
 }
+
+.Awesomplete_Pokemon,
+.Awesomplete_Ability {
+  &:after {
+    position: absolute;
+    right: 8px;
+    margin-top: 3px;
+    color: $light-grey;
+    font-size: 10px;
+    text-transform: lowercase;
+  }
+}
+
+.Awesomplete_Ability {
+  &:after {
+    content: 'Ability';
+  }
+}
+
+.Awesomplete_Pokemon {
+  &:after {
+    content: 'Pokemon';
+  }
+}

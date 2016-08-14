@@ -6,7 +6,7 @@ const Abilities = React.createClass({
     const abilities = this.props.abilities.map(function(ability){
       return (
         <p className={`Ability TooltipWrap ${ability.hidden && 'Ability--hidden'}`}>
-          {formatString(ability.name)}
+          <a href={`/ability/${ability.name}`}>{formatString(ability.name)}</a>
           { ability.hidden &&
             <span className="Ability_Hidden">hidden</span>
           }

@@ -19,6 +19,9 @@ const Head = React.createClass({
       case 'all':
         stylesheet = <link rel="stylesheet" type="text/css" href={`/css/All.css${version}`} />;
         break;
+      case 'ability':
+        stylesheet = <link rel="stylesheet" type="text/css" href={`/css/AbilityPage.css${version}`} />;
+        break;
     }
 
     return (

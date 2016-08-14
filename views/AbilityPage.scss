@@ -1,0 +1,36 @@
+@import './Reset',
+        './Fonts',
+        './Nav/Nav',
+        './Components/Search',
+        './Components/Icon',
+        './Components/Info',
+        './Components/BackToTop',
+        './Components/MonList',
+        './Commons',
+        './Base';
+
+.AbilityPage {
+  &_Title {
+    font-size: 30px;
+    font-weight: 500;
+    margin: 30px 0 16px;
+    text-transform: capitalize;
+    span {
+      font-size: 16px;
+      color: $light-grey;
+    }
+  }
+  &_Description {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 19px;
+    margin-bottom: 50px;
+  }
+  &_MonsText {
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: 400;
+    text-decoration: underline;
+    text-transform: lowercase;
+  }
+}

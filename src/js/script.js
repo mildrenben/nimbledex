@@ -46,9 +46,9 @@ if (BackToTopBtn) {
 }
 
 var searchOffset = searchInput.getClientRects()[0].top < 16 ? 16 : searchInput.getClientRects()[0].top;
-var allHeader = document.getElementsByClassName('AllListHeader')[0];
-if (allHeader) {
-  var allHeaderOffset = allHeader.getClientRects()[0].top < 64 ? 64 : allHeader.getClientRects()[0].top;
+var monListHeader = document.getElementsByClassName('MonListHeader')[0];
+if (monListHeader) {
+  var monListHeaderOffset = monListHeader.getClientRects()[0].top < 64 ? 64 : monListHeader.getClientRects()[0].top;
 }
 
 // Sticky headers
@@ -58,17 +58,17 @@ window.addEventListener('scroll', function(){
   } else if (document.body.classList.contains('fixed-header')) {
     document.body.classList.remove('fixed-header');
   }
-  if (allHeader) {
-    if (window.scrollY > allHeaderOffset) {
-      document.body.classList.add('fixed-allHeader');
-    } else if (document.body.classList.contains('fixed-allHeader')) {
-      document.body.classList.remove('fixed-allHeader');
+  if (monListHeader) {
+    if (window.scrollY > monListHeaderOffset) {
+      document.body.classList.add('fixed-monHeader');
+    } else if (document.body.classList.contains('fixed-monHeader')) {
+      document.body.classList.remove('fixed-monHeader');
     }
   }
 });
 
-// Anchor ID links on All page
-if (window.location.pathname === '/all') {
+// Anchor ID links for Mon List
+if (window.location.pathname === '/all' || window.location.pathname.includes('ability')) {
   var sideNavLinks = document.querySelectorAll('.SideNav_Link');
   for (var i = 0; i < sideNavLinks.length; i++) {
     sideNavLinks[i].addEventListener('click', function(event) {
