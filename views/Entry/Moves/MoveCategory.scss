@@ -98,7 +98,7 @@
     background: white;
     font-size: 14px;
     &--stab {
-      background: #f5f3ed;
+      background: darken(white, 4%);
     }
     &:hover {
       background: darken(white, 2%);
