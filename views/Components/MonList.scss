@@ -38,12 +38,15 @@ main {
 
 .MonList {
   border: solid 1px lighten($light-grey, 12%);
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .MonListHeader {
   font-size: 13px;
   font-weight: 700;
   padding: 10px 8px;
+  width: 100%;
   box-sizing: border-box;
   background: white;
   border-bottom: solid 1px lighten($light-grey, 30%);

@@ -7,12 +7,12 @@ const Details = React.createClass({
   render() {
     return (
       <div className="Details" id="Details">
-        <Abilities abilities={this.props.abilities} />
+        <Abilities abilities={this.props.abilities} forms={this.props.forms} />
         <ExtraInfo
           catchRate={this.props.catchRate}
           hatchCounter={this.props.hatchCounter}
           ev={this.props.ev} />
-        <Stats stats={this.props.stats} />
+        <Stats stats={this.props.stats} forms={this.props.forms}/>
       </div>
     )
   }

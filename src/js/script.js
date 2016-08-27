@@ -88,3 +88,15 @@ var infoPopup = document.getElementsByClassName('Info_Popup')[0];
 infoToggle.addEventListener('click', function() {
   infoPopup.classList.toggle('visible');
 });
+
+// Form Tabs
+var formTabs = document.getElementsByClassName('FormTabs_Tab');
+
+if (formTabs) {
+  for (var i = 0; i < formTabs.length; i++) {
+    formTabs[i].addEventListener('click', function() {
+      document.body.className = '';
+      document.body.className = this.id;
+    });
+  }
+}

@@ -82,9 +82,13 @@ const ListItem = React.createClass({
     const stats = this.getStats();
     const imgPos = this.getImgPos();
     const isDivisible100 = this.props.mon.id % 100 === 0;
+    const styles = {
+      order: mon.id,
+    };
 
     return (
-      <a className="ListItem" href={`/${mon.id}`} id={isDivisible100 ? this.props.mon.id : null}>
+      <a className="ListItem" href={`/${mon.id}`} id={isDivisible100 ? this.props.mon.id : null}
+        style={styles}>
         <span className="ListItem_Img" style={{ backgroundPosition: imgPos }}></span>
         <span className="ListItem_Id">{mon.id}</span>
         <span className="ListItem_Name">{mon.name}</span>

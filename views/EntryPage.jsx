@@ -9,6 +9,7 @@ const Moves = require('./Entry/Moves/Moves');
 const BackToTop = require('./Components/BackToTop');
 const Head = require('./Components/Head');
 const FootScripts = require('./Components/FootScripts');
+const FormTabs = require('./Entry/FormTabs');
 const capitaliseFirst = require('./Utilities/capitaliseFirst');
 
 const Root = React.createClass({
@@ -27,18 +28,20 @@ const Root = React.createClass({
     return (
       <html prefix="og: http://ogp.me/ns#">
         <Head title={`${title} | Nimbledex`} name={props.name} idnumber={props.id} stylesheet="entry"/>
-        <body>
+        <body className="default">
           <Nav sideNavItems={sideNavItems} />
+          <FormTabs forms={props.forms} name={props.name} />
           <main>
-            <Id name={props.name} idnumber={props.id} types={props.types} />
+            <Id name={props.name} idnumber={props.id} types={props.types} forms={props.forms}/>
             <Evol evol={props.evol} />
             <Details
               abilities={props.abilities}
               catchRate={props.captureRate}
               hatchCounter={props.hatchCounter}
               ev={props.ev}
-              stats={props.stats} />
-            <DmgChart dmgChart={props.dmgChart} />
+              stats={props.stats}
+              forms={props.forms} />
+            <DmgChart dmgChart={props.dmgChart} forms={props.forms} />
             <Info id={props.id} />
             <Moves moves={props.moves} types={props.types} />
             <BackToTop />

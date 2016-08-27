@@ -1,7 +1,26 @@
 const React = require('react');
 const Stat = require('./Stat');
+const suffix = ['default', 'form-1', 'form-2'];
 
 const Stats = React.createClass({
+  render() {
+    return (
+      <span>
+        <StatsSet stats={this.props.stats} suffix="default" />
+        {this.props.forms &&
+          <StatsSet stats={this.props.forms[0].stats} suffix="form-1" />
+        }
+        {this.props.forms && this.props.forms.length > 1 &&
+          <StatsSet stats={this.props.forms[1].stats} suffix="form-2" />
+        }
+      </span>
+    );
+  }
+});
+
+const StatOrder = ['HP', 'Atk', 'Def', 'SpAtk', 'SpDef', 'Spe'];
+
+const StatsSet = React.createClass({
   bst(vals) {
     const bstNum = vals.reduce((total, n) => {
       return total + n;
@@ -29,20 +48,14 @@ const Stats = React.createClass({
     return bst;
   },
   render() {
-    const stats = this.props.stats.map(function(stat){
-      return <div className='Stat'>{stat}</div>
+    const items =  this.props.stats.map((stat, i) => {
+        return <Stat value={stat} name={StatOrder[i]} />
     });
-
     const bst = this.bst(this.props.stats);
 
     return (
-      <div className="Stats">
-        <Stat value={this.props.stats[0]} name='HP' />
-        <Stat value={this.props.stats[1]} name='Atk' />
-        <Stat value={this.props.stats[2]} name='Def' />
-        <Stat value={this.props.stats[3]} name='SpAtk' />
-        <Stat value={this.props.stats[4]} name='SpDef' />
-        <Stat value={this.props.stats[5]} name='Spe' />
+      <div className={`Stats Stats--${this.props.suffix}`}>
+        {items}
         <div className="Stats_BST">
           <span className="Stats_BSTName">total</span>
           <span className={`Stats_BSTDot Stats_BSTDot--${bst.color}`}></span>

@@ -28,6 +28,7 @@ function renderData(res,data) {
       stats: data.stats,
       dmgChart: data.dmgChart,
       moves: data.moves,
+      forms: data.forms,
      });
    }
 };

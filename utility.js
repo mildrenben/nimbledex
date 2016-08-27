@@ -267,10 +267,16 @@ function getTypeData() {
   }
 }
 
-function getMonData(i) {
+function getMonData(i, formNum) {
   return new Promise((resolve, reject) => {
     client.get(i, function(err, val) {
-      resolve(JSON.parse(val));
+      if (typeof formNum === 'number') {
+        const Val = JSON.parse(val);
+        console.log(Val.forms);
+        resolve(Val.forms[formNum]);
+      } else {
+        resolve(JSON.parse(val));
+      }
     });
   })
 }
@@ -295,7 +301,7 @@ function getSecondType(mon) {
   })
 }
 
-function compareTypeDamage(monData, type1, type2) {
+function compareTypeDamage(monData, type1, type2, formNum) {
   if (!type2) {
     let dmgChart = {};
     Object.keys(type1).map(type1num => {
@@ -304,7 +310,18 @@ function compareTypeDamage(monData, type1, type2) {
       });
     })
     monData.dmgChart = dmgChart;
-    client.set(monData.id, JSON.stringify(monData));
+    if (typeof formNum === 'number') {
+      client.get(monData.id, (err,val) => {
+        const fullMonData = JSON.parse(val);
+        fullMonData.forms[formNum] = monData;
+        client.set(monData.id, JSON.stringify(fullMonData));
+        setTimeout(() => {
+          updateAbility(monData.id, formNum);
+        }, 400);
+      });
+    } else {
+      client.set(monData.id, JSON.stringify(monData));
+    }
     console.log('1 Dmg chart complete - ' + monData.id);
   } else {
     let dmgChart = {};
@@ -321,19 +338,30 @@ function compareTypeDamage(monData, type1, type2) {
       });
     });
     monData.dmgChart = dmgChart;
-    client.set(monData.id, JSON.stringify(monData));
+    if (typeof formNum === 'number') {
+      client.get(monData.id, (err,val) => {
+        const fullMonData = JSON.parse(val);
+        fullMonData.forms[formNum] = monData;
+        client.set(monData.id, JSON.stringify(fullMonData));
+        setTimeout(() => {
+          updateAbility(monData.id, formNum);
+        }, 400);
+      });
+    } else {
+      client.set(monData.id, JSON.stringify(monData));
+    }
     console.log('2 Dmg chart complete - ' + monData.id);
   }
 }
 
-const updateTypes = (num) => {
-  getMonData(num)
+const updateTypes = (num, formNum) => {
+  getMonData(num, formNum)
     .then((monData) => {
       return getFirstType(monData)
       .then((typeData1) => {
         return getSecondType(monData)
         .then((typeData2) => {
-          compareTypeDamage(monData, typeData1, typeData2);
+          compareTypeDamage(monData, typeData1, typeData2, formNum);
         })
       })
     });
@@ -587,21 +615,31 @@ const updateAllPrevoEggMoves = () => {
 // Read ability of mon and create db entry
 // if needed, otherwise simply add mon num
 // to the db entry
-const updateAbility = (id) => {
-  const num = tripleId(id);
+const updateAbility = (id, formNum) => {
+  let num = id.length >= 3 ? id : tripleId(id);
+
   client.get(num, (err, val) => {
     const Val = JSON.parse(val);
-    for (let i = 0; i < Val.abilities.length; i++) {
-      client.get(`__${Val.abilities[i].name}`, (err2,val2) => {
+    let dataSet;
+    if (typeof formNum === 'number') {
+      dataSet = Val.forms[formNum].abilities;
+    } else {
+      dataSet = Val.abilities;
+    }
+    console.log(dataSet);
+    for (let i = 0; i < dataSet.length; i++) {
+      console.log(dataSet[i].name);
+      client.get(`__${dataSet[i].name}`, (err2,val2) => {
+        console.log(val2);
         if (val2 === null) {
           // If no ability record is found, create one
           let obj = {
-            name: Val.abilities[i].name,
-            description: Val.abilities[i].description,
+            name: dataSet[i].name,
+            description: dataSet[i].description,
             mons: [Val.id],
           };
           console.log('creating');
-          client.set(`__${Val.abilities[i].name}`, JSON.stringify(obj));
+          client.set(`__${dataSet[i].name}`, JSON.stringify(obj));
         } else {
           // Else append mon id to ability
           const Val2 = JSON.parse(val2);
@@ -623,6 +661,112 @@ const updateAllAbilities = () => {
     }, 2000 * i);
   }
 }
+
+const getMegaData = (num, url, formNum) => {
+  request(url, function(err, res, body) {
+    if (!err && res.statusCode == 200) {
+      const data = JSON.parse(body);
+      let obj = {};
+      obj.id = num;
+      if (data.name.includes('mega')) {
+        console.log(data.name);
+        const monName = data.name.substr(0, data.name.indexOf('-mega'));
+        const monSuffix = data.name.includes('-mega-')
+          && data.name.substr(data.name.indexOf('-mega-') + 6);
+        if (monSuffix) {
+          obj.name = `Mega ${monName} ${monSuffix}`;
+        } else {
+          obj.name = `Mega ${monName}`;
+        }
+      } else if (data.name.includes('primal')) {
+        const monName = data.name.substr(0, data.name.length - 7);
+        obj.name = `Primal ${monName}`;
+      }
+      // Types
+      obj.types = [];
+      for(let i = 0; i < data.types.length; i++) {
+        obj.types.unshift(data.types[i].type.name)
+      }
+      // Stats - HP, Atk, Def, SpAtk, SpDef, Spe
+      obj.stats = [];
+      obj.ev = {};
+      for(let i = 0; i < data.stats.length; i++) {
+        obj.stats.unshift(data.stats[i].base_stat);
+        // EVs
+        if (data.stats[i].effort > 0) {
+          obj.ev[data.stats[i].stat.name] = data.stats[i].effort;
+        }
+      }
+
+      // Abilities
+      obj.abilities = [];
+      let ability = {
+        "name": data.abilities[0].ability.name,
+        "hidden": data.abilities[0].is_hidden,
+      };
+      setTimeout(function(){
+        request(data.abilities[0].ability.url, function(err, res, body) {
+          const data2 = JSON.parse(body);
+          ability.description = data2.effect_entries[0].short_effect;
+          obj.abilities.unshift(ability);
+          console.log('1' + obj.abilities);
+          setTimeout(function(){
+            client.get(num, (err,val) => {
+              const Val = JSON.parse(val);
+              Val.forms = [obj];
+              console.log('2' + obj.abilities + '_');
+              client.set(num, JSON.stringify(Val));
+              setTimeout(function(){
+                updateTypes(num, formNum - 1);
+                console.log(num + ' fully complete');
+              }, 400);
+            });
+          }, 8000);
+        });
+      }, 3000);
+    } else {
+      console.log(err);
+    }
+  });
+}
+
+const updateForms = (id) => {
+  const num = tripleId(id);
+
+  request('http://pokeapi.co/api/v2/pokemon-species/' + num, function(err, res, body) {
+    if (!err && res.statusCode == 200) {
+      const data = JSON.parse(body);
+      if (data.varieties.length > 1) {
+        let obj = {};
+        console.log(`${num} - started`);
+        for (let i = 0; i < data.varieties.length; i++) {
+          if (!data.varieties[i].is_default) {
+            if (data.varieties[i].pokemon.name.includes('mega')
+               || data.varieties[i].pokemon.name.includes('primal')) {
+              setTimeout(() => {
+                getMegaData(num, data.varieties[i].pokemon.url, i);
+              }, (i * 20000) - 20000);
+            }
+          }
+        }
+      } else {
+        console.log(`${num} - No forms`);
+      }
+    } else {
+      console.log('FAILURE' + ' | err: ' + err);
+    }
+  });
+}
+
+const updateAllForms = () => {
+  for (let i = 1; i <= 721; i++) {
+    setTimeout(() => {
+      updateForms(i);
+    }, i * 4000);
+  }
+}
+
+//updateAllForms();
 
 //updateAllAbilities();
 //updateAllPrevoEggMoves();

@@ -1,0 +1,1 @@
+.formRadio#default~main [class$="--default"]{display:block}.formRadio#default:not(:checked)~main [class$="--default"],.formRadio#form-1~main [class$="--form-1"]{display:none}.formRadio#form-1:checked~main [class$="--form-1"]{display:block}.formRadio#form-2~main [class$="--form-2"]{display:none}.formRadio#form-2:checked~main [class$="--form-2"]{display:block}

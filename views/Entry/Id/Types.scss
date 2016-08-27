@@ -6,8 +6,10 @@
   text-align: center;
   color: white;
   border-radius: 4px;
-  &:first-of-type {
-    margin-bottom: 6px;
+  &--default + .Id_Type--default,
+  &--form-1 + .Id_Type--form-1 ,
+  &--form-2 + .Id_Type--form-2 {
+    margin-top: 6px;
   }
 
   @include typeColors;

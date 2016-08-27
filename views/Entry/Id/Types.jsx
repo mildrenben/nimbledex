@@ -1,30 +1,33 @@
 const React = require('react');
+const suffix = ['default', 'form-1', 'form-2'];
 
 const Types = React.createClass({
   render() {
-    const amountOfTypes = this.props.types.length;
+    const props = this.props;
+    const types = props.types.map((type) => {
+      return (
+        <p className={ `Id_Type Id_Type--${type} Id_Type--default` }>
+          {type}
+        </p>
+      );
+    });
 
-    if (amountOfTypes === 1) {
-      return (
-        <div className="Id_Types">
-          <p className={ `Id_Type Id_Type--${this.props.types[0]}` }>
-            {this.props.types[0]}
+    const formTypes = props.forms && props.forms.map((form, i) => {
+      return form.types.map((type) => {
+        return (
+          <p className={ `Id_Type Id_Type--${type} Id_Type--${suffix[i + 1]}` }>
+            {type}
           </p>
-        </div>
-      );
-    }
-    else {
-      return (
-        <div className="Id_Types">
-          <p className={ `Id_Type Id_Type--${this.props.types[0]}` }>
-            {this.props.types[0]}
-          </p>
-          <p className={ `Id_Type Id_Type--${this.props.types[1]}` }>
-            {this.props.types[1]}
-          </p>
-        </div>
-      );
-    }
+        );
+      });
+    });
+
+    return (
+      <div className="Id_Types">
+        {types}
+        {formTypes}
+      </div>
+    )
   }
 });
 
