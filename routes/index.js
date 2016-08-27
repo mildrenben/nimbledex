@@ -113,7 +113,7 @@ function renderAbility(res, ability) {
 
 exports.index = function(req, res){
   let path = req.url.slice(1);
-
+  console.log('A - ' + path);
   if (req.url === '/') {
     renderHomepage(res);
     return;
@@ -130,9 +130,10 @@ exports.index = function(req, res){
     return;
   }
 
-  if (isNaN(path)) {
+  if (isNaN(path) && !path.includes('img/sprites/')) {
     path = path.charAt(0).toUpperCase() + path.slice(1);
     const lookupPath = lookup[path];
+    console.log('B - ' + lookupPath + ' ' + path);
     client.get(lookupPath, function (err, val) {
       const data = JSON.parse(val);
       renderData(res,data);
@@ -148,6 +149,7 @@ exports.index = function(req, res){
     else {
       path = '00' + path;
     }
+    console.log('C - ' + path);
     client.get(path, function (err, val) {
       const data = JSON.parse(val);
       renderData(res,data);
