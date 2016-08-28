@@ -26,7 +26,7 @@ const Head = React.createClass({
 
     return (
       <head>
-        <meta charset="utf-8" />
+        <meta charSet="utf-8" />
         <title>{this.props.title}</title>
         {stylesheet}
         <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css' />

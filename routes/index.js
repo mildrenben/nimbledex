@@ -114,6 +114,13 @@ function renderAbility(res, ability) {
 exports.index = function(req, res){
   let path = req.url.slice(1);
 
+  if (path.includes('?')) {
+    const query = path.substr(path.indexOf('?'));
+    path = path.substr(0, path.indexOf('?'));
+    console.log('Q' + query);
+    console.log('P' + path);
+  }
+
   if (req.url === '/') {
     renderHomepage(res);
     return;
