@@ -30,6 +30,12 @@
     @include link;
     padding: 4px 0;
   }
+  // Can be changed when/if Pokemon
+  // Showdown stuff is ever removed
+  // Should be margin: 0 auto 80px
+  main {
+    margin: 0 auto;
+  }
   h1.LogoWrap_Name {
     font-weight: 400;
     font-size: 16px;
