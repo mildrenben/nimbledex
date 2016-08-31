@@ -19,7 +19,7 @@ const All = React.createClass({
     ];
     return (
       <html>
-        <Head title='All Pokemon | Nimbledex' name='All' idnumber='001' stylesheet="all" />
+        <Head title='Pokemon Showdown Pokedex | All Pokemon | Nimbledex' name='All' idnumber='001' stylesheet="all" />
         <body className="All">
           <Nav sideNavItems={sideNavItems} />
           <main>

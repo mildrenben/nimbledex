@@ -176,7 +176,9 @@ const EvolSingle = React.createClass({
           </div>
         }
         <a href={`/${this.props.idnumber}`}>
-          <img className="Evol_Img" src={imgURL} />
+          <img className="Evol_Img" src={imgURL}
+          alt={`${this.props.idnumber} Pokemon Showdown Pokedex | Nimbledex`}
+          title={`${this.props.idnumber} Pokemon Showdown Pokedex | Nimbledex`} />
         </a>
       </div>
     )

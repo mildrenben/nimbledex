@@ -16,7 +16,7 @@ const AbilityPage = React.createClass({
 
     return (
       <html>
-        <Head title={`${title} Ability Pokemon | Nimbledex`} name='AbilityPage' idnumber='001' stylesheet="ability" />
+        <Head title={`Pokemon Showdown Pokedex ${title} Ability | Nimbledex`} name='AbilityPage' idnumber='001' stylesheet="ability" />
         <body className="AbilityPage">
           <Nav />
           <main>

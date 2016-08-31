@@ -12,7 +12,7 @@ const Info = React.createClass({
         {this.props.id && <NextPrevBtns prev={prev} next={next}/>}
         <span className="Info_Toggle">Info</span>
         <div className="Info_Popup">
-          <p>This is an open source Pokedéx made for the community.</p>
+          <p>Nimbledex is an open source Pokedex built for Pokemon Showdown.</p>
           <p>The data is for ORAS and I will try to always keep the data consistent with the latest game.</p>
           <p>It is meant to be concise, minimal and fast.</p>
           If you want to help the project please talk to me on Twitter or Github.

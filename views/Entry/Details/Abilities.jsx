@@ -1,6 +1,5 @@
 const React = require('react');
 const formatString = require('../../Utilities/formatString');
-const FormUtil = require('../FormUtil');
 const suffix = ['default', 'form-1', 'form-2'];
 
 const Abilities = React.createClass({

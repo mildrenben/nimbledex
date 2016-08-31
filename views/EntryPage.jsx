@@ -27,7 +27,7 @@ const Root = React.createClass({
 
     return (
       <html prefix="og: http://ogp.me/ns#">
-        <Head title={`${title} | Nimbledex`} name={props.name} idnumber={props.id} stylesheet="entry"/>
+        <Head title={`Pokemon Showdown Pokedex ${title} | Nimbledex`} name={props.name} idnumber={props.id} stylesheet="entry"/>
         <body className="default">
           <Nav sideNavItems={sideNavItems} />
           <FormTabs forms={props.forms} name={props.name} />

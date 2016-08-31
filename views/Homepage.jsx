@@ -8,11 +8,14 @@ const Root = React.createClass({
   render() {
     return (
       <html>
-        <Head title={`Nimbledex | Ultra fast Pokedex`} name='' idnumber='001' stylesheet="homepage" />
+        <Head title={`Pokemon Showdown Pokedex | Nimbledex | Ultra fast Pokedex`} name='' idnumber='001' stylesheet="homepage" />
         <body className="Homepage">
           <main>
             <div className="LogoWrap">
-              <h1 className="LogoWrap_Name">Nimbledex</h1>
+              <h1 className="LogoWrap_Name">
+                <span className="LogoWrap_NameInner">Nimbledex </span>
+                for Pokemon Showdown
+              </h1>
               <div className="LogoWrap_ImgWrap">
                 <img className="LogoWrap_Img" src="/img/icons/pokeball.svg" />
                 <div className="LogoWrap_AnimWrap">
@@ -22,7 +25,7 @@ const Root = React.createClass({
                 </div>
               </div>
             </div>
-            <h3>A minimal, ultra fast Pokedéx</h3>
+            <h3>A minimal, ultra fast Pokedéx built for Pokemon Showdown</h3>
             <Search />
             <a href="/all">All Pokemon</a>
             <Info />

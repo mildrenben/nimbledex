@@ -9,7 +9,7 @@ const page404 = React.createClass({
   render() {
     return (
       <html>
-        <Head title='Missingno | Nimbledex' name='Missingno' idnumber='missingno' stylesheet="404" />
+        <Head title='Pokemon Showdown Pokedex | Missingno | Nimbledex' name='Missingno' idnumber='missingno' stylesheet="404" />
         <body className="page404">
           <Nav sideNavItems={null} />
           <main>

@@ -30,4 +30,12 @@
     @include link;
     padding: 4px 0;
   }
+  h1.LogoWrap_Name {
+    font-weight: 400;
+    font-size: 16px;
+  }
+  .LogoWrap_NameInner {
+    font-size: 25px;
+    font-weight: bold;
+  }
 }

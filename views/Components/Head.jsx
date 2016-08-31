@@ -45,7 +45,7 @@ const Head = React.createClass({
         <meta name="twitter:title" content={this.props.title} />
         <meta name="twitter:description" content="Ultra fast, minimal Pokedex with all the important info up front!" />
         <meta name="twitter:image" content={imgURL} />
-        <meta name="description" content="An ultra fast, minimal design Pokedex with all the important Pokemon information up front." />
+        <meta name="description" content="Pokemon Showdown Pokedex. An ultra fast, minimal design Pokedex with all the important Pokemon information up front, built for Pokemon Showdown." />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
       </head>
     )
