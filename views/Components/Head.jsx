@@ -3,7 +3,7 @@ const React = require('react');
 const Head = React.createClass({
   render() {
     const imgURL = `http://nimbledex.com/img/sprites/${this.props.idnumber}.png`;
-    const version = '?version=1.1';
+    const version = '?version=1.2';
 
     let stylesheet;
     switch(this.props.stylesheet) {
