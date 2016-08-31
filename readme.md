@@ -1,5 +1,7 @@
 Nimbledex is an open source, experimental, minimal Pokedex.
 
+http://Nimbledex.com
+
 - Node
 - Express
 - React
